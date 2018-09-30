@@ -254,7 +254,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "* {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  body {\r\n    background-color: #edeff2;\r\n    font-family: \"Calibri\", \"Roboto\", sans-serif;\r\n  }\r\n  \r\n  .chat_window {\r\n    position: absolute;\r\n    width: calc(100% - 20px);\r\n    max-width: 80%;\r\n    height: 500px;\r\n    border-radius: 10px;\r\n    background-color: #fff;\r\n    left: 50%;\r\n    top: 50%;\r\n    -webkit-transform: translateX(-50%) translateY(-50%);\r\n            transform: translateX(-50%) translateY(-50%);\r\n    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);\r\n    background-color: #f8f8f8;\r\n    overflow: hidden;\r\n  }\r\n  \r\n  .top_menu {\r\n    background-color: #fff;\r\n    width: 100%;\r\n    padding: 20px 0 15px;\r\n    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);\r\n  }\r\n  \r\n  .top_menu .buttons {\r\n    margin: 3px 0 0 20px;\r\n    position: absolute;\r\n  }\r\n  \r\n  .top_menu .buttons .button {\r\n    width: 16px;\r\n    height: 16px;\r\n    border-radius: 50%;\r\n    display: inline-block;\r\n    margin-right: 10px;\r\n    position: relative;\r\n  }\r\n  \r\n  .top_menu .buttons .button.close {\r\n    background-color: #f5886e;\r\n  }\r\n  \r\n  .top_menu .buttons .button.minimize {\r\n    background-color: #fdbf68;\r\n  }\r\n  \r\n  .top_menu .buttons .button.maximize {\r\n    background-color: #a3d063;\r\n  }\r\n  \r\n  .top_menu .title {\r\n    text-align: center;\r\n    color: #bcbdc0;\r\n    font-size: 20px;\r\n  }\r\n  \r\n  .messages {\r\n    position: relative;\r\n    list-style: none;\r\n    padding: 20px 10px 0 10px;\r\n    margin: 0;\r\n    height: 347px;\r\n    overflow: scroll;\r\n  }\r\n  \r\n  .messages .message {\r\n    clear: both;\r\n    overflow: hidden;\r\n    margin-bottom: 20px;\r\n    transition: all 0.5s linear;\r\n    opacity: 0;\r\n  }\r\n  \r\n  .messages .message.left .avatar {\r\n    background-color: #f5886e;\r\n    float: left;\r\n  }\r\n  \r\n  .messages .message.left .text_wrapper {\r\n    background-color: #ffe6cb;\r\n    margin-left: 20px;\r\n  }\r\n  \r\n  .messages .message.left .text_wrapper::after, .messages .message.left .text_wrapper::before {\r\n    right: 100%;\r\n    border-right-color: #ffe6cb;\r\n  }\r\n  \r\n  .messages .message.left .text {\r\n    color: #c48843;\r\n  }\r\n  \r\n  .messages .message.right .avatar {\r\n    background-color: #fdbf68;\r\n    float: right;\r\n  }\r\n  \r\n  .messages .message.right .text_wrapper {\r\n    background-color: #c7eafc;\r\n    margin-right: 20px;\r\n    float: right;\r\n  }\r\n  \r\n  .messages .message.right .text_wrapper::after, .messages .message.right .text_wrapper::before {\r\n    left: 100%;\r\n    border-left-color: #c7eafc;\r\n  }\r\n  \r\n  .messages .message.right .text {\r\n    color: #45829b;\r\n  }\r\n  \r\n  .messages .message.appeared {\r\n    opacity: 1;\r\n  }\r\n  \r\n  .messages .message .avatar {\r\n    width: 60px;\r\n    height: 60px;\r\n    border-radius: 50%;\r\n    display: inline-block;\r\n  }\r\n  \r\n  .messages .message .text_wrapper {\r\n    display: inline-block;\r\n    padding: 20px;\r\n    border-radius: 6px;\r\n    width: calc(100% - 85px);\r\n    min-width: 100px;\r\n    position: relative;\r\n  }\r\n  \r\n  .messages .message .text_wrapper::after, .messages .message .text_wrapper:before {\r\n    top: 18px;\r\n    border: solid transparent;\r\n    content: \" \";\r\n    height: 0;\r\n    width: 0;\r\n    position: absolute;\r\n    pointer-events: none;\r\n  }\r\n  \r\n  .messages .message .text_wrapper::after {\r\n    border-width: 13px;\r\n    margin-top: 0px;\r\n  }\r\n  \r\n  .messages .message .text_wrapper::before {\r\n    border-width: 15px;\r\n    margin-top: -2px;\r\n  }\r\n  \r\n  .messages .message .text_wrapper .text {\r\n    font-size: 18px;\r\n    font-weight: 300;\r\n  }\r\n  \r\n  .bottom_wrapper {\r\n    position: relative;\r\n    width: 100%;\r\n    background-color: #fff;\r\n    padding: 20px 20px;\r\n    position: absolute;\r\n    bottom: 0;\r\n  }\r\n  \r\n  .bottom_wrapper .message_input_wrapper {\r\n    display: inline-block;\r\n    height: 50px;\r\n    border-radius: 25px;\r\n    border: 1px solid #bcbdc0;\r\n    width: calc(100% - 160px);\r\n    position: relative;\r\n    padding: 0 20px;\r\n  }\r\n  \r\n  .bottom_wrapper .message_input_wrapper .message_input {\r\n    border: none;\r\n    height: 100%;\r\n    box-sizing: border-box;\r\n    width: calc(100% - 40px);\r\n    position: absolute;\r\n    outline-width: 0;\r\n    color: gray;\r\n  }\r\n  \r\n  .bottom_wrapper .send_message {\r\n    width: 140px;\r\n    height: 50px;\r\n    display: inline-block;\r\n    border-radius: 50px;\r\n    background-color: #a3d063;\r\n    border: 2px solid #a3d063;\r\n    color: #fff;\r\n    cursor: pointer;\r\n    transition: all 0.2s linear;\r\n    text-align: center;\r\n    float: right;\r\n  }\r\n  \r\n  .bottom_wrapper .send_message:hover {\r\n    color: #a3d063;\r\n    background-color: #fff;\r\n  }\r\n  \r\n  .bottom_wrapper .send_message .text {\r\n    font-size: 18px;\r\n    font-weight: 300;\r\n    display: inline-block;\r\n    line-height: 48px;\r\n  }\r\n  \r\n  .message_template {\r\n    display: none;\r\n  }\r\n  "
+module.exports = "* {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  body {\r\n    background-color: #edeff2;\r\n    font-family: \"Calibri\", \"Roboto\", sans-serif;\r\n  }\r\n  \r\n  .chat_window {\r\n    position: absolute;\r\n    width: calc(100% - 20px);\r\n    max-width: 80%;\r\n    height: 700px;\r\n    border-radius: 10px;\r\n    background-color: #fff;\r\n    left: 50%;\r\n    top: 50%;\r\n    -webkit-transform: translateX(-50%) translateY(-50%);\r\n            transform: translateX(-50%) translateY(-50%);\r\n    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);\r\n    background-color: #f8f8f8;\r\n    overflow: hidden;\r\n  }\r\n  \r\n  .top_menu {\r\n    background-color: #fff;\r\n    width: 100%;\r\n    padding: 20px 0 15px;\r\n    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);\r\n  }\r\n  \r\n  .top_menu .buttons {\r\n    margin: 3px 0 0 20px;\r\n    position: absolute;\r\n  }\r\n  \r\n  .top_menu .buttons .button {\r\n    width: 16px;\r\n    height: 16px;\r\n    border-radius: 50%;\r\n    display: inline-block;\r\n    margin-right: 10px;\r\n    position: relative;\r\n  }\r\n  \r\n  .top_menu .buttons .button.close {\r\n    background-color: #f5886e;\r\n  }\r\n  \r\n  .top_menu .buttons .button.minimize {\r\n    background-color: #fdbf68;\r\n  }\r\n  \r\n  .top_menu .buttons .button.maximize {\r\n    background-color: #a3d063;\r\n  }\r\n  \r\n  .top_menu .title {\r\n    text-align: center;\r\n    color: #bcbdc0;\r\n    font-size: 20px;\r\n  }\r\n  \r\n  .messages {\r\n    position: relative;\r\n    list-style: none;\r\n    padding: 20px 10px 0 10px;\r\n    margin: 0;\r\n    height: 547px;\r\n    overflow: scroll;\r\n  }\r\n  \r\n  .messages .message {\r\n    clear: both;\r\n    overflow: hidden;\r\n    margin-bottom: 20px;\r\n    transition: all 0.5s linear;\r\n    opacity: 0;\r\n  }\r\n  \r\n  .messages .message.left .avatar {\r\n    background-color: #f5886e;\r\n    float: left;\r\n  }\r\n  \r\n  .messages .message.left .text_wrapper {\r\n    background-color: #ffe6cb;\r\n    margin-left: 20px;\r\n  }\r\n  \r\n  .messages .message.left .text_wrapper::after, .messages .message.left .text_wrapper::before {\r\n    right: 100%;\r\n    border-right-color: #ffe6cb;\r\n  }\r\n  \r\n  .messages .message.left .text {\r\n    color: #c48843;\r\n  }\r\n  \r\n  .messages .message.right .avatar {\r\n    background-color: #fdbf68;\r\n    float: right;\r\n  }\r\n  \r\n  .messages .message.right .text_wrapper {\r\n    background-color: #c7eafc;\r\n    margin-right: 20px;\r\n    float: right;\r\n  }\r\n  \r\n  .messages .message.right .text_wrapper::after, .messages .message.right .text_wrapper::before {\r\n    left: 100%;\r\n    border-left-color: #c7eafc;\r\n  }\r\n  \r\n  .messages .message.right .text {\r\n    color: #45829b;\r\n  }\r\n  \r\n  .messages .message.appeared {\r\n    opacity: 1;\r\n  }\r\n  \r\n  .messages .message .avatar {\r\n    width: 60px;\r\n    height: 60px;\r\n    border-radius: 50%;\r\n    display: inline-block;\r\n  }\r\n  \r\n  .messages .message .text_wrapper {\r\n    display: inline-block;\r\n    padding: 20px;\r\n    border-radius: 6px;\r\n    width: calc(100% - 85px);\r\n    min-width: 100px;\r\n    position: relative;\r\n  }\r\n  \r\n  .messages .message .text_wrapper::after, .messages .message .text_wrapper:before {\r\n    top: 18px;\r\n    border: solid transparent;\r\n    content: \" \";\r\n    height: 0;\r\n    width: 0;\r\n    position: absolute;\r\n    pointer-events: none;\r\n  }\r\n  \r\n  .messages .message .text_wrapper::after {\r\n    border-width: 13px;\r\n    margin-top: 0px;\r\n  }\r\n  \r\n  .messages .message .text_wrapper::before {\r\n    border-width: 15px;\r\n    margin-top: -2px;\r\n  }\r\n  \r\n  .messages .message .text_wrapper .text {\r\n    font-size: 18px;\r\n    font-weight: 300;\r\n  }\r\n  \r\n  .bottom_wrapper {\r\n    position: relative;\r\n    width: 100%;\r\n    background-color: #fff;\r\n    padding: 2px 20px;\r\n    position: absolute;\r\n    bottom: 0;\r\n  }\r\n  \r\n  .bottom_wrapper .message_input_wrapper {\r\n    display: inline-block;\r\n    height: 50px;\r\n    border-radius: 25px;\r\n    border: 1px solid #bcbdc0;\r\n    width: calc(100% - 160px);\r\n    position: relative;\r\n    padding: 0 20px;\r\n  }\r\n  \r\n  .bottom_wrapper .message_input_wrapper .message_input {\r\n    border: none;\r\n    height: 100%;\r\n    box-sizing: border-box;\r\n    width: calc(100% - 40px);\r\n    position: absolute;\r\n    outline-width: 0;\r\n    color: gray;\r\n  }\r\n  \r\n  .bottom_wrapper .send_message {\r\n    width: 140px;\r\n    height: 50px;\r\n    display: inline-block;\r\n    border-radius: 50px;\r\n    background-color: #a3d063;\r\n    border: 2px solid #a3d063;\r\n    color: #fff;\r\n    cursor: pointer;\r\n    transition: all 0.2s linear;\r\n    text-align: center;\r\n    float: right;\r\n  }\r\n  \r\n  .bottom_wrapper .send_message:hover {\r\n    color: #a3d063;\r\n    background-color: #fff;\r\n  }\r\n  \r\n  .bottom_wrapper .send_message .text {\r\n    font-size: 18px;\r\n    font-weight: 300;\r\n    display: inline-block;\r\n    line-height: 48px;\r\n  }\r\n  \r\n  .message_template {\r\n    display: none;\r\n  }\r\n  "
 
 /***/ }),
 
@@ -265,7 +265,7 @@ module.exports = "* {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  body {\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!------ Include the above in your HEAD tag ---------->\n\n<div class=\"chat_window\">\n  <div class=\"top_menu\">\n    <div class=\"buttons\">\n      <div class=\"button close\">\n\n      </div>\n      <div class=\"button minimize\"></div>\n      <div class=\"button maximize\"></div>\n    </div>\n    <div class=\"title\">Chat</div>\n  </div>\n  <ul class=\"messages\" #conversationArea>\n    <div *ngFor=\"let message of messages\">\n        <li class=\"message left appeared\" *ngIf=\"message.user._id ==person1\">\n            <div class=\"avatar\"></div>\n            <div class=\"text_wrapper\">\n              <div class=\"text\">{{message?.text}}</div>\n            </div>\n          </li>\n          <li class=\"message right appeared\" *ngIf=\"message.user._id ==person2\">\n            <div class=\"avatar\"></div>\n            <div class=\"text_wrapper\">\n              <div class=\"text\">{{message?.text}}</div>\n            </div>\n          </li>\n    </div>\n  \n  </ul>\n  <div class=\"bottom_wrapper clearfix\">\n    <form [formGroup]=\"chatForm\" (ngSubmit)=\"sendMessage()\" class=\"SendForm\">\n      <div class=\"message_input_wrapper\">\n        <input formControlName=\"messageText\" class=\"message_input\" (input)=\"emitIsTying()\" placeholder=\"Type your message here...\" />\n      </div>\n      <button class=\"send_message\">\n        <div class=\"icon\"></div>\n        <div class=\"text\">\n          Send\n        </div>\n      </button>\n    </form>\n  </div>\n</div>\n<div class=\"message_template\">\n  <li class=\"message\">\n    <div class=\"avatar\">\n\n    </div>\n    <div class=\"text_wrapper\">\n      <div class=\"text\">\n      </div>\n    </div>\n  </li>\n</div>"
+module.exports = "<!------ Include the above in your HEAD tag ---------->\n\n<div class=\"chat_window\">\n  <div class=\"top_menu\">\n    <div class=\"buttons\">\n      <div class=\"button close\">\n\n      </div>\n      <div class=\"button minimize\"></div>\n      <div class=\"button maximize\"></div>\n    </div>\n    <div class=\"title\">Chat</div>\n  </div>\n  <ul class=\"messages\" #conversationArea>\n    <div *ngFor=\"let message of messages\">\n      <li class=\"message left appeared\" *ngIf=\"message.user._id ==person1\">\n        <div class=\"avatar\"></div>\n        <div class=\"text_wrapper\">\n          <div class=\"text\" *ngIf=\"message?.text\">{{message?.text}}</div>\n          <div class=\"text\" *ngIf=\"message?.img\">\n            <img src=\"{{message?.img}}\" width=\"140\" height=\"140\">\n          </div>\n        </div>\n      </li>\n      <li class=\"message right appeared\" *ngIf=\"message.user._id ==person2\">\n        <div class=\"avatar\"></div>\n        <div class=\"text_wrapper\">\n          <div class=\"text\" *ngIf=\"message?.text\">{{message?.text}}</div>\n          <div class=\"text\" *ngIf=\"message?.img\">\n            <img src=\"{{message?.img}}\" width=\"140\" height=\"140\">\n          </div>\n        </div>\n      </li>\n    </div>\n\n  </ul>\n  <div class=\"bottom_wrapper clearfix\">\n    <form [formGroup]=\"chatForm\" (ngSubmit)=\"sendMessage()\" class=\"SendForm\">\n      <div class=\"message_input_wrapper\">\n        <input formControlName=\"messageText\" class=\"message_input\" (input)=\"emitIsTying()\" placeholder=\"Type your message here...\"\n        />\n        <br>\n        <br>\n        <br>\n        <br> ارفاق صورة\n        <input type=\"file\" #img>\n     \n      </div>\n      <button class=\"send_message\">\n        <div class=\"icon\"></div>\n        <div class=\"text\">\n          Send\n        </div>\n      </button>\n    </form>\n  </div>\n</div>\n<div class=\"message_template\">\n  <li class=\"message\">\n    <div class=\"avatar\">\n\n    </div>\n    <div class=\"text_wrapper\">\n      <div class=\"text\">\n      </div>\n    </div>\n  </li>\n</div>"
 
 /***/ }),
 
@@ -305,6 +305,7 @@ var ChatComponent = /** @class */ (function () {
         this.orderServices = orderServices;
         this.activeRoute = activeRoute;
         this.zone = zone;
+        this.myImg = null;
         this.messages = [];
         this.scrollToBottomFlage = false;
     }
@@ -336,45 +337,59 @@ var ChatComponent = /** @class */ (function () {
     ChatComponent.prototype.getConversationMessage = function (getConversationId) {
         var _this = this;
         this.orderServices.getConversationMessages(getConversationId).subscribe(function (res) {
-            // this.messages.push({ ...res });
             _this.messages = res.reverse();
             _this.scrollToBottomFlage = true;
-            console.log(_this.messages.length, _this.messages, 'the conversation Message ===', _this.messages[3].text);
         }, function (err) {
             console.log('error while getting getConversationId ==>', err);
         });
     };
     ChatComponent.prototype.sendMessage = function () {
         var _this = this;
-        if (!this.chatForm.get('messageText').value) {
+        var img = this.myImg.nativeElement.files[0];
+        var text = this.chatForm.get('messageText').value;
+        if (!this.chatForm.get('messageText').value && !img) {
             return;
         }
-        var message = {
-            'text': this.chatForm.get('messageText').value
-        };
+        var message = new FormData();
+        if (img)
+            message.append('img', img);
+        if (text)
+            message.append('text', text);
         this.orderServices.sendMessage(message, this.conversationId)
             .subscribe(function (res) {
             console.log('the result ===', res);
-            _this.chatForm.get('messageText').setValue('');
+            _this.chatForm.reset();
+            _this.myImg.nativeElement.value = "";
         }, function (err) { console.log('the result ===', err); });
     };
     ChatComponent.prototype.listenToMessage = function () {
         var _this = this;
         console.log('this.conversationId ==>', this.conversationId);
         this.listChat = _da_service__WEBPACK_IMPORTED_MODULE_5__["default"].record.getList("dsChats/" + this.conversationId);
-        // console.log('the list chat ===>', this.listChat);
         this.listChat.on('entry-added', function (x) {
             _da_service__WEBPACK_IMPORTED_MODULE_5__["default"].record.getRecord(x).whenReady(function (message) {
-                // console.log(this.messages, 'the resulat of  ', message.get());
+                console.log(_this.messages, 'the resulat of  fffff  ===', message.get().message, message.get().user);
+                var newMessage = {
+                    createdAt: message.get().message.createdAt,
+                    seen: message.get().message.createdAt,
+                    text: message.get().message.text,
+                    img: message.get().message.img,
+                    user: {
+                        name: message.get().message.user.name,
+                        avatar: message.get().message.user.avatar,
+                        _id: message.get().message.user._id
+                    },
+                    _id: message.get().message._id
+                };
                 _this.zone.run(function () {
-                    _this.messages.push(message.get());
+                    _this.messages.push(newMessage);
                     _this.scrollToBottomFlage = true;
                 });
             });
         });
     };
     ChatComponent.prototype.emitIsTying = function () {
-        console.log('the help');
+        console.log('the help', this.person1);
         _da_service__WEBPACK_IMPORTED_MODULE_5__["default"].event.emit(this.conversationId + "/" + this.person1, { isTyping: true });
     };
     ChatComponent.prototype.checkTyping = function () {
@@ -502,6 +517,10 @@ var ChatComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('conversationArea'),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
     ], ChatComponent.prototype, "chatBody", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('img'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
+    ], ChatComponent.prototype, "myImg", void 0);
     ChatComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-chat',
@@ -562,7 +581,7 @@ module.exports = "/* /* body {\r\n    font-family: Arial;\r\n    color: white;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card orderSingle\">\n  <p class=\"title\">{{order?.provider?.name}}</p>\n  <h1>Order Number: {{order?.id }}</h1>\n\n  <h1>client Id: {{order?.client?.id }}</h1>\n  <h1>Order Price: {{order?.price }}</h1>\n\n\n  <h1>\n    Order status: {{order?.status }}\n\n  </h1>\n\n  <h1>Order type: {{order?.orderType }}</h1>\n  <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n  <h1>{{order?.bookingDate | date:'medium'}}</h1>\n  <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n\n\n  <p >\n    <button (click)=\"startCancel('REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:50%;background:crimson\" [disabled]=\"order?.status != 'IN_PROGRESS'\">\n      Puse\n    </button>\n    <button (click)=\"startCancel('REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:50%;background:#000\" [disabled]=\"order?.status != 'PAUSE_BY_PROVIDER'\">\n      Resueme\n    </button>\n  </p>\n\n</div>\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<div class=\"card orderSingle\">\n  <p class=\"title\">{{order?.provider?.name}}</p>\n  <h1>Order Number: {{order?.id }}</h1>\n\n  <h1>client Id: {{order?.client?.id }}</h1>\n  <h1>Order Price: {{order?.price }}</h1>\n\n\n  <h1>\n    Order status: {{order?.status }}\n\n  </h1>\n\n  <h1>Order type: {{order?.orderType }}</h1>\n  <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n  <h1>{{order?.bookingDate | date:'medium'}}</h1>\n  <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n\n\n  <p >\n    <button (click)=\"startCancel('REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:50%;background:crimson\" [disabled]=\"order?.status != 'IN_PROGRESS'\">\n      PAUSE\n    </button>\n    <button (click)=\"startCancel('REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:50%;background:#000\" [disabled]=\"order?.status != 'PAUSE_BY_PROVIDER'\">\n      RESUME\n    </button>\n  </p>\n\n</div>\n<simple-notifications [options]=\"options\"></simple-notifications>"
 
 /***/ }),
 
@@ -838,7 +857,7 @@ var OrdersComponent = /** @class */ (function () {
     OrdersComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.fetchOrders(1);
-        this.startTracking();
+        // this.startTracking();
         _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].record.getRecord("dsNotifications/" + _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].id).subscribe(function (res) {
             if (res.unseenCount > 0) {
                 _this.open('you have new notification');
@@ -881,18 +900,19 @@ var OrdersComponent = /** @class */ (function () {
         });
         //ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.newlat, longitude: this.newLng });
     };
-    OrdersComponent.prototype.startTracking = function () {
-        var _this = this;
-        var opts = { maximumAge: 60000, timeout: 15000 };
-        var watchPositionReturn = navigator.geolocation.watchPosition(function (position) {
-            _this.lat = position['coords'].latitude;
-            _this.lng = position['coords'].longitude;
-            // console.log('watchPositionReturn', position);
-            //  ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.lat, longitude: this.lng });
-        }, function (err) {
-            console.log('watchPositionReturn error', err);
-        }, opts);
-    };
+    // startTracking() {
+    //   let opts = { maximumAge: 60000, timeout: 15000 }
+    //   let watchPositionReturn = navigator.geolocation.watchPosition((position) => {
+    //     this.lat = position['coords'].latitude;
+    //     this.lng = position['coords'].longitude;
+    //     // console.log('watchPositionReturn', position);
+    //     //  ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.lat, longitude: this.lng });
+    //   },
+    //     (err) => {
+    //       console.log('watchPositionReturn error', err);
+    //     },
+    //     opts);
+    // }
     OrdersComponent.prototype.onLoadMoreClick = function () {
         this.page++;
         this.fetchOrders(this.page);
