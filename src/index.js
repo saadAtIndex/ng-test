@@ -2,12 +2,16 @@ import http from 'http';
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
+import cors from 'cors';
 import config from './config.json';
 
 let app = express();
 app.server = http.createServer(app);
 
+app.use(cors());
+
 app.use(express.static(path.join(__dirname, 'cross-storage')));
+
 app.get('/cross-storage', (req, res) => {
 	res.sendFile(path.join(__dirname, 'cross-storage/example/hub.html'));
 });
