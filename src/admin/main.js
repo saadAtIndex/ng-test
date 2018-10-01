@@ -207,7 +207,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var appRouting = [
     { path: 'provider/:id/notification', component: _showorder_notification_showorder_notification_component__WEBPACK_IMPORTED_MODULE_11__["ShoworderNotificationComponent"] },
-    { path: 'client/:id/chat', component: _chat_chat_component__WEBPACK_IMPORTED_MODULE_7__["ChatComponent"] },
+    { path: 'orders/:id/client/:clientId/chat', component: _chat_chat_component__WEBPACK_IMPORTED_MODULE_7__["ChatComponent"] },
     { path: 'orders/:id', component: _order_detail_order_detail_component__WEBPACK_IMPORTED_MODULE_14__["OrderDetailComponent"] },
     { path: '', component: _orders_orders_component__WEBPACK_IMPORTED_MODULE_9__["OrdersComponent"] },
 ];
@@ -315,7 +315,7 @@ var ChatComponent = /** @class */ (function () {
             'messageText': new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](null, []),
         });
         //get the two persons 
-        this.person1 = this.activeRoute.snapshot.params['id'];
+        this.person1 = this.activeRoute.snapshot.params['clientId'];
         this.person2 = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].id;
         //call get conversion id
         this.getConversationId(this.person1, this.person2);
@@ -570,7 +570,7 @@ ds.on('error', function (err) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* /* body {\r\n    font-family: Arial;\r\n    color: white;\r\n} */\r\nagm-map{\r\n    height: 600px;\r\n  }\r\n.split {\r\n    height: 100%;\r\n    width: 50%;\r\n    position: fixed;\r\n    top: 0;\r\n    overflow-x: hidden;\r\n    padding-top: 20px;\r\n}\r\n.left {\r\n    left: 0;\r\n}\r\n.right {\r\n    right: 0;\r\n}\r\n.centered img {\r\n    width: 150px;\r\n    border-radius: 50%;\r\n}\r\nh1{\r\n    font-size: 16px;\r\n}\r\n.orderSingle{\r\n      width: 50%;\r\n      margin-left: 25%;\r\n      margin-right: 25%;\r\n      height: 200px;\r\n      text-align: center;\r\n      margin-bottom: 20px;\r\n  }\r\n.card {\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n    max-width: 48%;\r\n    text-align: center;\r\n    font-family: arial;\r\n    margin-bottom: 50px;\r\n    height: 400px;\r\n  }\r\n.title {\r\n    color: grey;\r\n    font-size: 18px;\r\n  }\r\nbutton {\r\n    border: none;\r\n    outline: 0;\r\n    display: inline-block;\r\n    padding: 8px;\r\n    color: white;\r\n    background-color: #000;\r\n    text-align: center;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    font-size: 18px;\r\n  }\r\na {\r\n    text-decoration: none;\r\n    font-size: 22px;\r\n    color: black;\r\n  }\r\nbutton:hover, a:hover {\r\n    opacity: 0.7;\r\n  }\r\nbutton:disabled{\r\n      cursor: not-allowed;\r\n  } "
+module.exports = ".split {\r\n    height: 100%;\r\n    width: 50%;\r\n    position: fixed;\r\n    top: 0;\r\n    overflow-x: hidden;\r\n    padding-top: 20px;\r\n}\r\n\r\n.left {\r\n    left: 0;\r\n}\r\n\r\n.right {\r\n    right: 0;\r\n}\r\n\r\n.centered img {\r\n    width: 150px;\r\n    border-radius: 50%;\r\n}\r\n\r\nh1{\r\n    font-size: 16px;\r\n}\r\n\r\n.orderSingle{\r\n      width: 50%;\r\n      margin-left: 25%;\r\n      margin-right: 25%;\r\n      height: 200px;\r\n      text-align: center;\r\n      margin-bottom: 20px;\r\n  }\r\n\r\n.card {\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n    max-width: 48%;\r\n    text-align: center;\r\n    font-family: arial;\r\n    margin-bottom: 50px;\r\n    height: 400px;\r\n  }\r\n\r\n.title {\r\n    color: grey;\r\n    font-size: 18px;\r\n  }\r\n\r\nbutton {\r\n    border: none;\r\n    outline: 0;\r\n    display: inline-block;\r\n    padding: 8px;\r\n    color: white;\r\n    background-color: #000;\r\n    text-align: center;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    font-size: 18px;\r\n  }\r\n\r\na {\r\n    text-decoration: none;\r\n    font-size: 22px;\r\n    color: black;\r\n  }\r\n\r\nbutton:hover, a:hover {\r\n    opacity: 0.7;\r\n  }\r\n\r\nbutton:disabled{\r\n      cursor: not-allowed;\r\n  } "
 
 /***/ }),
 
@@ -581,7 +581,7 @@ module.exports = "/* /* body {\r\n    font-family: Arial;\r\n    color: white;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card orderSingle\">\n  <p class=\"title\">{{order?.provider?.name}}</p>\n  <h1>Order Number: {{order?.id }}</h1>\n\n  <h1>client Id: {{order?.client?.id }}</h1>\n  <h1>Order Price: {{order?.price }}</h1>\n\n\n  <h1>\n    Order status: {{order?.status }}\n\n  </h1>\n\n  <h1>Order type: {{order?.orderType }}</h1>\n  <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n  <h1>{{order?.bookingDate | date:'medium'}}</h1>\n  <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n\n\n  <p >\n    <button (click)=\"startCancel('REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:50%;background:crimson\" [disabled]=\"order?.status != 'IN_PROGRESS'\">\n      PAUSE\n    </button>\n    <button (click)=\"startCancel('REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:50%;background:#000\" [disabled]=\"order?.status != 'PAUSE_BY_PROVIDER'\">\n      RESUME\n    </button>\n  </p>\n\n</div>\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<div class=\"card orderSingle\">\n  <p class=\"title\">{{order?.provider?.name}}</p>\n  <h1>Order Number: {{order?.id }}</h1>\n\n  <h1>client Id: {{order?.client?.id }}</h1>\n\n  <h1>Order Price: {{order?.price }}</h1>\n\n  <h1>Order status: {{order?.status }}</h1>\n\n  <h1>Order type: {{order?.orderType }}</h1>\n\n  <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n\n  <h1>{{order?.bookingDate | date:'medium'}}</h1>\n\n  <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n  <h1 *ngIf=\"order?.status =='PENDING'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:50%;background: green\">\n      ACCEPTED\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:50%;background: red\">\n      REJECTED_BY_PROVIDER\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"background: burlywood\">\n      ON_THE_WAY\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='IN_PROGRESS'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:50%;background: chocolate\">\n      PAUSED_BY_PROVIDER\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:50%;background: chocolate\">\n      FINISHED_WORKING\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:50%;background: orange\">\n      RESUME\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:50%;background: rgb(212, 0, 255)\">\n      FINISHED_WORKING\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='ON_THE_WAY'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"background: blue\">\n      ARRIVED\n    </button>\n  </h1>\n\n  <!-- <h1 *ngIf=\"order?.status == 'IN_PROGRESS' \">\n    <button (click)=\"startCancel('REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:100%;background:crimson\">\n      PAUSE\n    </button>\n  </h1> -->\n\n  <!-- <h1 *ngIf=\"order?.status == 'PAUSE_BY_PROVIDER' \">\n    <button (click)=\"startCancel('REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:100%;background:#000\">\n      RESUME\n    </button>\n  </h1> -->\n\n  <p>\n\n    <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:50%;background: black\">\n      CANCELLED\n    </button>\n    <button (click)=\"goToChat(order?.client)\" style=\"width:50%;background:crimson\">\n      CHAT\n    </button>\n  </p>\n\n</div>\n<simple-notifications [options]=\"options\"></simple-notifications>"
 
 /***/ }),
 
@@ -616,10 +616,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var OrderDetailComponent = /** @class */ (function () {
-    function OrderDetailComponent(route, _notifications, zone, orderServices) {
+    function OrderDetailComponent(route, _notifications, zone, router, orderServices) {
         this.route = route;
         this._notifications = _notifications;
         this.zone = zone;
+        this.router = router;
         this.orderServices = orderServices;
         this.requestToPauseByClient = false;
     }
@@ -642,6 +643,11 @@ var OrderDetailComponent = /** @class */ (function () {
                 }
             }
             _this.resetUnseenCount();
+            if (res.status) {
+                _this.zone.run(function () {
+                    _this.fetchOrder(_this.orderId);
+                });
+            }
             console.log(_this.orderId, 'the notifcation ', res, res.requestToPause);
         });
     };
@@ -649,6 +655,7 @@ var OrderDetailComponent = /** @class */ (function () {
         var _this = this;
         this.orderServices.updateproviderorders(this.orderId, status).subscribe(function (res) {
             _this.zone.run(function () {
+                console.log('11111111111111111111111111111111111111');
                 _this.fetchOrder(_this.orderId);
             });
         }, function (err) {
@@ -665,20 +672,6 @@ var OrderDetailComponent = /** @class */ (function () {
     OrderDetailComponent.prototype.resetUnseenCount = function () {
         this.orderServices.resetUnseenCount()
             .subscribe(function (result) {
-            //console.log(result, 'result')
-        });
-    };
-    OrderDetailComponent.prototype.startCancel = function (status) {
-        // if (status == 'IN_PROGRESS') status = 'REQUEST_TO_PAUSE_BY_PROVIDER';
-        // else status = 'REQUEST_TO_RESUME_BY_PROVIDER'
-        var _this = this;
-        console.log('the status ====>', status);
-        this.orderServices.updateproviderorders(this.orderId, status).subscribe(function (res) {
-            _this.zone.run(function () {
-                _this.fetchOrder(_this.orderId);
-            });
-        }, function (err) {
-            console.log('the error is ====>', err);
         });
     };
     OrderDetailComponent.prototype.open = function (text) {
@@ -690,7 +683,22 @@ var OrderDetailComponent = /** @class */ (function () {
             maxLength: 10,
             clickIconToClose: true
         });
-        // this._notifications.success('new notification', 'this notification from my orders ');
+    };
+    OrderDetailComponent.prototype.changeStatus = function (id, status) {
+        var _this = this;
+        console.log(id, 'the status ====>', status);
+        this.orderServices.updateproviderorders(id, status).subscribe(function (res) {
+            // if(res.)
+            _this.zone.run(function () {
+                _this.fetchOrder(_this.orderId);
+            });
+        }, function (err) {
+            _this.open(err.error.error.message);
+            console.log('the error is ====>', err.error.error.message);
+        });
+    };
+    OrderDetailComponent.prototype.goToChat = function (client) {
+        this.router.navigate(['orders', this.orderId, 'client', client.id, 'chat']);
     };
     OrderDetailComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -701,6 +709,7 @@ var OrderDetailComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
             angular2_notifications__WEBPACK_IMPORTED_MODULE_4__["NotificationsService"],
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
             _order_service__WEBPACK_IMPORTED_MODULE_2__["OrderServices"]])
     ], OrderDetailComponent);
     return OrderDetailComponent;
@@ -796,7 +805,7 @@ var OrderServices = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* /* body {\r\n    font-family: Arial;\r\n    color: white;\r\n} */\r\nagm-map{\r\n    height: 600px;\r\n  }\r\n.split {\r\n    height: 100%;\r\n    width: 50%;\r\n    position: fixed;\r\n    top: 0;\r\n    overflow-x: hidden;\r\n    padding-top: 20px;\r\n}\r\n.left {\r\n    left: 0;\r\n}\r\n.right {\r\n    right: 0;\r\n}\r\n.centered img {\r\n    width: 150px;\r\n    border-radius: 50%;\r\n}\r\nh1{\r\n    font-size: 16px;\r\n}\r\n.orderSingle{\r\n      width: 50%;\r\n      height: 250px;\r\n      float: left;\r\n      margin-bottom: 20px;\r\n  }\r\n.card {\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n    max-width: 48%;\r\n    margin: .5%;\r\n    text-align: center;\r\n    font-family: arial;\r\n    margin-bottom: 50px;\r\n    min-height: 500px;\r\n  }\r\n.title {\r\n    color: grey;\r\n    font-size: 18px;\r\n  }\r\nbutton {\r\n    border: none;\r\n    outline: 0;\r\n    display: inline-block;\r\n    padding: 8px;\r\n    color: white;\r\n    background-color: #000;\r\n    text-align: center;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    font-size: 18px;\r\n  }\r\na {\r\n    text-decoration: none;\r\n    font-size: 22px;\r\n    color: black;\r\n  }\r\nbutton:hover, a:hover {\r\n    opacity: 0.7;\r\n  }\r\nbutton:disabled{\r\n      cursor: not-allowed;\r\n  } "
+module.exports = "/* /* body {\r\n    font-family: Arial;\r\n    color: white;\r\n} */\r\nagm-map{\r\n    height: 600px;\r\n  }\r\n.split {\r\n    height: 100%;\r\n    width: 50%;\r\n    position: fixed;\r\n    top: 0;\r\n    overflow-x: hidden;\r\n    padding-top: 20px;\r\n}\r\n.left {\r\n    left: 0;\r\n}\r\n.right {\r\n    right: 0;\r\n}\r\n.centered img {\r\n    width: 150px;\r\n    border-radius: 50%;\r\n}\r\nh1{\r\n    font-size: 16px;\r\n}\r\n.orderSingle{\r\n      width: 50%;\r\n      height: 250px;\r\n      float: left;\r\n      margin-bottom: 20px;\r\n  }\r\n.card {\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n    max-width: 48%;\r\n    margin: .5%;\r\n    text-align: center;\r\n    font-family: arial;\r\n    margin-bottom: 50px;\r\n    min-height: 380px;\r\n  }\r\n.title {\r\n    color: grey;\r\n    font-size: 18px;\r\n  }\r\nbutton {\r\n    border: none;\r\n    outline: 0;\r\n    display: inline-block;\r\n    padding: 8px;\r\n    color: white;\r\n    background-color: #000;\r\n    text-align: center;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    font-size: 18px;\r\n  }\r\na {\r\n    text-decoration: none;\r\n    font-size: 22px;\r\n    color: black;\r\n  }\r\nbutton:hover, a:hover {\r\n    opacity: 0.7;\r\n  }\r\nbutton:disabled{\r\n      cursor: not-allowed;\r\n  } "
 
 /***/ }),
 
@@ -807,7 +816,7 @@ module.exports = "/* /* body {\r\n    font-family: Arial;\r\n    color: white;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"split left pull-left\">\n  <div class=\"centered\">\n    <div class=\"order\">\n      <div *ngFor=\"let order of orders\">\n        <div class=\"card orderSingle\">\n          <p class=\"title\">{{order?.provider?.name}}</p>\n          <h1>Order Number: {{order?.id }}</h1>\n          <button (click)=\"showOrder(order?.id)\" style=\"width:60%;;background: black\">\n            DETAILS\n          </button>\n          <h1>client Id: {{order?.client }}</h1>\n          <h1>Order Price: {{order?.price }}</h1>\n\n          <h1 *ngIf=\"order?.status =='PENDING'\">\n            <!-- Order status: {{order?.status }} -->\n            <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:50%;background: green\">\n              ACCEPTED\n            </button>\n            <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:50%;background: red\">\n              REJECTED_BY_PROVIDER\n            </button>\n          </h1>\n\n          <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n            <!-- Order status: {{order?.status }} -->\n            <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"background: burlywood\">\n              ON_THE_WAY\n            </button>\n          </h1>\n\n          <h1 *ngIf=\"order?.status =='ON_THE_WAY'\">\n            <!-- Order status: {{order?.status }} -->\n            <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"background: blue\">\n              ARRIVED\n            </button>\n          </h1>\n\n          <!-- <h1 *ngIf=\"order?.status =='ARRIVED'\">\n             Order status: {{order?.status }} \n             <button class=\"btn btn-primary\" class=\"btn btn-primary\" class=\"btn btn-primary\" class=\"btn btn-primary\" class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'IN_PROGRESS')\" style=\"background: mediumslateblue\">\n                IN_PROGRESS\n            </button class=\"btn btn-primary\" class=\"btn btn-primary\" class=\"btn btn-primary\" class=\"btn btn-primary\" class=\"btn btn-primary\"> \n          </h1> -->\n\n          <h1 *ngIf=\"order?.status =='IN_PROGRESS'\">\n            <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'PAUSED_BY_PROVIDER')\" style=\"width:50%;background: orange\">\n              PAUSED_BY_PROVIDER\n            </button>\n            <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:50%;background: aquamarine\">\n              FINISHED_WORKING\n            </button>\n          </h1>\n\n          <h1 *ngIf=\"order?.status =='PAUSED_BY_PROVIDER';else otherCondition\">\n            <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'IN_PROGRESS')\" style=\"width:50%;background: orange\">\n              IN_PROGRESS\n            </button>\n            <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:50%;background: rgb(212, 0, 255)\">\n              FINISHED_WORKING\n            </button>\n          </h1>\n\n\n          <ng-template #otherCondition>\n            <h1>\n              Order status: {{order?.status }}\n\n            </h1>\n          </ng-template>\n\n          <h1>Order type: {{order?.orderType }}</h1>\n          <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n          <h1>{{order?.bookingDate | date:'medium'}}</h1>\n          <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n          <!-- [disabled]=\"order?.status != 'ACCEPTED' ||order?.status != 'CANCELLED_BY_CLIENT'\" -->\n\n          <p>\n            <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:50%;background: black\">\n              CANCELLED BY PROVIDER\n            </button>\n            <button (click)=\"goToChat(order?.client)\" style=\"width:50%;background:crimson\">\n              CHAT WITH CLIENT\n            </button>\n\n          </p>\n          <br>\n\n\n        </div>\n      </div>\n      <div *ngIf=\"loading\" style=\"text-align: center;margin: 40px auto\">\n        <!-- <img src=\"assets/images/loading.gif\"  width=\"100\" height=\"100\"> -->\n      </div>\n\n      <div *ngIf=\" orders?.length !=0\">\n        <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n          <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n            المزيد\n          </button>\n        </div>\n      </div>\n      <div *ngIf=\"!loading && orders?.length ==0\">\n        <div style=\"text-align: center;margin-top: 50px;\">\n          <button class=\"btn btn-primary\" disabled>\n            لا يوجد بيانات\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"split right pull-right\">\n  <div class=\"centered\">\n    <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n      [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <div class=\"notification\">\n    <div class=\"singleNotification\">\n      <button (click)=\"gonotifcation()\">notification</button>\n      <br>\n      <br>\n      <!-- <button (click)=\"open()\" class=\"btn btn-primary\">notification click</button> -->\n    </div>\n  </div>\n</div>\n\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<div class=\"split left pull-left\">\n  <div class=\"centered\">\n    <div class=\"order\">\n      <div *ngFor=\"let order of orders\">\n        <div class=\"card orderSingle\">\n          <p class=\"title\">{{order?.provider?.name}}</p>\n          \n          <h1>Order Number: {{order?.id }}</h1>\n\n          <h1>client Id: {{order?.client }}</h1>\n\n          <h1>Order Price: {{order?.price }}</h1>\n\n          <h1>Order status: {{order?.status }}</h1>\n\n          <ng-template #otherCondition>\n            <h1>\n              Order status: {{order?.status }}\n\n            </h1>\n          </ng-template>\n\n          <h1>Order type: {{order?.orderType }}</h1>\n          <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n          <h1>{{order?.bookingDate | date:'medium'}}</h1>\n          <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n\n\n          <br>\n          <button (click)=\"showOrder(order?.id)\" style=\"width:60%;;background: black\">\n            DETAILS\n          </button>\n\n        </div>\n      </div>\n      <div *ngIf=\"loading\" style=\"text-align: center;margin: 40px auto\">\n        <!-- <img src=\"assets/images/loading.gif\"  width=\"100\" height=\"100\"> -->\n      </div>\n\n      <div *ngIf=\" orders?.length !=0\">\n        <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n          <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n            المزيد\n          </button>\n        </div>\n      </div>\n      <div *ngIf=\"!loading && orders?.length ==0\">\n        <div style=\"text-align: center;margin-top: 50px;\">\n          <button class=\"btn btn-primary\" disabled>\n            لا يوجد بيانات\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"split right pull-right\">\n  <div class=\"centered\">\n    <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n      [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <div class=\"notification\">\n    <div class=\"singleNotification\">\n      <button (click)=\"gonotifcation()\">notification</button>\n      <br>\n      <br>\n      <!-- <button (click)=\"open()\" class=\"btn btn-primary\">notification click</button> -->\n    </div>\n  </div>\n</div>\n\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
 
 /***/ }),
 
@@ -857,12 +866,12 @@ var OrdersComponent = /** @class */ (function () {
     OrdersComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.fetchOrders(1);
-        // this.startTracking();
         _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].record.getRecord("dsNotifications/" + _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].id).subscribe(function (res) {
             if (res.unseenCount > 0) {
                 _this.open('you have new notification');
                 console.log('the notifcation', res);
                 _this.resetUnseenCount();
+                _this.fetchOrders(1);
             }
             console.log(res.unseenCount, 'the notifcation', res);
         });
@@ -871,15 +880,6 @@ var OrdersComponent = /** @class */ (function () {
         this.orderServices.resetUnseenCount()
             .subscribe(function (result) {
             console.log(result, 'result');
-        });
-    };
-    OrdersComponent.prototype.listenForNotifications = function () {
-        var _this = this;
-        this.orders.forEach(function (order) {
-            _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].event.subscribe("/providers/" + _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].id + "/orders/" + order.id, function (res) {
-                _this.open('order has been changed');
-                // console.log(order.id, 'the notifcation ', res);
-            });
         });
     };
     OrdersComponent.prototype.newPosition = function (event) {
@@ -917,17 +917,6 @@ var OrdersComponent = /** @class */ (function () {
         this.page++;
         this.fetchOrders(this.page);
     };
-    OrdersComponent.prototype.changeStatus = function (id, status) {
-        var _this = this;
-        console.log(id, 'the status ====>', status);
-        this.orderServices.updateproviderorders(id, status).subscribe(function (res) {
-            _this.orders = [];
-            _this.fetchOrders(1);
-        }, function (err) {
-            _this.open(err.error.error.message);
-            console.log('the error is ====>', err.error.error.message);
-        });
-    };
     OrdersComponent.prototype.open = function (text) {
         var toast = this._notifications.success(text, 'Click to undo...', {
             timeOut: 3000,
@@ -949,14 +938,9 @@ var OrdersComponent = /** @class */ (function () {
             _this.totalPages = result.pageCount;
             _this.loading = false;
             //listen
-            _this.listenForNotifications();
             if (_this.page == _this.totalPages)
                 _this.noMoreData = true;
         });
-    };
-    OrdersComponent.prototype.goToChat = function (client) {
-        console.log('the client ==>', client);
-        this.router.navigate(['client', client, 'chat']);
     };
     OrdersComponent.prototype.gonotifcation = function () {
         this.router.navigate(['provider', _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].id, 'notification']);
