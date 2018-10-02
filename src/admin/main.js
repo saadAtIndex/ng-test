@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\n        <div class=\"container-fluid\">\n            <!-- Brand and toggle get grouped for better mobile display -->\n            <div class=\"navbar-header\">\n                <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\"\n                    aria-expanded=\"false\">\n                    <span class=\"sr-only\">Toggle navigation</span>\n                    <span class=\"icon-bar\"></span>\n                    <span class=\"icon-bar\"></span>\n                    <span class=\"icon-bar\"></span>\n                </button>\n                <a class=\"navbar-brand\" routerLink=\"/\">Home page</a>\n            </div>\n    \n            <!-- Collect the nav links, forms, and other content for toggling -->\n            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n        \n    \n                <a class=\"navbar-brand\" (click)=\"logOut\" style=\"cursor: pointer;\"> logOut</a>\n            </div>\n            <!-- /.navbar-collapse -->\n        </div>\n        <!-- /.container-fluid -->\n    </nav>\n<router-outlet></router-outlet>\n\n<!-- container-1 END-->"
+module.exports = "\n<router-outlet></router-outlet>\n\n<!-- container-1 END-->"
 
 /***/ }),
 
@@ -57,9 +57,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _order_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./order.service */ "./src/app/order.service.ts");
-/* harmony import */ var _da_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./da.service */ "./src/app/da.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./service/auth.service */ "./src/app/service/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -69,7 +68,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -85,67 +83,6 @@ var AppComponent = /** @class */ (function () {
         this.authService.authUser();
     }
     AppComponent.prototype.ngOnInit = function () {
-        var user = this.authService.currentUser.user;
-        this.providerId = user.id;
-        _da_service__WEBPACK_IMPORTED_MODULE_2__["default"].login({
-            accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMxNSwiaXNzIjoiQXBwIiwiaWF0IjoxNTM2NDkyMTA5NzgxLCJleHAiOjE1MzY0OTIxMTY5ODF9.wYPCAEDMcUC2JvmBXxT5z2w8Jf2KL7ilVgEsYLQPuOk",
-            loginAs: "PROVIDER",
-            id: 315
-        }, function (success, data) {
-            console.log(success);
-            console.log(data);
-        });
-    };
-    AppComponent.prototype.newPosition = function (event) {
-        this.newlat = event.coords.lat;
-        this.newLng = event.coords.lng;
-        this.lat = this.newlat;
-        this.lng = this.newLng;
-        // ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.newlat, longitude: this.newLng });
-    };
-    AppComponent.prototype.startTracking = function () {
-        var _this = this;
-        var opts = { maximumAge: 60000, timeout: 15000 };
-        var watchPositionReturn = navigator.geolocation.getCurrentPosition(function (position) {
-            _this.lat = position['coords'].latitude;
-            _this.lng = position['coords'].longitude;
-            console.log('watchPositionReturn', position);
-            // ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.lat, longitude: this.lng });
-        }, function (err) {
-            console.log('watchPositionReturn error', err);
-        }, opts);
-    };
-    AppComponent.prototype.onLoadMoreClick = function () {
-        this.page++;
-        this.fetchOrders(this.page);
-    };
-    AppComponent.prototype.changeStatus = function (id, status) {
-        var _this = this;
-        console.log(id, 'the status ====>', status);
-        this.orderServices.updateproviderorders(id, status).subscribe(function (res) {
-            _this.orders = [];
-            _this.fetchOrders(1);
-        });
-    };
-    AppComponent.prototype.fetchOrders = function (page) {
-        var _this = this;
-        this.loading = true;
-        this.orderServices.fetchproviderorders(this.providerId, page)
-            .subscribe(function (result) {
-            console.log(result);
-            _this.orders = _this.orders.concat(result.data);
-            _this.totalPages = result.pageCount;
-            _this.loading = false;
-            if (_this.page == _this.totalPages)
-                _this.noMoreData = true;
-        });
-    };
-    AppComponent.prototype.goToChat = function (client) {
-        console.log('the client ==>', client);
-        this.router.navigate(['chat']);
-    };
-    AppComponent.prototype.logOut = function () {
-        this.authService.logout();
     };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -154,8 +91,8 @@ var AppComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
         __metadata("design:paramtypes", [_order_service__WEBPACK_IMPORTED_MODULE_1__["OrderServices"],
-            _service_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+            _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -291,7 +228,7 @@ module.exports = "* {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  body {\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!------ Include the above in your HEAD tag ---------->\n\n<div class=\"chat_window\">\n  <div class=\"top_menu\">\n    <div class=\"buttons\">\n      <div class=\"button close\">\n\n      </div>\n      <div class=\"button minimize\"></div>\n      <div class=\"button maximize\"></div>\n    </div>\n    <div class=\"title\">Chat</div>\n  </div>\n  <ul class=\"messages\" #conversationArea>\n    <div *ngFor=\"let message of messages\">\n      <li class=\"message left appeared\" *ngIf=\"message.user._id ==person1\">\n        <div class=\"avatar\"></div>\n        <div class=\"text_wrapper\">\n          <div class=\"text\" *ngIf=\"message?.text\">{{message?.text}}</div>\n          <div class=\"text\" *ngIf=\"message?.img\">\n            <img src=\"{{message?.img}}\" width=\"140\" height=\"140\">\n          </div>\n        </div>\n      </li>\n      <li class=\"message right appeared\" *ngIf=\"message.user._id ==person2\">\n        <div class=\"avatar\"></div>\n        <div class=\"text_wrapper\">\n          <div class=\"text\" *ngIf=\"message?.text\">{{message?.text}}</div>\n          <div class=\"text\" *ngIf=\"message?.img\">\n            <img src=\"{{message?.img}}\" width=\"140\" height=\"140\">\n          </div>\n        </div>\n      </li>\n    </div>\n\n  </ul>\n  <div class=\"bottom_wrapper clearfix\">\n    <form [formGroup]=\"chatForm\" (ngSubmit)=\"sendMessage()\" class=\"SendForm\">\n      <div class=\"message_input_wrapper\">\n        <input formControlName=\"messageText\" class=\"message_input\" (input)=\"emitIsTying()\" placeholder=\"Type your message here...\"\n        />\n        <br>\n        <br>\n        <br>\n        <br> ارفاق صورة\n        <input type=\"file\" #img>\n     \n      </div>\n      <button class=\"send_message\">\n        <div class=\"icon\"></div>\n        <div class=\"text\">\n          Send\n        </div>\n      </button>\n    </form>\n  </div>\n</div>\n<div class=\"message_template\">\n  <li class=\"message\">\n    <div class=\"avatar\">\n\n    </div>\n    <div class=\"text_wrapper\">\n      <div class=\"text\">\n      </div>\n    </div>\n  </li>\n</div>"
+module.exports = "<!------ Include the above in your HEAD tag ---------->\n<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <a class=\"navbar-brand\" routerLink=\"/\">Home page</a>\n        </div>\n\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n            <a class=\"navbar-brand\" (click)=\"logOut()\" style=\"cursor: pointer;\"> logOut</a>\n        </div>\n    </div>\n</nav>\n\n<div class=\"chat_window\">\n  <div class=\"top_menu\">\n    <div class=\"buttons\">\n      <div class=\"button close\">\n\n      </div>\n      <div class=\"button minimize\"></div>\n      <div class=\"button maximize\"></div>\n    </div>\n    <div class=\"title\">Chat</div>\n  </div>\n  <ul class=\"messages\" #conversationArea>\n    <div *ngFor=\"let message of messages\">\n      <li class=\"message left appeared\" *ngIf=\"message.user._id ==person1\">\n        <div class=\"avatar\"></div>\n        <div class=\"text_wrapper\">\n          <div class=\"text\" *ngIf=\"message?.text\">{{message?.text}}</div>\n          <div class=\"text\" *ngIf=\"message?.img\">\n            <img src=\"{{message?.img}}\" width=\"140\" height=\"140\">\n          </div>\n        </div>\n      </li>\n      <li class=\"message right appeared\" *ngIf=\"message.user._id ==person2\">\n        <div class=\"avatar\"></div>\n        <div class=\"text_wrapper\">\n          <div class=\"text\" *ngIf=\"message?.text\">{{message?.text}}</div>\n          <div class=\"text\" *ngIf=\"message?.img\">\n            <img src=\"{{message?.img}}\" width=\"140\" height=\"140\">\n          </div>\n        </div>\n      </li>\n    </div>\n\n  </ul>\n  <div class=\"bottom_wrapper clearfix\">\n    <form [formGroup]=\"chatForm\" (ngSubmit)=\"sendMessage()\" class=\"SendForm\">\n      <div class=\"message_input_wrapper\">\n        <input formControlName=\"messageText\" class=\"message_input\" (input)=\"emitIsTying()\" placeholder=\"Type your message here...\"\n        />\n        <br>\n        <br>\n        <br>\n        <br> ارفاق صورة\n        <input type=\"file\" #img>\n     \n      </div>\n      <button class=\"send_message\">\n        <div class=\"icon\"></div>\n        <div class=\"text\">\n          Send\n        </div>\n      </button>\n    </form>\n  </div>\n</div>\n<div class=\"message_template\">\n  <li class=\"message\">\n    <div class=\"avatar\">\n\n    </div>\n    <div class=\"text_wrapper\">\n      <div class=\"text\">\n      </div>\n    </div>\n  </li>\n</div>"
 
 /***/ }),
 
@@ -542,6 +479,10 @@ var ChatComponent = /** @class */ (function () {
             });
         }.call(this));
     };
+    ChatComponent.prototype.logOut = function () {
+        console.log('the help');
+        this.authService.logout();
+    };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('conversationArea'),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
@@ -611,7 +552,7 @@ module.exports = ".loginContainer{\r\n    margin: 10%\r\n}\r\n.shape1{\r\n    po
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container loginContainer pull-left\">\n    <div id=\"login-row\" class=\"row justify-content-center align-items-center\">\n        <div id=\"login-column\" class=\"col-md-6\">\n            <div class=\"box\">\n                <!-- <div class=\"shape1\"></div>\n                <div class=\"shape2\"></div>\n                <div class=\"shape3\"></div>\n                <div class=\"shape4\"></div>\n                <div class=\"shape5\"></div>\n                <div class=\"shape6\"></div>\n                <div class=\"shape7\"></div> -->\n                <div class=\"float\">\n                    <form [formGroup]=\"singInForm\" (ngSubmit)=\"onLoginSubmit()\" class=\"form\">\n                        <div class=\"form-group\">\n                            <label for=\"username\" class=\"text-white\">Username:</label>\n                            <br>\n                            <input type=\"text\"  formControlName=\"userName\" class=\"form-control\">\n                            <span class=\"text-error\" *ngIf=\"singInForm.get('userName').hasError('required') && singInForm.get('userName').touched\">\n                                هذا الحقل الزامي\n                            </span>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"password\" class=\"text-white\">Password:</label>\n                            <br>\n                            <input type=\"password\"  formControlName=\"password\" class=\"form-control\">\n                            <span class=\"text-error\" *ngIf=\"singInForm.get('password').hasError('required') && singInForm.get('password').touched\">\n                                هذا الحقل الزامي\n                            </span>\n                        </div>\n                        <div class=\"form-group\">\n                            <input type=\"submit\" name=\"submit\" class=\"btn btn-info btn-md\" value=\"submit\">\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n        <div class=\"pull-right\">\n            <h1> username: +201069875421 </h1>\n            <h1> password: Aaaa3aaa$</h1>\n            <!-- <h1>hhhhhhhhhhhhh</h1>\n            <h1>hhhhhhhhhhhhh</h1>\n            <h1>hhhhhhhhhhhhh</h1>\n            <h1>hhhhhhhhhhhhh</h1>\n            <h1>hhhhhhhhhhhhh</h1> -->\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"container loginContainer pull-left\">\n    <div id=\"login-row\" class=\"row justify-content-center align-items-center\">\n        <div id=\"login-column\" class=\"col-md-6\">\n            <div class=\"box\">\n                <!-- <div class=\"shape1\"></div>\n                <div class=\"shape2\"></div>\n                <div class=\"shape3\"></div>\n                <div class=\"shape4\"></div>\n                <div class=\"shape5\"></div>\n                <div class=\"shape6\"></div>\n                <div class=\"shape7\"></div> -->\n                <div class=\"float\">\n                    <form [formGroup]=\"singInForm\" (ngSubmit)=\"onLoginSubmit()\" class=\"form\">\n                        <div class=\"form-group\">\n                            <label for=\"username\" class=\"text-white\">Username:</label>\n                            <br>\n                            <input type=\"text\" formControlName=\"userName\" class=\"form-control\">\n                            <span class=\"text-error\" *ngIf=\"singInForm.get('userName').hasError('required') && singInForm.get('userName').touched\">\n                                هذا الحقل الزامي\n                            </span>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"password\" class=\"text-white\">Password:</label>\n                            <br>\n                            <input type=\"password\" formControlName=\"password\" class=\"form-control\">\n                            <span class=\"text-error\" *ngIf=\"singInForm.get('password').hasError('required') && singInForm.get('password').touched\">\n                                هذا الحقل الزامي\n                            </span>\n                        </div>\n                        <div class=\"form-group\">\n                            <input type=\"submit\" name=\"submit\" class=\"btn btn-info btn-md\" value=\"submit\">\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n        <div class=\"pull-right\">\n            <!-- <h2>kareem</h2>\n            <h5>userName : provider111@gmail.com</h5>\n            <h5> password: Aaaa3aaa$</h5>\n            <hr> -->\n\n            <h2>development</h2>\n            <h5> username: +201069875421 </h5>\n            <h5> password: Aaaa3aaa$</h5>\n            <hr>\n\n            <h2>testing</h2>\n            <h5>userName : hishamprovider@index.com</h5>\n            <h5> password: Aaaa3aaa$</h5>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -713,7 +654,7 @@ module.exports = ".split {\r\n    height: 100%;\r\n    width: 50%;\r\n    positi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card orderSingle\">\n  <p class=\"title\">{{order?.provider?.name}}</p>\n  <h1>Order Number: {{order?.id }}</h1>\n\n  <h1>client Id: {{order?.client?.id }}</h1>\n\n  <h1>Order Price: {{order?.price }}</h1>\n\n  <h1>Order status: {{order?.status }}</h1>\n\n  <h1>Order type: {{order?.orderType }}</h1>\n\n  <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n\n  <h1>{{order?.bookingDate | date:'medium'}}</h1>\n\n  <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n  <h1 *ngIf=\"order?.status =='PENDING'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:50%;background: green\">\n      ACCEPTED\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:50%;background: red\">\n      REJECTED_BY_PROVIDER\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"background: burlywood\">\n      ON_THE_WAY\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='IN_PROGRESS'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:50%;background: chocolate\">\n      PAUSED_BY_PROVIDER\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:50%;background: chocolate\">\n      FINISHED_WORKING\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:50%;background: orange\">\n      RESUME\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:50%;background: rgb(212, 0, 255)\">\n      FINISHED_WORKING\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='ON_THE_WAY'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"background: blue\">\n      ARRIVED\n    </button>\n  </h1>\n\n  <!-- <h1 *ngIf=\"order?.status == 'IN_PROGRESS' \">\n    <button (click)=\"startCancel('REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:100%;background:crimson\">\n      PAUSE\n    </button>\n  </h1> -->\n\n  <!-- <h1 *ngIf=\"order?.status == 'PAUSE_BY_PROVIDER' \">\n    <button (click)=\"startCancel('REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:100%;background:#000\">\n      RESUME\n    </button>\n  </h1> -->\n\n  <p>\n\n    <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:50%;background: black\">\n      CANCELLED\n    </button>\n    <button (click)=\"goToChat(order?.client)\" style=\"width:50%;background:crimson\">\n      CHAT\n    </button>\n  </p>\n\n</div>\n<!-- <div id=\"myModal\" class=\"modal\">\n  <div class=\"modal-content\">\n    <span class=\"close\">&times;</span>\n    <p class=\"text-center\">the client ask to pause this order</p>\n\n    <button (click)=\"pauseResuemeAction(false,'')\" style=\"width:50%;background:crimson\">\n      CANCEL\n    </button>\n    <button (click)=\"pauseResuemeAction(true,'PAUSED_BY_CLIENT')\" style=\"width:50%;background: green\">\n      Ok\n    </button>\n  </div>\n\n</div> -->\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <a class=\"navbar-brand\" routerLink=\"/\">Home page</a>\n        </div>\n\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n            <a class=\"navbar-brand\" (click)=\"logOut()\" style=\"cursor: pointer;\"> logOut</a>\n        </div>\n    </div>\n</nav>\n\n<div class=\"card orderSingle\">\n  <p class=\"title\">{{order?.provider?.name}}</p>\n  <h1>Order Number: {{order?.id }}</h1>\n\n  <h1>client Id: {{order?.client?.id }}</h1>\n\n  <h1>client Name: {{client?.user?.name }}</h1>\n\n  <h1>Order Price: {{order?.price }}</h1>\n\n  <h1>Order status: {{order?.status }}</h1>\n\n  <h1>Order type: {{order?.orderType }}</h1>\n\n  <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n\n  <h1>{{order?.bookingDate | date:'medium'}}</h1>\n\n  <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n  <h1 *ngIf=\"order?.status =='PENDING'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:50%;background: green\">\n      ACCEPTED\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:50%;background: red\">\n      REJECTED_BY_PROVIDER\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"background: burlywood\">\n      ON_THE_WAY\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='IN_PROGRESS'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:50%;background: chocolate\">\n      PAUSED_BY_PROVIDER\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:50%;background: chocolate\">\n      FINISHED_WORKING\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:50%;background: orange\">\n      RESUME\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:50%;background: rgb(212, 0, 255)\">\n      FINISHED_WORKING\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='ON_THE_WAY'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"background: blue\">\n      ARRIVED\n    </button>\n  </h1>\n\n  <!-- <h1 *ngIf=\"order?.status == 'IN_PROGRESS' \">\n    <button (click)=\"startCancel('REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:100%;background:crimson\">\n      PAUSE\n    </button>\n  </h1> -->\n\n  <!-- <h1 *ngIf=\"order?.status == 'PAUSE_BY_PROVIDER' \">\n    <button (click)=\"startCancel('REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:100%;background:#000\">\n      RESUME\n    </button>\n  </h1> -->\n\n  <p>\n\n    <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:50%;background: black\">\n      CANCELLED\n    </button>\n    <button (click)=\"goToChat(order?.client)\" style=\"width:50%;background:crimson\">\n      CHAT\n    </button>\n  </p>\n\n</div>\n<!-- <div id=\"myModal\" class=\"modal\">\n  <div class=\"modal-content\">\n    <span class=\"close\">&times;</span>\n    <p class=\"text-center\">the client ask to pause this order</p>\n\n    <button (click)=\"pauseResuemeAction(false,'')\" style=\"width:50%;background:crimson\">\n      CANCEL\n    </button>\n    <button (click)=\"pauseResuemeAction(true,'PAUSED_BY_CLIENT')\" style=\"width:50%;background: green\">\n      Ok\n    </button>\n  </div>\n\n</div> -->\n<simple-notifications [options]=\"options\"></simple-notifications>"
 
 /***/ }),
 
@@ -835,7 +776,10 @@ var OrderDetailComponent = /** @class */ (function () {
         var _this = this;
         this.orderServices.getOrderById(this.providerId, orderId).subscribe(function (res) {
             _this.order = res;
-            console.log('the order ==', res);
+            _this.orderServices.getClientById(_this.order.client.id).subscribe(function (result) {
+                console.log('the order ==', result);
+                _this.client = result;
+            });
         });
     };
     OrderDetailComponent.prototype.resetUnseenCount = function () {
@@ -877,6 +821,10 @@ var OrderDetailComponent = /** @class */ (function () {
     };
     OrderDetailComponent.prototype.goToChat = function (client) {
         this.router.navigate(['orders', this.orderId, 'client', client.id, 'chat']);
+    };
+    OrderDetailComponent.prototype.logOut = function () {
+        console.log('the help');
+        this.authService.logout();
     };
     OrderDetailComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -974,6 +922,14 @@ var OrderServices = /** @class */ (function () {
         var url = this.basePath + "users/" + providerId + "/notifications?page=" + page + "&limit=" + 12;
         return this.httpClient.get(url);
     };
+    OrderServices.prototype.getProviderLocation = function (providerId) {
+        var url = this.basePath + 'providers/' + providerId + '/current-location';
+        return this.httpClient.get(url);
+    };
+    OrderServices.prototype.getClientById = function (ClientId) {
+        var url = this.basePath + 'clients/' + ClientId;
+        return this.httpClient.get(url);
+    };
     OrderServices = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
@@ -1003,7 +959,7 @@ module.exports = "/* /* body {\r\n    font-family: Arial;\r\n    color: white;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"split left pull-left\">\n  <div class=\"centered\">\n    <div class=\"order\">\n      <div *ngFor=\"let order of orders\">\n        <div class=\"card orderSingle\">\n          <p class=\"title\">{{order?.provider?.name}}</p>\n          \n          <h1>Order Number: {{order?.id }}</h1>\n\n          <h1>client Id: {{order?.client }}</h1>\n\n          <h1>Order Price: {{order?.price }}</h1>\n\n          <h1>Order status: {{order?.status }}</h1>\n\n          <ng-template #otherCondition>\n            <h1>\n              Order status: {{order?.status }}\n\n            </h1>\n          </ng-template>\n\n          <h1>Order type: {{order?.orderType }}</h1>\n          <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n          <h1>{{order?.bookingDate | date:'medium'}}</h1>\n          <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n\n\n          <br>\n          <button (click)=\"showOrder(order?.id)\" style=\"width:60%;;background: black\">\n            DETAILS\n          </button>\n\n        </div>\n      </div>\n      <div *ngIf=\"loading\" style=\"text-align: center;margin: 40px auto\">\n        <!-- <img src=\"assets/images/loading.gif\"  width=\"100\" height=\"100\"> -->\n      </div>\n\n      <div *ngIf=\" orders?.length !=0\">\n        <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n          <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n            المزيد\n          </button>\n        </div>\n      </div>\n      <div *ngIf=\"!loading && orders?.length ==0\">\n        <div style=\"text-align: center;margin-top: 50px;\">\n          <button class=\"btn btn-primary\" disabled>\n            لا يوجد بيانات\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"split right pull-right\">\n  <div class=\"centered\">\n    <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n      [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <div class=\"notification\">\n    <div class=\"singleNotification\">\n      <button (click)=\"gonotifcation()\">notification</button>\n      <br>\n      <br>\n      <!-- <button (click)=\"open()\" class=\"btn btn-primary\">notification click</button> -->\n    </div>\n  </div>\n</div>\n\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<h2 style=\"text-decoration: underline\">orders</h2>\n<div class=\"split left pull-left\">\n  <div class=\"centered\">\n    <div class=\"order\">\n      <div *ngFor=\"let order of orders\">\n        <div class=\"card orderSingle\">\n          <p class=\"title\">{{order?.provider?.name}}</p>\n          \n          <h1>Order Number: {{order?.id }}</h1>\n\n          <h1>client Id: {{order?.client }}</h1>\n\n          <h1>Order Price: {{order?.price }}</h1>\n\n          <h1>Order status: {{order?.status }}</h1>\n\n          <ng-template #otherCondition>\n            <h1>\n              Order status: {{order?.status }}\n\n            </h1>\n          </ng-template>\n\n          <h1>Order type: {{order?.orderType }}</h1>\n          <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n          <h1>{{order?.bookingDate | date:'medium'}}</h1>\n          <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n\n\n          <br>\n          <button (click)=\"showOrder(order?.id)\" style=\"width:60%;;background: black\">\n            DETAILS\n          </button>\n\n        </div>\n      </div>\n      <div *ngIf=\"loading\" style=\"text-align: center;margin: 40px auto\">\n        <!-- <img src=\"assets/images/loading.gif\"  width=\"100\" height=\"100\"> -->\n      </div>\n\n      <div *ngIf=\" orders?.length !=0\">\n        <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n          <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n            more\n          </button>\n        </div>\n      </div>\n      <div *ngIf=\"!loading && orders?.length ==0\">\n        <div style=\"text-align: center;margin-top: 50px;\">\n          <button class=\"btn btn-primary\" disabled>\n           no orders\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"split right pull-right\">\n  <div class=\"centered\">\n    <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n      [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <div class=\"notification\">\n    <div class=\"singleNotification\">\n      <button (click)=\"gonotifcation()\">notification</button>\n      <br>\n      <br>\n      <br>\n      <button (click)=\"logOut()\">logOut</button>\n    \n      <!-- <button (click)=\"open()\" class=\"btn btn-primary\">notification click</button> -->\n    </div>\n  </div>\n</div>\n\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
 
 /***/ }),
 
@@ -1055,7 +1011,16 @@ var OrdersComponent = /** @class */ (function () {
         var _this = this;
         var user = this.authService.currentUser.user;
         this.providerId = user.id;
+        _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].login({
+            accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMxNSwiaXNzIjoiQXBwIiwiaWF0IjoxNTM2NDkyMTA5NzgxLCJleHAiOjE1MzY0OTIxMTY5ODF9.wYPCAEDMcUC2JvmBXxT5z2w8Jf2KL7ilVgEsYLQPuOk",
+            loginAs: "PROVIDER",
+            id: 315
+        }, function (success, data) {
+            console.log(success);
+            console.log(data);
+        });
         this.fetchOrders(1);
+        this.getProviderLocation();
         _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].record.getRecord("dsNotifications/" + this.providerId).subscribe(function (res) {
             if (res.unseenCount > 0) {
                 _this.open('you have new notification');
@@ -1090,19 +1055,15 @@ var OrdersComponent = /** @class */ (function () {
         });
         //ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.newlat, longitude: this.newLng });
     };
-    // startTracking() {
-    //   let opts = { maximumAge: 60000, timeout: 15000 }
-    //   let watchPositionReturn = navigator.geolocation.watchPosition((position) => {
-    //     this.lat = position['coords'].latitude;
-    //     this.lng = position['coords'].longitude;
-    //     // console.log('watchPositionReturn', position);
-    //     //  ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.lat, longitude: this.lng });
-    //   },
-    //     (err) => {
-    //       console.log('watchPositionReturn error', err);
-    //     },
-    //     opts);
-    // }
+    OrdersComponent.prototype.getProviderLocation = function () {
+        var _this = this;
+        this.orderServices.getProviderLocation(this.providerId)
+            .subscribe(function (result) {
+            console.log('etProviderLocation', result['currentLocation']);
+            _this.lng = result['currentLocation'][0],
+                _this.lat = result['currentLocation'][1];
+        });
+    };
     OrdersComponent.prototype.onLoadMoreClick = function () {
         this.page++;
         this.fetchOrders(this.page);
@@ -1138,6 +1099,10 @@ var OrdersComponent = /** @class */ (function () {
     OrdersComponent.prototype.showOrder = function (orderId) {
         console.log('the orderId ===', this.router, orderId);
         this.router.navigate(['orders', orderId]);
+    };
+    OrdersComponent.prototype.logOut = function () {
+        console.log('the help');
+        this.authService.logout();
     };
     OrdersComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1366,7 +1331,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngFor=\"let notif of notification \" style=\"widows: 60%;padding: 5px;text-align: center;height: 200px;margin-left: 20%;margin-bottom: 20px;margin-right: 20%;background: mediumpurple\">\n  <div class=\"notif\">\n   \n    <h4>the notification : {{notif.id}}</h4>\n    <h4>the message :{{notif.text}}</h4>\n    <h4>provider :{{notif?.subject?.provider?.user.name}}</h4>\n    <h4>client :{{notif?.subject?.client?.user.name}}</h4>\n    <h5>kind :{{notif?.subject?.kind}}</h5>\n    <h5>status :{{notif?.subject?.status}}</h5>\n  </div>\n\n</div>\n\n<div *ngIf=\" notification?.length !=0\">\n  <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n    <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n      المزيد\n    </button>\n  </div>\n</div>\n\n<div *ngIf=\"!loading && notification?.length ==0\">\n  <div style=\"text-align: center;margin-top: 50px;\">\n    <button class=\"btn btn-primary\" disabled>\n      لا يوجد بيانات\n    </button>\n  </div>\n</div>"
+module.exports = "<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <a class=\"navbar-brand\" routerLink=\"/\">Home page</a>\n        </div>\n\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n            <a class=\"navbar-brand\" (click)=\"logOut()\" style=\"cursor: pointer;\"> logOut</a>\n        </div>\n    </div>\n</nav>\n<div *ngFor=\"let notif of notification \" style=\"widows: 60%;padding: 5px;text-align: center;height: 200px;margin-left: 20%;margin-bottom: 20px;margin-right: 20%;background: mediumpurple\">\n  <div class=\"notif\">\n   \n    <h4>the notification : {{notif.id}}</h4>\n    <h4>the message :{{notif.text}}</h4>\n    <h4>provider :{{notif?.subject?.provider?.user.name}}</h4>\n    <h4>client :{{notif?.subject?.client?.user.name}}</h4>\n    <h5>kind :{{notif?.subject?.kind}}</h5>\n    <h5>status :{{notif?.subject?.status}}</h5>\n  </div>\n\n</div>\n\n<div *ngIf=\" notification?.length !=0\">\n  <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n    <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n      المزيد\n    </button>\n  </div>\n</div>\n\n<div *ngIf=\"!loading && notification?.length ==0\">\n  <div style=\"text-align: center;margin-top: 50px;\">\n    <button class=\"btn btn-primary\" disabled>\n      لا يوجد بيانات\n    </button>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1424,6 +1389,10 @@ var ShoworderNotificationComponent = /** @class */ (function () {
             if (_this.page == _this.totalPages)
                 _this.noMoreData = true;
         });
+    };
+    ShoworderNotificationComponent.prototype.logOut = function () {
+        console.log('the help');
+        this.authService.logout();
     };
     ShoworderNotificationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
