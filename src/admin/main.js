@@ -606,7 +606,7 @@ var HomeComponent = /** @class */ (function () {
         var _this = this;
         _da_service__WEBPACK_IMPORTED_MODULE_1__["default"].record.getRecord("dsNotifications/" + this.providerId).subscribe(function (res) {
             if (res.unseenCount > 0) {
-                console.log('the notifcation', res);
+                console.log('the notifcation ======', res);
                 _this.notificationCount = res.unseenCount;
             }
         });
@@ -628,9 +628,11 @@ var HomeComponent = /** @class */ (function () {
             this.resetUnseenCount();
     };
     HomeComponent.prototype.resetUnseenCount = function () {
+        var _this = this;
         this.orderServices.resetUnseenCount(this.providerId)
             .subscribe(function (result) {
-            console.log(result, 'result');
+            _this.notificationCount = 0;
+            console.log(result, 'resetUnseenCount');
         });
     };
     HomeComponent = __decorate([
@@ -784,7 +786,7 @@ var Page = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row{\r\n  margin-top: 20px;\r\n}\r\n.card{\r\n  width: 100%;\r\n  padding: 20px;\r\n  min-height: 450px;\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n}\r\nbutton {\r\n  border: none;\r\n  outline: 0;\r\n  display: inline-block;\r\n  padding: 8px;\r\n  color: white;\r\n  background-color: #000;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  width: 100%;\r\n  font-size: 18px;\r\n}\r\n#myModal{\r\n  width: 50%;\r\n  margin-left: 25%;\r\n \r\n}\r\n.modal-content{\r\n  padding: 20px;\r\n}\r\n.modal-sm {\r\n  width: 450px;\r\n}\r\n.watingForPayement .modal-content{\r\n  background: #eee\r\n}\r\n.watingForPayement{\r\n  width: 100%;\r\n  height: 500px;\r\n}\r\n.overlay {\r\n  height: 100%;\r\n  width: 0;\r\n  position: fixed;\r\n  z-index: 1;\r\n  top: 0;\r\n  left: 0;\r\n  background-color: #777777eb;\r\n  overflow-x: hidden;\r\n  transition: 0.5s;\r\n}\r\n.overlay-content {\r\n  position: relative;\r\n  top: 25%;\r\n  width: 100%;\r\n  text-align: center;\r\n  margin-top: 30px;\r\n}\r\n.overlay a {\r\n  padding: 8px;\r\n  text-decoration: none;\r\n  font-size: 36px;\r\n  color: #ffffff;\r\n  display: block;\r\n  transition: 0.3s;\r\n}\r\n.overlay a:hover, .overlay a:focus {\r\n  color: #f1f1f1;\r\n}\r\n.overlay .closebtn {\r\n  position: absolute;\r\n  top: 20px;\r\n  right: 45px;\r\n  font-size: 60px;\r\n}\r\n@media screen and (max-height: 450px) {\r\n.overlay a {font-size: 20px}\r\n.overlay .closebtn {\r\n  font-size: 40px;\r\n  top: 15px;\r\n  right: 35px;\r\n}\r\n}"
+module.exports = ".row{\r\n  margin-top: 20px;\r\n}\r\n.card{\r\n  width: 100%;\r\n  padding: 20px;\r\n  min-height: 450px;\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n}\r\nbutton {\r\n  border: none;\r\n  outline: 0;\r\n  display: inline-block;\r\n  padding: 8px;\r\n  color: white;\r\n  background-color: #000;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  width: 100%;\r\n  font-size: 18px;\r\n}\r\n#myModal{\r\n  width: 50%;\r\n  margin-left: 25%;\r\n \r\n}\r\n.modal-content{\r\n  padding: 20px;\r\n}\r\n.modal-sm {\r\n  width: 450px;\r\n}\r\n.watingForPayement .modal-content{\r\n  background: #eee\r\n}\r\n.watingForPayement{\r\n  width: 100%;\r\n  height: 500px;\r\n}\r\n.overlay {\r\n  height: 100%;\r\n  width: 0;\r\n  position: fixed;\r\n  z-index: 1;\r\n  top: 51PX;\r\n  left: 0;\r\n  background-color: #777777eb;\r\n  overflow-x: hidden;\r\n  transition: 0.5s;\r\n}\r\n.overlay-content {\r\n  position: relative;\r\n  top: 25%;\r\n  width: 100%;\r\n  text-align: center;\r\n  margin-top: 30px;\r\n}\r\n.overlay a {\r\n  padding: 8px;\r\n  text-decoration: none;\r\n  font-size: 36px;\r\n  color: #ffffff;\r\n  display: block;\r\n  transition: 0.3s;\r\n}\r\n.overlay a:hover, .overlay a:focus {\r\n  color: #f1f1f1;\r\n}\r\n.overlay .closebtn {\r\n  position: absolute;\r\n  top: 20px;\r\n  right: 45px;\r\n  font-size: 60px;\r\n}\r\n@media screen and (max-height: 450px) {\r\n.overlay a {font-size: 20px}\r\n.overlay .closebtn {\r\n  font-size: 40px;\r\n  top: 15px;\r\n  right: 35px;\r\n}\r\n}"
 
 /***/ }),
 
@@ -795,7 +797,7 @@ module.exports = ".row{\r\n  margin-top: 20px;\r\n}\r\n.card{\r\n  width: 100%;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"card  pull-left\">\n        <table class=\"table table-bordered\">\n          <!-- <thead>\n                    <tr>\n                      <th>Firstname</th>\n                      <th>Email</th>\n                    </tr>\n                  </thead> -->\n          <tbody>\n            <tr>\n              <td>Order Number</td>\n              <td> {{order?.id }}</td>\n            </tr>\n            <!-- <tr>\n              <td>provider</td>\n              <td>{{order?.provider?.name}}</td>\n            </tr> -->\n            <tr>\n              <td>client id</td>\n              <td>{{order?.client?.id }}</td>\n            </tr>\n            <tr>\n              <td>client Name</td>\n              <td>{{client?.user?.name }}</td>\n            </tr>\n            <tr>\n              <td>Order Price</td>\n              <td>{{order?.price }}</td>\n            </tr>\n            <tr>\n              <td>Order status</td>\n              <td>{{order?.status}}</td>\n            </tr>\n            <tr>\n              <td>Order type</td>\n              <td>{{order?.orderType}}</td>\n            </tr>\n            <tr>\n              <td>Order preview Needed</td>\n              <td>{{order?.previewNeeded}}</td>\n            </tr>\n            <tr>\n              <td> booking Date</td>\n              <td>{{order?.bookingDate | date:'medium'}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n    <div class=\"col-md-6\">\n      <div class=\"card  pull-right text-center\" style=\"padding-top: 100px;\">\n        <p *ngIf=\"cancelOrder\">\n        <!-- <p *ngIf=\"['PENDING','ACCEPTED','ON_THE_WAY','ARRIVED'].includes( orders?.status) \"> -->\n          <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background: red;margin-top:10px;\">\n            CANCELLED\n          </button>\n        </p>\n\n        <p *ngIf=\"order?.status =='PENDING'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:60%;margin-top:10px;background: green\">\n            ACCEPTED\n          </button>\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: red\">\n            REJECTED_BY_PROVIDER\n          </button>\n        </p>\n\n        <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"width:60%;background: burlywood\">\n            ON_THE_WAY\n          </button>\n        </h1>\n\n        <h1 *ngIf=\"order?.status =='IN_PROGRESS'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:60%margin-top:10px;;background: chocolate\">\n            PAUSED_BY_PROVIDER\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: chocolate\">\n            FINISHED_WORKING\n          </button>\n        </h1>\n\n        <h1 *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: orange\">\n            RESUME\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: rgb(212, 0, 255)\">\n            FINISHED_WORKING\n          </button>\n        </h1>\n\n        <p *ngIf=\"order?.status =='ON_THE_WAY'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"width:60%;background: blue;margin-top:10px;\">\n            ARRIVED\n          </button>\n        </p>\n\n\n\n        <p>\n          <button (click)=\"goToChat(order?.client)\" style=\"width:60%;background:crimson\">\n            CHAT\n          </button>\n        </p>\n\n\n      </div>\n    </div>\n  </div>\n</div>\n\n\n<div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"myModal\">\n  <div class=\"modal-dialog modal-sm\" role=\"document\">\n    <div class=\"modal-content\">\n      <form [formGroup]=\"cancelForm\" (ngSubmit)=\"onCancelledOrder()\">\n        <h1>cancel reasons</h1>\n        <div *ngIf=\"loadingReason\">\n          LOADING....\n        </div>\n        <div *ngIf=\"!loadingReason\">\n          <div class=\"radio\" *ngFor=\"let reason of reasons\">\n            <label>\n              <input type=\"radio\" formControlName=\"reason\" checked [value]=\"reason.id\">{{reason.text}}</label>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"comment\">Comment:</label>\n          <textarea class=\"form-control\" rows=\"5\" id=\"comment\" formControlName=\"reasonText\"></textarea>\n        </div>\n        <button style=\"width:40%;background: blue\">\n          SUBMIT\n        </button>\n\n      </form>\n\n    </div>\n  </div>\n</div>\n\n\n<div id=\"myNav\" class=\"overlay\" #laterPaymentOverlay>\n  <!-- <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a> -->\n  <div class=\"overlay-content\">\n    <a style=\"cursor: pointer;\" (click)=\"laterPayment()\">الدفع لاحقا</a>\n  </div>\n</div>\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"card  pull-left\">\n        <h1>Order Details</h1>\n        <table class=\"table table-bordered\">\n\n          <tbody>\n            <tr>\n              <td>Order Number</td>\n              <td> {{order?.id }}</td>\n            </tr>\n            <!-- <tr>\n              <td>provider</td>\n              <td>{{order?.provider?.name}}</td>\n            </tr> -->\n            <tr>\n              <td>client id</td>\n              <td>{{order?.client?.id }}</td>\n            </tr>\n            <tr>\n              <td>client Name</td>\n              <td>{{client?.user?.name }}</td>\n            </tr>\n            <tr>\n              <td>Order Price</td>\n              <td>{{order?.price }}</td>\n            </tr>\n            <tr>\n              <td>Order status</td>\n              <td>{{order?.status}}</td>\n            </tr>\n            <tr>\n              <td>Order type</td>\n              <td>{{order?.orderType}}</td>\n            </tr>\n            <tr>\n              <td>Order preview Needed</td>\n              <td>{{order?.previewNeeded}}</td>\n            </tr>\n            <tr>\n              <td> booking Date</td>\n              <td>{{order?.bookingDate | date:'medium'}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n\n    <div class=\"col-md-6\">\n      <h1 class=\" text-center\">Actions </h1>\n      <div class=\"card  pull-right text-center\" style=\"padding-top: 100px;\">\n        <!-- <p *ngIf=\"['ACCEPTED','ON_THE_WAY','ARRIVED'].includes( orders?.status) \"> -->\n        <!-- <p *ngIf=\"cancelOrder\">\n          <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n            CANCELLED\n          </button>\n        </p> -->\n\n        <p *ngIf=\"order?.status =='ACCEPTED' ||  order?.status =='ON_THE_WAY' || order?.status =='ARRIVED'\">\n          <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n            CANCELLED\n          </button>\n        </p>\n\n        <p *ngIf=\"order?.status =='PENDING'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:60%;margin-top:10px;background:#007be2\">\n            ACCEPTED\n          </button>\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            REJECTED_BY_PROVIDER\n          </button>\n        </p>\n\n        <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"width:60%;background: #007be2\">\n            ON_THE_WAY\n          </button>\n        </h1>\n\n        <P *ngIf=\"order?.status =='IN_PROGRESS'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;;background: #007be2\">\n            PAUSED_BY_PROVIDER\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            FINISHED_WORKING\n          </button>\n        </P>\n\n        <P *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            RESUME\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            FINISHED_WORKING\n          </button>\n        </P>\n\n        <p *ngIf=\"order?.status =='ON_THE_WAY'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"width:60%;background: #007be2;margin-top:10px;\">\n            ARRIVED\n          </button>\n        </p>\n\n        <p>\n          <button (click)=\"goToChat(order?.client)\" style=\"width:60%;background:#007be2\">\n            CHAT\n          </button>\n        </p>\n\n\n      </div>\n    </div>\n  </div>\n</div>\n\n\n<div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"myModal\">\n  <div class=\"modal-dialog modal-sm\" role=\"document\">\n    <div class=\"modal-content\">\n      <form [formGroup]=\"cancelForm\" (ngSubmit)=\"onCancelledOrder()\">\n        <h1>cancel reasons</h1>\n        <div *ngIf=\"loadingReason\">\n          LOADING....\n        </div>\n        <div *ngIf=\"!loadingReason\">\n          <div class=\"radio\" *ngFor=\"let reason of reasons\">\n            <label>\n              <input type=\"radio\" formControlName=\"reason\" checked [value]=\"reason.id\">{{reason.text}}</label>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"comment\">Comment:</label>\n          <textarea class=\"form-control\" rows=\"5\" id=\"comment\" formControlName=\"reasonText\"></textarea>\n        </div>\n        <button style=\"width:40%;background: blue\">\n          SUBMIT\n        </button>\n\n      </form>\n\n    </div>\n  </div>\n</div>\n\n\n<div id=\"myNav\" class=\"overlay\" #laterPaymentOverlay>\n  <!-- <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a> -->\n  <div class=\"overlay-content text-center\">\n    <!-- <a style=\"cursor: pointer;\" (click)=\"laterPayment()\"></a> -->\n\n    <div class=\"\">\n      <h1>بانتظار رد العميل</h1>\n      <img src=\"assets/loading.gif\" class=\"img-responsive\" width=\"16%\" height=\"200\" style=\"margin-left: 42%;\">\n    </div>\n    <button (click)=\"laterPayment()\" style=\"width:50%;background: red\">\n      الدفع لاحقا\n    </button>\n  </div>\n</div>\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
 
 /***/ }),
 
@@ -845,10 +847,10 @@ var OrderDetailComponent = /** @class */ (function () {
         this.orderServices = orderServices;
         this.authService = authService;
         this.cancelOrder = false;
+        this.openOverly = false;
         this.requestToPauseByClient = false;
     }
     OrderDetailComponent.prototype.ngOnInit = function () {
-        var _this = this;
         var user = this.authService.currentUser.user;
         this.providerId = user.id;
         this.orderId = this.route.snapshot.params['id'];
@@ -859,11 +861,31 @@ var OrderDetailComponent = /** @class */ (function () {
         });
         this.fetchOrder(this.orderId);
         // ds.event.subscribe(`/providers/${environment.id}/orders/${this.orderId}`,
+    };
+    OrderDetailComponent.prototype.dsEventLisenning = function () {
+        var _this = this;
         _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].record.getRecord("dsOrder/" + this.orderId).subscribe(function (res) {
-            console.log(_this.orderId, 'the notifcation ========>', res, res.requestToPauseByClient);
-            if (res.status == 'WAITING_FOR_PAYMENT')
+            if (res.status == 'WAITING_FOR_PAYMENT' && _this.currentStatus != 'ENDED' && _this.order.isProviderWaitingForPayment == true)
                 _this.openNav();
-            if (res.status == 'ENDED') {
+            if (res.status == 'ENDED' && _this.currentStatus != 'ENDED') {
+                _this.closeNav();
+                if (res.paymentMethod == 'CASH') {
+                    sweetalert2__WEBPACK_IMPORTED_MODULE_5___default()({
+                        title: 'CLIENT CASH PAYMENT',
+                        text: "client want to buy by cash",
+                        type: 'info',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                    }).then(function (isConfirm) {
+                        if (isConfirm.value === true) {
+                            _this.providerConfirmCash('CONFIRMED');
+                        }
+                        else {
+                            _this.providerConfirmCash('DENIED');
+                        }
+                    });
+                }
                 console.log('the status is ended');
             }
             if (res.requestToPauseByClient == true) {
@@ -908,7 +930,7 @@ var OrderDetailComponent = /** @class */ (function () {
                 //   this.pauseResume('IN_PROGRESS');
                 // }
             }
-            if (res.status) {
+            if (res.status != _this.currentStatus) {
                 _this.zone.run(function () {
                     _this.fetchOrder(_this.orderId);
                 });
@@ -931,18 +953,23 @@ var OrderDetailComponent = /** @class */ (function () {
             _this.order = res;
             _this.orderServices.getClientById(_this.order.client.id).subscribe(function (result) {
                 _this.client = result;
-                if (['PENDING', 'ACCEPTED', 'ON_THE_WAY', 'ARRIVED'].includes(_this.order.status))
+                if (['ACCEPTED', 'ON_THE_WAY', 'ARRIVED'].includes(_this.order.status))
                     _this.cancelOrder = true;
                 _this.currentStatus = _this.order.status;
+                _this.dsEventLisenning();
+                // console.log('the order is', this.order);
             });
         });
     };
-    // resetUnseenCount() {
-    //   this.orderServices.resetUnseenCount(this.providerId)
-    //     .subscribe(result => {
-    //     }
-    //     )
-    // }
+    OrderDetailComponent.prototype.providerConfirmCash = function (action) {
+        var _this = this;
+        var actionBody = { action: action };
+        this.orderServices.providerConfirmCash(this.providerId, this.orderId, actionBody).subscribe(function (res) {
+            if (_this.openOverly == true)
+                _this.closeNav();
+            console.log('providerConfirmCash', res);
+        });
+    };
     OrderDetailComponent.prototype.denyResumption = function () {
         this.orderServices.denyResumption(this.providerId, this.orderId).subscribe(function (res) {
             console.log('denyResumption', res);
@@ -1040,12 +1067,19 @@ var OrderDetailComponent = /** @class */ (function () {
     };
     OrderDetailComponent.prototype.openNav = function () {
         this.laterPaymentOverlay.nativeElement.style.width = "100%";
-        // document.getElementById("myNav").style.width = "100%";
+        this.openOverly = true;
     };
     OrderDetailComponent.prototype.closeNav = function () {
-        document.getElementById("myNav").style.width = "0%";
+        this.laterPaymentOverlay.nativeElement.style.width = "0%";
+        this.openOverly = false;
     };
     OrderDetailComponent.prototype.laterPayment = function () {
+        var _this = this;
+        this.orderServices.laterPayment(this.orderId).subscribe(function (res) {
+            console.log('the later for payment is ===>', res);
+            _this.closeNav();
+            _this.fetchOrder(_this.orderId);
+        });
         console.log('later payment');
     };
     __decorate([
@@ -1164,6 +1198,14 @@ var OrderServices = /** @class */ (function () {
         var url = this.basePath + "orders/" + orderId + "/reason";
         return this.httpClient.patch(url, reasonBody);
     };
+    OrderServices.prototype.laterPayment = function (orderId) {
+        var url = this.basePath + "orders/" + orderId + "/payment/not-waiting";
+        return this.httpClient.patch(url, {});
+    };
+    OrderServices.prototype.providerConfirmCash = function (providerId, orderId, body) {
+        var url = this.basePath + "providers/" + providerId + "/orders/" + orderId + "/confirm-cash";
+        return this.httpClient.put(url, body);
+    };
     OrderServices.prototype.getUnseenNotification = function (userId) {
         var url = this.basePath + "users/" + userId + "/notifications/unseen-count";
         return this.httpClient.get(url);
@@ -1186,7 +1228,7 @@ var OrderServices = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "agm-map{\r\n    height: 600px;\r\n  }\r\n .cardTitle{\r\n     text-decoration: underline\r\n }"
+module.exports = "agm-map{\r\n    height: 600px;\r\n  }\r\n .cardTitle{\r\n     /* text-decoration: underline */\r\n }"
 
 /***/ }),
 
@@ -1197,7 +1239,7 @@ module.exports = "agm-map{\r\n    height: 600px;\r\n  }\r\n .cardTitle{\r\n     
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <h2 style=\"text-decoration: underline\">orders</h2> -->\n<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"orders\">\n        <h2 class=\"cardTitle\">the orders </h2>\n        <div *ngIf=\"currentPage?.totalCount >0\">\n          <ngx-datatable *ngIf=\"!loading\" class=\"material bg-white\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\"\n            [rowHeight]=\"50\" [count]=\"currentPage?.totalCount\" [offset]=\"currentPage?.page - 1\" [limit]=\"currentPage?.limit\"\n            [rows]=\"currentPage?.data\" [externalPaging]=\"true\" (page)=\"onPageChange($event)\">\n\n\n            <ngx-datatable-column name=\"order number\" [flexGrow]=\"1\" fxHide>\n              <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                {{ row?.id }}\n              </ng-template>\n            </ngx-datatable-column>\n\n            <ngx-datatable-column name=\" status \" [flexGrow]=\"1\" fxHide>\n              <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                {{ row?.status }}\n              </ng-template>\n            </ngx-datatable-column>\n\n\n            <ngx-datatable-column name=\"\" [flexGrow]=\"1\">\n              <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                <a (click)=\"showOrder(row?.id)\" style=\"cursor: pointer;\">\n                  <!-- DETAILS -->\n                  <i class=\"fa fa-eye\" style=\"font-size: 25px; padding-left:40px; \"></i>\n                </a>\n              </ng-template>\n            </ngx-datatable-column>\n\n\n          </ngx-datatable>\n        </div>\n\n      </div>\n    </div>\n\n    <div class=\"col-md-6\">\n        <div class=\"map\">\n            <h2 class=\"cardTitle\">click to update your location </h2>\n          <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n            [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n            <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n          </agm-map>\n        </div>\n    </div>\n  </div>\n</div>\n\n\n<!-- <div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"split left pull-left\">\n      <div class=\"centered\">\n        <div class=\"order\">\n          <div *ngFor=\"let order of orders\">\n            <div class=\"card orderSingle\">\n              <p class=\"title\">{{order?.provider?.name}}</p>\n\n              <h1>Order Number: {{order?.id }}</h1>\n\n              <h1>client Id: {{order?.client }}</h1>\n\n              <h1>Order Price: {{order?.price }}</h1>\n\n              <h1>Order status: {{order?.status }}</h1>\n\n              <ng-template #otherCondition>\n                <h1>\n                  Order status: {{order?.status }}\n\n                </h1>\n              </ng-template>\n\n              <h1>Order type: {{order?.orderType }}</h1>\n              <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n              <h1>{{order?.bookingDate | date:'medium'}}</h1>\n              <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n\n\n              <br>\n              <button (click)=\"showOrder(order?.id)\" style=\"width:60%;;background: black\">\n                DETAILS\n              </button>\n\n            </div>\n          </div>\n        \n\n          <div *ngIf=\" orders?.length !=0\">\n            <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n              <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n                more\n              </button>\n            </div>\n          </div>\n          <div *ngIf=\"!loading && orders?.length ==0\">\n            <div style=\"text-align: center;margin-top: 50px;\">\n              <button class=\"btn btn-primary\" disabled>\n                no orders\n              </button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div> -->\n\n<!-- \n<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\" pull-right\">\n      <div class=\"\">\n        <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n          [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n          <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n        </agm-map>\n      </div>\n\n      <div class=\"notification\">\n        <div class=\"singleNotification\">\n          <button (click)=\"gonotifcation()\">notification</button>\n          <br>\n          <br>\n          <br>\n          <button (click)=\"logOut()\">logOut</button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div> -->\n\n\n<!-- <simple-notifications [options]=\"options\"></simple-notifications> -->"
+module.exports = "<!-- <h2 style=\"text-decoration: underline\">orders</h2> -->\n<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"orders\">\n        <h2 class=\"cardTitle\"> Current orders </h2>\n        <div *ngIf=\"currentPage?.totalCount >0\">\n          <ngx-datatable *ngIf=\"!loading\" class=\"material bg-white\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\"\n            [rowHeight]=\"50\" [count]=\"currentPage?.totalCount\" [offset]=\"currentPage?.page - 1\" [limit]=\"currentPage?.limit\"\n            [rows]=\"currentPage?.data\" [externalPaging]=\"true\" (page)=\"onPageChange($event)\">\n\n\n            <ngx-datatable-column name=\"order number\" [flexGrow]=\"1\" fxHide>\n              <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                {{ row?.id }}\n              </ng-template>\n            </ngx-datatable-column>\n\n            <ngx-datatable-column name=\" status \" [flexGrow]=\"1\" fxHide>\n              <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                {{ row?.status }}\n              </ng-template>\n            </ngx-datatable-column>\n\n\n            <ngx-datatable-column name=\"\" [flexGrow]=\"1\">\n              <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                <a (click)=\"showOrder(row?.id)\" style=\"cursor: pointer;\">\n                  <!-- DETAILS -->\n                  <i class=\"fa fa-eye\" style=\"font-size: 25px; padding-left:40px; \"></i>\n                </a>\n              </ng-template>\n            </ngx-datatable-column>\n\n\n          </ngx-datatable>\n        </div>\n\n      </div>\n    </div>\n\n    <div class=\"col-md-6\">\n        <div class=\"map\">\n            <h2 class=\"cardTitle\">Click to update your location </h2>\n          <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n            [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n            <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n          </agm-map>\n        </div>\n    </div>\n  </div>\n</div>\n\n\n<!-- <div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"split left pull-left\">\n      <div class=\"centered\">\n        <div class=\"order\">\n          <div *ngFor=\"let order of orders\">\n            <div class=\"card orderSingle\">\n              <p class=\"title\">{{order?.provider?.name}}</p>\n\n              <h1>Order Number: {{order?.id }}</h1>\n\n              <h1>client Id: {{order?.client }}</h1>\n\n              <h1>Order Price: {{order?.price }}</h1>\n\n              <h1>Order status: {{order?.status }}</h1>\n\n              <ng-template #otherCondition>\n                <h1>\n                  Order status: {{order?.status }}\n\n                </h1>\n              </ng-template>\n\n              <h1>Order type: {{order?.orderType }}</h1>\n              <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n              <h1>{{order?.bookingDate | date:'medium'}}</h1>\n              <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n\n\n              <br>\n              <button (click)=\"showOrder(order?.id)\" style=\"width:60%;;background: black\">\n                DETAILS\n              </button>\n\n            </div>\n          </div>\n        \n\n          <div *ngIf=\" orders?.length !=0\">\n            <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n              <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n                more\n              </button>\n            </div>\n          </div>\n          <div *ngIf=\"!loading && orders?.length ==0\">\n            <div style=\"text-align: center;margin-top: 50px;\">\n              <button class=\"btn btn-primary\" disabled>\n                no orders\n              </button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div> -->\n\n<!-- \n<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\" pull-right\">\n      <div class=\"\">\n        <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n          [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n          <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n        </agm-map>\n      </div>\n\n      <div class=\"notification\">\n        <div class=\"singleNotification\">\n          <button (click)=\"gonotifcation()\">notification</button>\n          <br>\n          <br>\n          <br>\n          <button (click)=\"logOut()\">logOut</button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div> -->\n\n\n<!-- <simple-notifications [options]=\"options\"></simple-notifications> -->"
 
 /***/ }),
 
@@ -1301,7 +1343,6 @@ var OrdersComponent = /** @class */ (function () {
         this.loading = true;
         this.orderServices.fetchproviderorders(this.providerId, page)
             .subscribe(function (result) {
-            console.log(result);
             _this.currentPage = result;
             _this.orders = _this.orders.concat(result.data);
             _this.totalPages = result.pageCount;
