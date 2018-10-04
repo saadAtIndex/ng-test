@@ -1266,7 +1266,7 @@ module.exports = "agm-map{\r\n    height: 600px;\r\n  }\r\n .cardTitle{\r\n     
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <h2 style=\"text-decoration: underline\">orders</h2> -->\n<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"orders\">\n      <h2 class=\"cardTitle\"> Current orders </h2>\n      <div *ngIf=\"currentPage?.totalCount >0\">\n        <ngx-datatable *ngIf=\"!loading\" class=\"material bg-white\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\"\n          [rowHeight]=\"50\" [count]=\"currentPage?.totalCount\" [offset]=\"currentPage?.page - 1\" [limit]=\"currentPage?.limit\"\n          [rows]=\"currentPage?.data\" [externalPaging]=\"true\" (page)=\"onPageChange($event)\">\n\n\n          <ngx-datatable-column name=\"order number\" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{ row?.id }}\n            </ng-template>\n          </ngx-datatable-column>\n\n          <ngx-datatable-column name=\" status \" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{ row?.status }}\n            </ng-template>\n          </ngx-datatable-column>\n\n          <ngx-datatable-column name=\"  booking Date \" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{row?.bookingDate | date:'medium'}}\n            </ng-template>\n          </ngx-datatable-column>\n\n\n          <ngx-datatable-column name=\"\" [flexGrow]=\"1\">\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              <a (click)=\"showOrder(row?.id)\" style=\"cursor: pointer;\">\n                <!-- DETAILS -->\n                <i class=\"fa fa-eye\" style=\"font-size: 25px; padding-left:40px; \"></i>\n              </a>\n            </ng-template>\n          </ngx-datatable-column>\n\n\n        </ngx-datatable>\n      </div>\n    </div>\n\n\n  </div>\n</div>\n\n\n\n<!-- <simple-notifications [options]=\"options\"></simple-notifications> -->"
+module.exports = "<!-- <h2 style=\"text-decoration: underline\">orders</h2> -->\n<div class=\"row\">\n  <div class=\"col-md-6\">\n    <div class=\"orders\">\n      <h2 class=\"cardTitle\"> Current orders </h2>\n      <div *ngIf=\"currentPage?.totalCount >0\">\n        <ngx-datatable *ngIf=\"!loading\" class=\"material bg-white\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\"\n          [rowHeight]=\"50\" [count]=\"currentPage?.totalCount\" [offset]=\"currentPage?.page - 1\" [limit]=\"currentPage?.limit\"\n          [rows]=\"currentPage?.data\" [externalPaging]=\"true\" (page)=\"onPageChange($event)\">\n\n\n          <ngx-datatable-column name=\"order number\" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{ row?.id }}\n            </ng-template>\n          </ngx-datatable-column>\n\n          <ngx-datatable-column name=\" status \" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{ row?.status }}\n            </ng-template>\n          </ngx-datatable-column>\n\n          <!-- <ngx-datatable-column name=\"  booking Date \" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{row?.bookingDate | date:'medium'}}\n            </ng-template>\n          </ngx-datatable-column> -->\n\n\n          <ngx-datatable-column name=\"\" [flexGrow]=\"1\">\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              <a (click)=\"showOrder(row?.id)\" style=\"cursor: pointer;\">\n                <!-- DETAILS -->\n                <i class=\"fa fa-eye\" style=\"font-size: 25px; padding-left:40px; \"></i>\n              </a>\n            </ng-template>\n          </ngx-datatable-column>\n\n\n        </ngx-datatable>\n      </div>\n    </div>\n\n\n  </div>\n  <div class=\"col-md-6\">\n      <div class=\"map\">\n        <h2 class=\"cardTitle\">Click to update your location </h2>\n        <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n          [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n          <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n        </agm-map>\n      </div>\n    </div>\n</div>\n\n\n\n<!-- <simple-notifications [options]=\"options\"></simple-notifications> -->"
 
 /***/ }),
 
@@ -1321,7 +1321,34 @@ var OrdersComponent = /** @class */ (function () {
         var user = this.authService.currentUser.user;
         this.providerId = user.id;
         this.loginDeapStream();
+        this.getProviderLocation();
         this.fetchOrders(1);
+    };
+    OrdersComponent.prototype.newPosition = function (event) {
+        this.newlat = event.coords.lat;
+        this.newLng = event.coords.lng;
+        this.lat = this.newlat;
+        this.lng = this.newLng;
+        // this.open('the new postion is ')
+        var body = {
+            "currentLocation": [
+                this.lng,
+                this.lat
+            ]
+        };
+        this.orderServices.updateprovideLocation(this.providerId, body)
+            .subscribe(function (result) {
+            //console.log(result, 'result')
+        });
+        //ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.newlat, longitude: this.newLng });
+    };
+    OrdersComponent.prototype.getProviderLocation = function () {
+        var _this = this;
+        this.orderServices.getProviderLocation(this.providerId)
+            .subscribe(function (result) {
+            _this.lng = result['currentLocation'][0],
+                _this.lat = result['currentLocation'][1];
+        });
     };
     OrdersComponent.prototype.onLoadMoreClick = function () {
         this.page++;
