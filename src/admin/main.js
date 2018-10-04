@@ -131,6 +131,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_authGuard_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./service/authGuard.service */ "./src/app/service/authGuard.service.ts");
 /* harmony import */ var _service_auth_interceptor_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./service/auth.interceptor.service */ "./src/app/service/auth.interceptor.service.ts");
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @swimlane/ngx-datatable */ "./node_modules/@swimlane/ngx-datatable/release/index.js");
+/* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_20__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -156,12 +159,18 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var appRouting = [
     { path: 'signin', component: _login_component_login_component_component__WEBPACK_IMPORTED_MODULE_15__["LoginComponent"] },
-    { path: '', component: _orders_orders_component__WEBPACK_IMPORTED_MODULE_9__["OrdersComponent"], canActivate: [_service_authGuard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"]] },
-    { path: 'orders/:id/client/:clientId/chat', component: _chat_chat_component__WEBPACK_IMPORTED_MODULE_7__["ChatComponent"], canActivate: [_service_authGuard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"]] },
-    { path: 'provider/:id/notification', component: _showorder_notification_showorder_notification_component__WEBPACK_IMPORTED_MODULE_11__["ShoworderNotificationComponent"], canActivate: [_service_authGuard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"]] },
-    { path: 'orders/:id', component: _order_detail_order_detail_component__WEBPACK_IMPORTED_MODULE_14__["OrderDetailComponent"], canActivate: [_service_authGuard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"]] }
+    {
+        path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_19__["HomeComponent"], canActivate: [_service_authGuard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"]], children: [
+            { path: '', component: _orders_orders_component__WEBPACK_IMPORTED_MODULE_9__["OrdersComponent"] },
+            { path: 'orders/:id', component: _order_detail_order_detail_component__WEBPACK_IMPORTED_MODULE_14__["OrderDetailComponent"] },
+            { path: 'orders/:id/client/:clientId/chat', component: _chat_chat_component__WEBPACK_IMPORTED_MODULE_7__["ChatComponent"] },
+            { path: 'provider/:id/notification', component: _showorder_notification_showorder_notification_component__WEBPACK_IMPORTED_MODULE_11__["ShoworderNotificationComponent"] },
+        ]
+    },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -174,7 +183,8 @@ var AppModule = /** @class */ (function () {
                 _orders_orders_component__WEBPACK_IMPORTED_MODULE_9__["OrdersComponent"],
                 _showorder_notification_showorder_notification_component__WEBPACK_IMPORTED_MODULE_11__["ShoworderNotificationComponent"],
                 _order_detail_order_detail_component__WEBPACK_IMPORTED_MODULE_14__["OrderDetailComponent"],
-                _login_component_login_component_component__WEBPACK_IMPORTED_MODULE_15__["LoginComponent"]
+                _login_component_login_component_component__WEBPACK_IMPORTED_MODULE_15__["LoginComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_19__["HomeComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -182,6 +192,7 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_13__["BrowserAnimationsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"],
+                _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_20__["NgxDatatableModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
                 angular2_notifications__WEBPACK_IMPORTED_MODULE_12__["SimpleNotificationsModule"].forRoot(),
                 _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(appRouting),
@@ -228,7 +239,7 @@ module.exports = "* {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  body {\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!------ Include the above in your HEAD tag ---------->\n<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <a class=\"navbar-brand\" routerLink=\"/\">Home page</a>\n        </div>\n\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n            <a class=\"navbar-brand\" (click)=\"logOut()\" style=\"cursor: pointer;\"> logOut</a>\n        </div>\n    </div>\n</nav>\n\n<div class=\"chat_window\">\n  <div class=\"top_menu\">\n    <div class=\"buttons\">\n      <div class=\"button close\">\n\n      </div>\n      <div class=\"button minimize\"></div>\n      <div class=\"button maximize\"></div>\n    </div>\n    <div class=\"title\">Chat</div>\n  </div>\n  <ul class=\"messages\" #conversationArea>\n    <div *ngFor=\"let message of messages\">\n      <li class=\"message left appeared\" *ngIf=\"message.user._id ==person1\">\n        <div class=\"avatar\"></div>\n        <div class=\"text_wrapper\">\n          <div class=\"text\" *ngIf=\"message?.text\">{{message?.text}}</div>\n          <div class=\"text\" *ngIf=\"message?.img\">\n            <img src=\"{{message?.img}}\" width=\"140\" height=\"140\">\n          </div>\n        </div>\n      </li>\n      <li class=\"message right appeared\" *ngIf=\"message.user._id ==person2\">\n        <div class=\"avatar\"></div>\n        <div class=\"text_wrapper\">\n          <div class=\"text\" *ngIf=\"message?.text\">{{message?.text}}</div>\n          <div class=\"text\" *ngIf=\"message?.img\">\n            <img src=\"{{message?.img}}\" width=\"140\" height=\"140\">\n          </div>\n        </div>\n      </li>\n    </div>\n\n  </ul>\n  <div class=\"bottom_wrapper clearfix\">\n    <form [formGroup]=\"chatForm\" (ngSubmit)=\"sendMessage()\" class=\"SendForm\">\n      <div class=\"message_input_wrapper\">\n        <input formControlName=\"messageText\" class=\"message_input\" (input)=\"emitIsTying()\" placeholder=\"Type your message here...\"\n        />\n        <br>\n        <br>\n        <br>\n        <br> ارفاق صورة\n        <input type=\"file\" #img>\n     \n      </div>\n      <button class=\"send_message\">\n        <div class=\"icon\"></div>\n        <div class=\"text\">\n          Send\n        </div>\n      </button>\n    </form>\n  </div>\n</div>\n<div class=\"message_template\">\n  <li class=\"message\">\n    <div class=\"avatar\">\n\n    </div>\n    <div class=\"text_wrapper\">\n      <div class=\"text\">\n      </div>\n    </div>\n  </li>\n</div>"
+module.exports = "\n\n<div class=\"chat_window\">\n  <div class=\"top_menu\">\n    <div class=\"buttons\">\n      <div class=\"button close\">\n\n      </div>\n      <div class=\"button minimize\"></div>\n      <div class=\"button maximize\"></div>\n    </div>\n    <div class=\"title\">Chat</div>\n  </div>\n  <ul class=\"messages\" #conversationArea>\n    <div *ngFor=\"let message of messages\">\n      <li class=\"message left appeared\" *ngIf=\"message.user._id ==person1\">\n        <div class=\"avatar\"></div>\n        <div class=\"text_wrapper\">\n          <div class=\"text\" *ngIf=\"message?.text\">{{message?.text}}</div>\n          <div class=\"text\" *ngIf=\"message?.img\">\n            <img src=\"{{message?.img}}\" width=\"140\" height=\"140\">\n          </div>\n        </div>\n      </li>\n      <li class=\"message right appeared\" *ngIf=\"message.user._id ==person2\">\n        <div class=\"avatar\"></div>\n        <div class=\"text_wrapper\">\n          <div class=\"text\" *ngIf=\"message?.text\">{{message?.text}}</div>\n          <div class=\"text\" *ngIf=\"message?.img\">\n            <img src=\"{{message?.img}}\" width=\"140\" height=\"140\">\n          </div>\n        </div>\n      </li>\n    </div>\n\n  </ul>\n  <div class=\"bottom_wrapper clearfix\">\n    <form [formGroup]=\"chatForm\" (ngSubmit)=\"sendMessage()\" class=\"SendForm\">\n      <div class=\"message_input_wrapper\">\n        <input formControlName=\"messageText\" class=\"message_input\" (input)=\"emitIsTying()\" placeholder=\"Type your message here...\"\n        />\n        <br>\n        <br>\n        <br>\n        <br> ارفاق صورة\n        <input type=\"file\" #img>\n     \n      </div>\n      <button class=\"send_message\">\n        <div class=\"icon\"></div>\n        <div class=\"text\">\n          Send\n        </div>\n      </button>\n    </form>\n  </div>\n</div>\n<div class=\"message_template\">\n  <li class=\"message\">\n    <div class=\"avatar\">\n\n    </div>\n    <div class=\"text_wrapper\">\n      <div class=\"text\">\n      </div>\n    </div>\n  </li>\n</div>"
 
 /***/ }),
 
@@ -323,7 +334,6 @@ var ChatComponent = /** @class */ (function () {
             message.append('text', text);
         this.orderServices.sendMessage(message, this.conversationId)
             .subscribe(function (res) {
-            console.log('the result ===', res);
             _this.chatForm.reset();
             _this.myImg.nativeElement.value = "";
         }, function (err) { console.log('the result ===', err); });
@@ -334,7 +344,6 @@ var ChatComponent = /** @class */ (function () {
         this.listChat = _da_service__WEBPACK_IMPORTED_MODULE_4__["default"].record.getList("dsChats/" + this.conversationId);
         this.listChat.on('entry-added', function (x) {
             _da_service__WEBPACK_IMPORTED_MODULE_4__["default"].record.getRecord(x).whenReady(function (message) {
-                console.log(_this.messages, 'the resulat of  fffff  ===', message.get().message, message.get().user);
                 var newMessage = {
                     createdAt: message.get().message.createdAt,
                     seen: message.get().message.createdAt,
@@ -479,10 +488,6 @@ var ChatComponent = /** @class */ (function () {
             });
         }.call(this));
     };
-    ChatComponent.prototype.logOut = function () {
-        console.log('the help');
-        this.authService.logout();
-    };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('conversationArea'),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
@@ -534,6 +539,117 @@ ds.on('error', function (err) {
 
 /***/ }),
 
+/***/ "./src/app/home/home.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/home/home.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "body{background-color: #ecf0f1;}\r\n\r\n.navbar-inverse {\r\n    background-color: #007be2;\r\n    border-color: #007be2;\r\n}\r\n\r\n.navbar {\r\n    position: relative;\r\n    min-height: 50px;\r\n    margin-bottom: 10px;\r\n    border: 0px solid transparent;\r\n}\r\n\r\n.navbar-nav > li > a {\r\n    padding-top: 20px;\r\n    color: #fff;\r\n    \r\n    padding-bottom: 10px;\r\n    line-height: 20px;\r\n}\r\n\r\n@media (min-width: 768px){\r\n\r\n.navbar {\r\n    border-radius: 0px;\r\n}}\r\n\r\n.navbar-brand {\r\n    float: left;\r\n    height: auto;\r\n    color: #fff;\r\n    padding: 15px 15px;\r\n    font-size: 18px;\r\n    line-height: 20px;\r\n}\r\n\r\n.sidebar-toggle {\r\n    color: #fff;\r\n    font-size: 28px;\r\n    display: inline-block;\r\n    padding: 3px 22px;\r\n}\r\n\r\n@media (min-width:768px){\r\n.container-1{width:15%;float:left;}\r\n.container-2{width:100%;float: left;}\r\n}\r\n\r\n@media (max-width:768px){\r\n.container-1{width:100%;}\r\n.container-2{width:100%;}\r\n}\r\n\r\n.container-1:after,\r\n.container-2:before,\r\n{\r\n  display: table;\r\n  content: \" \";\r\n}\r\n\r\n.container-1:after,\r\n.container-2:after,\r\n{clear: both;}\r\n\r\n.container-1{display: none;}\r\n\r\n/*navbar-right=====START==========*/\r\n\r\n.social-icon{margin:0px;padding:0px;}\r\n\r\n.social-icon li {margin: 0px;padding: 0px;list-style-type: none;}\r\n\r\n.social-icon li a {\r\n    display: block;\r\n    padding: 15px 14px;\r\n    text-decoration:none;\r\n}\r\n\r\n.social-icon li a:focus{\r\n   color:#fff;\r\n    text-decoration:none;\r\n}\r\n\r\n.messages-link{\r\n    color: #fff !important;\r\n    background: #16a085 !important;\r\n\r\n}\r\n\r\n.alerts-link{\r\n color: #fff !important;\r\n}\r\n\r\n.tasks-link{\r\n    color: #fff !important;\r\n    background: #2980b9 !important;\r\n\r\n}\r\n\r\n.user-link{\r\n color: #fff !important;\r\n}\r\n\r\n.number {\r\n    position: absolute;\r\n    bottom: 25px;\r\n    left: 3px;\r\n    width: 20px;\r\n    height: 20px;\r\n    padding-right: 1px;\r\n    border-radius: 50%;\r\n    text-align: center;\r\n    font-size: 11px;\r\n    line-height: 20px;\r\n    background-color: #2c3e50;\r\n}\r\n\r\n.dropdown-menu {\r\n    position: absolute;\r\n    top: 100%;\r\n    left: -105px;\r\n    z-index: 1000;\r\n    /* display: none; */\r\n    float: left;\r\n    min-width: 160px;\r\n    padding: 5px 0;\r\n    margin: 2px 0 0;\r\n    font-size: 14px;\r\n    text-align: left;\r\n    list-style: none;\r\n    background-color: #fff;\r\n    background-clip: padding-box;\r\n    border: 1px solid #ccc;\r\n    border: 1px solid rgba(0, 0, 0, .15);\r\n    border-radius: 4px;\r\n    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);\r\n}\r\n\r\n/*navbar-right=======END========*/\r\n\r\n/*sidebar-toggle=============*/\r\n\r\n.sidebar-toggle:hover, .sidebar-toggle:focus {\r\n    color: #fff;\r\n    text-decoration: underline;\r\n}\r\n\r\n/*sidr-NAVBAR=======START========*/\r\n\r\n.navbar-nav-1{width: 100%;background-color:#34495E;height:auto;overflow: hidden;z-index: 1020;position: relative;}\r\n\r\n.side-user {\r\n    display: block;\r\n    width: 100%;\r\n    padding: 15px;\r\n    border-top: none !important;\r\n    border-bottom: 1px solid #142638;\r\n    text-align: center;\r\n}\r\n\r\n.close-btn {\r\n    position: absolute;\r\n    z-index: 99;\r\n    color: #fff;\r\n    font-size: 31px;\r\n    top: 0px;\r\n    left: 223px;    \r\n    display: none;\r\n    padding: 0px;\r\n    cursor: pointer;\r\n}\r\n\r\n.close-btn .fa-window-close{color:#fff;font-size: 25px;}\r\n\r\n.welcome {\r\n    margin: 0;\r\n    font-style: italic;\r\n    color: #9aa4af;\r\n}\r\n\r\n.name {\r\n    margin: 0;\r\n    font-family: \"Ubuntu\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;\r\n    font-size: 20px;\r\n    font-weight: 300;\r\n    color: #ccd1d7;\r\n}\r\n\r\n.side-user a{\r\n   color:#fff;\r\n}\r\n\r\n.nav-search{border-top: 1px solid #54677a;}\r\n\r\n.nav-search .form-control{border: 1px solid #000;border-radius: 0px;}\r\n\r\n.nav-search .btn{border: 1px solid #000;border-radius: 0px;}\r\n\r\n.dashboard>a{\r\n    color:#fff;\r\n    }\r\n\r\n.side-nav li {\r\n    border-top: 1px solid #54677a;\r\n    border-bottom: 1px solid #142638;\r\n}\r\n\r\n.side-nav>li>a:active {\r\n    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);\r\n    outline: none;\r\n    color: #fff;\r\n    background-color: #34495e;\r\n}\r\n\r\n.panel {\r\n    margin-bottom: 0;\r\n    border: none;\r\n    border-radius: 0;\r\n    background-color: transparent;\r\n    box-shadow: none;\r\n}\r\n\r\n.panel>a{\r\n    position: relative;\r\n    display: block;\r\n    padding: 10px 15px;\r\n    color: #fff;\r\n}\r\n\r\n.panel>ul>li>a {\r\n    position: relative;\r\n    display: block;\r\n    padding: 10px 15px;\r\n    color: darkcyan;\r\n    background: black;\r\n}\r\n\r\n.nav > li > a:hover, .nav > li > a:focus {\r\n    text-decoration: none;\r\n    background-color: #3d566e;\r\n}\r\n\r\n/*sidr-NAVBAR=======END========*/\r\n\r\n@media (min-width: 768px){\r\n\r\n#page-wrapper {\r\n   \r\n    padding: 0 30px;\r\n    min-height: 700px;\r\n    border-left: 1px solid #2c3e50;\r\n}\r\n}\r\n\r\n#page-wrapper {\r\n    padding: 0 15px;\r\n    border: none;\r\n    \r\n}\r\n\r\n.date-picker{    \r\n    border-color: #138871;\r\n    color: #fff;\r\n    background-color: #149077;\r\n    margin-top: -7px;\r\n    border-radius: 0px;\r\n    margin-right: -15px;\r\n}\r\n\r\n#page-wrapper .breadcrumb {\r\n    padding: 8px 15px;\r\n    margin-bottom: 20px;\r\n    list-style: none;\r\n    background-color: #e0e7e8;\r\n    border-radius: 0px;\r\n    \r\n}\r\n\r\n@media (min-width: 768px){\r\n.circle-tile {\r\n    margin-bottom: 30px;\r\n}\r\n}\r\n\r\n.circle-tile {\r\n    margin-bottom: 15px;\r\n    text-align: center;\r\n}\r\n\r\n.circle-tile-heading {\r\n    position: relative;\r\n    width: 80px;\r\n    height: 80px;\r\n    margin: 0 auto -40px;\r\n    border: 3px solid rgba(255,255,255,0.3);\r\n    border-radius: 100%;\r\n    color: #fff;\r\n    transition: all ease-in-out .3s;\r\n}\r\n\r\n/* -- Background Helper Classes */\r\n\r\n/* Use these to cuztomize the background color of a div. These are used along with tiles, or any other div you want to customize. */\r\n\r\n.dark-blue {\r\n    background-color: #34495e;\r\n}\r\n\r\n.green {\r\n    background-color: #16a085;\r\n}\r\n\r\n.blue {\r\n    background-color: #2980b9;\r\n}\r\n\r\n.orange {\r\n    background-color: #f39c12;\r\n}\r\n\r\n.red {\r\n    background-color: #e74c3c;\r\n}\r\n\r\n.purple {\r\n    background-color: #8e44ad;\r\n}\r\n\r\n.dark-gray {\r\n    background-color: #7f8c8d;\r\n}\r\n\r\n.gray {\r\n    background-color: #95a5a6;\r\n}\r\n\r\n.light-gray {\r\n    background-color: #bdc3c7;\r\n}\r\n\r\n.yellow {\r\n    background-color: #f1c40f;\r\n}\r\n\r\n/* -- Text Color Helper Classes */\r\n\r\n.text-dark-blue {\r\n    color: #34495e;\r\n}\r\n\r\n.text-green {\r\n    color: #16a085;\r\n}\r\n\r\n.text-blue {\r\n    color: #2980b9;\r\n}\r\n\r\n.text-orange {\r\n    color: #f39c12;\r\n}\r\n\r\n.text-red {\r\n    color: #e74c3c;\r\n}\r\n\r\n.text-purple {\r\n    color: #8e44ad;\r\n}\r\n\r\n.text-faded {\r\n    color: rgba(255,255,255,0.7);\r\n}\r\n\r\n.circle-tile-heading .fa {\r\n    line-height: 80px;\r\n}\r\n\r\n.circle-tile-content {\r\n    padding-top: 50px;\r\n}\r\n\r\n.circle-tile-description {\r\n    text-transform: uppercase;\r\n}\r\n\r\n.text-faded {\r\n    color: rgba(255,255,255,0.7);\r\n}\r\n\r\n.circle-tile-number {\r\n    padding: 5px 0 15px;\r\n    font-size: 26px;\r\n    font-weight: 700;\r\n    line-height: 1;\r\n}\r\n\r\n.circle-tile-footer {\r\n    display: block;\r\n    padding: 5px;\r\n    color: rgba(255,255,255,0.5);\r\n    background-color: rgba(0,0,0,0.1);\r\n    transition: all ease-in-out .3s;\r\n}\r\n\r\n.circle-tile-footer:hover {\r\n    text-decoration: none;\r\n    color: rgba(255,255,255,0.5);\r\n    background-color: rgba(0,0,0,0.2);\r\n}\r\n\r\n.morning {\r\n    background: url(https://lh3.googleusercontent.com/-1YbV7nsVnX8/WMugaq-6BEI/AAAAAAAADSg/0wPfQ84vMUcCle_SkgiUDOumUKscMaA8QCL0B/w530-d-h353-p-rw/widget-bg-morning.jpg) center bottom no-repeat;\r\n    background-size: cover;\r\n}\r\n\r\n.time-widget {\r\n    margin-top: 5px;\r\n    overflow: hidden;\r\n    text-align: center;\r\n    font-size: 1.75em;\r\n}\r\n\r\n.time-widget-heading {\r\n    text-transform: uppercase;\r\n    font-size: .5em;\r\n    font-weight: 400;\r\n    color: #fff;\r\n}\r\n\r\n#datetime{color:#fff;}\r\n\r\n.tile-img {\r\n    text-shadow: 2px 2px 3px rgba(0,0,0,0.9);\r\n}\r\n\r\n.tile {\r\n    margin-bottom: 15px;\r\n    padding: 15px;\r\n    overflow: hidden;\r\n    color: #fff;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.html":
+/*!******************************************!*\
+  !*** ./src/app/home/home.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!--top nav start=======-->\n<nav class=\"navbar navbar-inverse top-navbar\" id=\"top-nav\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <a class=\"navbar-brand\" routerLink=\"/\">Home </a>\n      <span class=\"close-btn\" id=\"hide-btn\">\n        <i class=\"fa fa-times\" aria-hidden=\"true\"></i>\n      </span>\n    </div>\n\n    <ul class=\"social-icon pull-right list-inline\">\n\n      <li class=\"dropdown\">\n        <a class=\"alerts-link dropdown-toggle\" (click)=\"goToNtifcation()\" style=\"cursor: pointer;\" >\n          <span class=\"glyphicon glyphicon-bell\"></span>\n          <span class=\"number\" *ngIf=\"notificationCount >0\">{{notificationCount}}</span>\n          <span class=\"caret\" ></span>\n        </a>\n      </li>\n\n\n\n      <li class=\"dropdown\">\n        <a class=\"user-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">\n          <span class=\"glyphicon glyphicon-user\"></span>\n          <span class=\"caret\"></span>\n        </a>\n        <ul class=\"dropdown-menu\">\n          <li>\n            <a  (click)=\"logOut()\" style=\"cursor: pointer;\">log out </a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  </div>\n</nav>\n<!--    top nav end===========-->\n\n<div class=\"container-2\">\n  <div id=\"page-wrapper\">\n\n    <router-outlet></router-outlet>\n\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/home/home.component.ts ***!
+  \****************************************/
+/*! exports provided: HomeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _da_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../da.service */ "./src/app/da.service.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _order_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../order.service */ "./src/app/order.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var HomeComponent = /** @class */ (function () {
+    function HomeComponent(authService, orderServices, router) {
+        this.authService = authService;
+        this.orderServices = orderServices;
+        this.router = router;
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+        var user = this.authService.currentUser.user;
+        this.providerId = user.id;
+        this.getUnseenCountNotification();
+        this.listenToNotification();
+    };
+    HomeComponent.prototype.listenToNotification = function () {
+        var _this = this;
+        _da_service__WEBPACK_IMPORTED_MODULE_1__["default"].record.getRecord("dsNotifications/" + this.providerId).subscribe(function (res) {
+            if (res.unseenCount > 0) {
+                console.log('the notifcation', res);
+                _this.notificationCount = res.unseenCount;
+            }
+        });
+    };
+    HomeComponent.prototype.getUnseenCountNotification = function () {
+        var _this = this;
+        this.orderServices.getUnseenNotification(this.providerId)
+            .subscribe(function (res) {
+            _this.notificationCount = res['unseenCount'];
+            console.log('the Notification =======>>>', res);
+        });
+    };
+    HomeComponent.prototype.logOut = function () {
+        this.authService.logout();
+    };
+    HomeComponent.prototype.goToNtifcation = function () {
+        this.router.navigate(['provider', this.providerId, 'notification']);
+        if (this.notificationCount > 0)
+            this.resetUnseenCount();
+    };
+    HomeComponent.prototype.resetUnseenCount = function () {
+        this.orderServices.resetUnseenCount(this.providerId)
+            .subscribe(function (result) {
+            console.log(result, 'result');
+        });
+    };
+    HomeComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-home',
+            template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
+            styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
+        }),
+        __metadata("design:paramtypes", [_service_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"],
+            _order_service__WEBPACK_IMPORTED_MODULE_3__["OrderServices"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    ], HomeComponent);
+    return HomeComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/login-component/login-component.component.css":
 /*!***************************************************************!*\
   !*** ./src/app/login-component/login-component.component.css ***!
@@ -552,7 +668,7 @@ module.exports = ".loginContainer{\r\n    margin: 10%\r\n}\r\n.shape1{\r\n    po
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container loginContainer pull-left\">\n    <div id=\"login-row\" class=\"row justify-content-center align-items-center\">\n        <div id=\"login-column\" class=\"col-md-6\">\n            <div class=\"box\">\n                <!-- <div class=\"shape1\"></div>\n                <div class=\"shape2\"></div>\n                <div class=\"shape3\"></div>\n                <div class=\"shape4\"></div>\n                <div class=\"shape5\"></div>\n                <div class=\"shape6\"></div>\n                <div class=\"shape7\"></div> -->\n                <div class=\"float\">\n                    <form [formGroup]=\"singInForm\" (ngSubmit)=\"onLoginSubmit()\" class=\"form\">\n                        <div class=\"form-group\">\n                            <label for=\"username\" class=\"text-white\">Username:</label>\n                            <br>\n                            <input type=\"text\" formControlName=\"userName\" class=\"form-control\">\n                            <span class=\"text-error\" *ngIf=\"singInForm.get('userName').hasError('required') && singInForm.get('userName').touched\">\n                                هذا الحقل الزامي\n                            </span>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"password\" class=\"text-white\">Password:</label>\n                            <br>\n                            <input type=\"password\" formControlName=\"password\" class=\"form-control\">\n                            <span class=\"text-error\" *ngIf=\"singInForm.get('password').hasError('required') && singInForm.get('password').touched\">\n                                هذا الحقل الزامي\n                            </span>\n                        </div>\n                        <div class=\"form-group\">\n                            <input type=\"submit\" name=\"submit\" class=\"btn btn-info btn-md\" value=\"submit\">\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n        <div class=\"pull-right\">\n            <!-- <h2>kareem</h2>\n            <h5>userName : provider111@gmail.com</h5>\n            <h5> password: Aaaa3aaa$</h5>\n            <hr> -->\n\n            <h2>development</h2>\n            <h5> username: +201069875421 </h5>\n            <h5> password: Aaaa3aaa$</h5>\n            <hr>\n\n            <h2>testing</h2>\n            <h5>userName : hishamprovider@index.com</h5>\n            <h5> password: Aaaa3aaa$</h5>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"container loginContainer pull-left\">\n    <div id=\"login-row\" class=\"row justify-content-center align-items-center\">\n        <div id=\"login-column\" class=\"col-md-6\">\n            <div class=\"box\">\n                <!-- <div class=\"shape1\"></div>\n                <div class=\"shape2\"></div>\n                <div class=\"shape3\"></div>\n                <div class=\"shape4\"></div>\n                <div class=\"shape5\"></div>\n                <div class=\"shape6\"></div>\n                <div class=\"shape7\"></div> -->\n                <div class=\"float\">\n                    <form [formGroup]=\"singInForm\" (ngSubmit)=\"onLoginSubmit()\" class=\"form\">\n                        <div class=\"form-group\">\n                            <label for=\"username\" class=\"text-white\">Username:</label>\n                            <br>\n                            <input type=\"text\" formControlName=\"userName\" class=\"form-control\">\n                            <span class=\"text-error\" *ngIf=\"singInForm.get('userName').hasError('required') && singInForm.get('userName').touched\">\n                                هذا الحقل الزامي\n                            </span>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"password\" class=\"text-white\">Password:</label>\n                            <br>\n                            <input type=\"password\" formControlName=\"password\" class=\"form-control\">\n                            <span class=\"text-error\" *ngIf=\"singInForm.get('password').hasError('required') && singInForm.get('password').touched\">\n                                هذا الحقل الزامي\n                            </span>\n                        </div>\n                        <div class=\"form-group\">\n                            <input type=\"submit\" name=\"submit\" class=\"btn btn-info btn-md\" value=\"login\">\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n        <div class=\"pull-right\">\n          \n            <h2>development</h2>\n            <h5> username: +201069875421 </h5>\n            <h5> password: Aaaa3aaa$</h5>\n            <hr>\n\n            <h2>testing</h2>\n            <h5>userName : hishamprovider@index.com</h5>\n            <h5> password: Aaaa3aaa$</h5>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -636,6 +752,31 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/models/page.model.ts":
+/*!**************************************!*\
+  !*** ./src/app/models/page.model.ts ***!
+  \**************************************/
+/*! exports provided: Page */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Page", function() { return Page; });
+var Page = /** @class */ (function () {
+    function Page() {
+        this.page = 0;
+        this.limit = 0;
+        this.pageCount = 0;
+        this.totalCount = 0;
+        this.data = [];
+    }
+    return Page;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/order-detail/order-detail.component.css":
 /*!*********************************************************!*\
   !*** ./src/app/order-detail/order-detail.component.css ***!
@@ -643,7 +784,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".split {\r\n    height: 100%;\r\n    width: 50%;\r\n    position: fixed;\r\n    top: 0;\r\n    overflow-x: hidden;\r\n    padding-top: 20px;\r\n}\r\n\r\n.left {\r\n    left: 0;\r\n}\r\n\r\n.right {\r\n    right: 0;\r\n}\r\n\r\n.centered img {\r\n    width: 150px;\r\n    border-radius: 50%;\r\n}\r\n\r\nh1{\r\n    font-size: 16px;\r\n}\r\n\r\n.orderSingle{\r\n      width: 50%;\r\n      margin-left: 25%;\r\n      margin-right: 25%;\r\n      height: 200px;\r\n      text-align: center;\r\n      margin-bottom: 20px;\r\n  }\r\n\r\n.card {\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n    max-width: 48%;\r\n    text-align: center;\r\n    font-family: arial;\r\n    margin-bottom: 50px;\r\n    height: 400px;\r\n  }\r\n\r\n.title {\r\n    color: grey;\r\n    font-size: 18px;\r\n  }\r\n\r\nbutton {\r\n    border: none;\r\n    outline: 0;\r\n    display: inline-block;\r\n    padding: 8px;\r\n    color: white;\r\n    background-color: #000;\r\n    text-align: center;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    font-size: 18px;\r\n  }\r\n\r\na {\r\n    text-decoration: none;\r\n    font-size: 22px;\r\n    color: black;\r\n  }\r\n\r\nbutton:hover, a:hover {\r\n    opacity: 0.7;\r\n  }\r\n\r\nbutton:disabled{\r\n      cursor: not-allowed;\r\n  }\r\n\r\n#myModal{\r\n    width: 50%;\r\n    margin-left: 25%;\r\n   \r\n  }\r\n\r\n.modal-content{\r\n    padding: 20px;\r\n  }\r\n\r\n\r\n"
+module.exports = ".row{\r\n  margin-top: 20px;\r\n}\r\n.card{\r\n  width: 100%;\r\n  padding: 20px;\r\n  min-height: 450px;\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n}\r\nbutton {\r\n  border: none;\r\n  outline: 0;\r\n  display: inline-block;\r\n  padding: 8px;\r\n  color: white;\r\n  background-color: #000;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  width: 100%;\r\n  font-size: 18px;\r\n}\r\n#myModal{\r\n  width: 50%;\r\n  margin-left: 25%;\r\n \r\n}\r\n.modal-content{\r\n  padding: 20px;\r\n}\r\n.modal-sm {\r\n  width: 450px;\r\n}\r\n.watingForPayement .modal-content{\r\n  background: #eee\r\n}\r\n.watingForPayement{\r\n  width: 100%;\r\n  height: 500px;\r\n}\r\n.overlay {\r\n  height: 100%;\r\n  width: 0;\r\n  position: fixed;\r\n  z-index: 1;\r\n  top: 0;\r\n  left: 0;\r\n  background-color: #777777eb;\r\n  overflow-x: hidden;\r\n  transition: 0.5s;\r\n}\r\n.overlay-content {\r\n  position: relative;\r\n  top: 25%;\r\n  width: 100%;\r\n  text-align: center;\r\n  margin-top: 30px;\r\n}\r\n.overlay a {\r\n  padding: 8px;\r\n  text-decoration: none;\r\n  font-size: 36px;\r\n  color: #ffffff;\r\n  display: block;\r\n  transition: 0.3s;\r\n}\r\n.overlay a:hover, .overlay a:focus {\r\n  color: #f1f1f1;\r\n}\r\n.overlay .closebtn {\r\n  position: absolute;\r\n  top: 20px;\r\n  right: 45px;\r\n  font-size: 60px;\r\n}\r\n@media screen and (max-height: 450px) {\r\n.overlay a {font-size: 20px}\r\n.overlay .closebtn {\r\n  font-size: 40px;\r\n  top: 15px;\r\n  right: 35px;\r\n}\r\n}"
 
 /***/ }),
 
@@ -654,7 +795,7 @@ module.exports = ".split {\r\n    height: 100%;\r\n    width: 50%;\r\n    positi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <a class=\"navbar-brand\" routerLink=\"/\">Home page</a>\n        </div>\n\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n            <a class=\"navbar-brand\" (click)=\"logOut()\" style=\"cursor: pointer;\"> logOut</a>\n        </div>\n    </div>\n</nav>\n\n<div class=\"card orderSingle\">\n  <p class=\"title\">{{order?.provider?.name}}</p>\n  <h1>Order Number: {{order?.id }}</h1>\n\n  <h1>client Id: {{order?.client?.id }}</h1>\n\n  <h1>client Name: {{client?.user?.name }}</h1>\n\n  <h1>Order Price: {{order?.price }}</h1>\n\n  <h1>Order status: {{order?.status }}</h1>\n\n  <h1>Order type: {{order?.orderType }}</h1>\n\n  <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n\n  <h1>{{order?.bookingDate | date:'medium'}}</h1>\n\n  <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n  <h1 *ngIf=\"order?.status =='PENDING'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:50%;background: green\">\n      ACCEPTED\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:50%;background: red\">\n      REJECTED_BY_PROVIDER\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"background: burlywood\">\n      ON_THE_WAY\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='IN_PROGRESS'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:50%;background: chocolate\">\n      PAUSED_BY_PROVIDER\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:50%;background: chocolate\">\n      FINISHED_WORKING\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:50%;background: orange\">\n      RESUME\n    </button>\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:50%;background: rgb(212, 0, 255)\">\n      FINISHED_WORKING\n    </button>\n  </h1>\n\n  <h1 *ngIf=\"order?.status =='ON_THE_WAY'\">\n    <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"background: blue\">\n      ARRIVED\n    </button>\n  </h1>\n\n  <!-- <h1 *ngIf=\"order?.status == 'IN_PROGRESS' \">\n    <button (click)=\"startCancel('REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:100%;background:crimson\">\n      PAUSE\n    </button>\n  </h1> -->\n\n  <!-- <h1 *ngIf=\"order?.status == 'PAUSE_BY_PROVIDER' \">\n    <button (click)=\"startCancel('REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:100%;background:#000\">\n      RESUME\n    </button>\n  </h1> -->\n\n  <p>\n\n    <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:50%;background: black\">\n      CANCELLED\n    </button>\n    <button (click)=\"goToChat(order?.client)\" style=\"width:50%;background:crimson\">\n      CHAT\n    </button>\n  </p>\n\n</div>\n<!-- <div id=\"myModal\" class=\"modal\">\n  <div class=\"modal-content\">\n    <span class=\"close\">&times;</span>\n    <p class=\"text-center\">the client ask to pause this order</p>\n\n    <button (click)=\"pauseResuemeAction(false,'')\" style=\"width:50%;background:crimson\">\n      CANCEL\n    </button>\n    <button (click)=\"pauseResuemeAction(true,'PAUSED_BY_CLIENT')\" style=\"width:50%;background: green\">\n      Ok\n    </button>\n  </div>\n\n</div> -->\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"card  pull-left\">\n        <table class=\"table table-bordered\">\n          <!-- <thead>\n                    <tr>\n                      <th>Firstname</th>\n                      <th>Email</th>\n                    </tr>\n                  </thead> -->\n          <tbody>\n            <tr>\n              <td>Order Number</td>\n              <td> {{order?.id }}</td>\n            </tr>\n            <!-- <tr>\n              <td>provider</td>\n              <td>{{order?.provider?.name}}</td>\n            </tr> -->\n            <tr>\n              <td>client id</td>\n              <td>{{order?.client?.id }}</td>\n            </tr>\n            <tr>\n              <td>client Name</td>\n              <td>{{client?.user?.name }}</td>\n            </tr>\n            <tr>\n              <td>Order Price</td>\n              <td>{{order?.price }}</td>\n            </tr>\n            <tr>\n              <td>Order status</td>\n              <td>{{order?.status}}</td>\n            </tr>\n            <tr>\n              <td>Order type</td>\n              <td>{{order?.orderType}}</td>\n            </tr>\n            <tr>\n              <td>Order preview Needed</td>\n              <td>{{order?.previewNeeded}}</td>\n            </tr>\n            <tr>\n              <td> booking Date</td>\n              <td>{{order?.bookingDate | date:'medium'}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n    <div class=\"col-md-6\">\n      <div class=\"card  pull-right text-center\" style=\"padding-top: 100px;\">\n        <p *ngIf=\"cancelOrder\">\n        <!-- <p *ngIf=\"['PENDING','ACCEPTED','ON_THE_WAY','ARRIVED'].includes( orders?.status) \"> -->\n          <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background: red;margin-top:10px;\">\n            CANCELLED\n          </button>\n        </p>\n\n        <p *ngIf=\"order?.status =='PENDING'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:60%;margin-top:10px;background: green\">\n            ACCEPTED\n          </button>\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: red\">\n            REJECTED_BY_PROVIDER\n          </button>\n        </p>\n\n        <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"width:60%;background: burlywood\">\n            ON_THE_WAY\n          </button>\n        </h1>\n\n        <h1 *ngIf=\"order?.status =='IN_PROGRESS'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:60%margin-top:10px;;background: chocolate\">\n            PAUSED_BY_PROVIDER\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: chocolate\">\n            FINISHED_WORKING\n          </button>\n        </h1>\n\n        <h1 *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: orange\">\n            RESUME\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: rgb(212, 0, 255)\">\n            FINISHED_WORKING\n          </button>\n        </h1>\n\n        <p *ngIf=\"order?.status =='ON_THE_WAY'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"width:60%;background: blue;margin-top:10px;\">\n            ARRIVED\n          </button>\n        </p>\n\n\n\n        <p>\n          <button (click)=\"goToChat(order?.client)\" style=\"width:60%;background:crimson\">\n            CHAT\n          </button>\n        </p>\n\n\n      </div>\n    </div>\n  </div>\n</div>\n\n\n<div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"myModal\">\n  <div class=\"modal-dialog modal-sm\" role=\"document\">\n    <div class=\"modal-content\">\n      <form [formGroup]=\"cancelForm\" (ngSubmit)=\"onCancelledOrder()\">\n        <h1>cancel reasons</h1>\n        <div *ngIf=\"loadingReason\">\n          LOADING....\n        </div>\n        <div *ngIf=\"!loadingReason\">\n          <div class=\"radio\" *ngFor=\"let reason of reasons\">\n            <label>\n              <input type=\"radio\" formControlName=\"reason\" checked [value]=\"reason.id\">{{reason.text}}</label>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"comment\">Comment:</label>\n          <textarea class=\"form-control\" rows=\"5\" id=\"comment\" formControlName=\"reasonText\"></textarea>\n        </div>\n        <button style=\"width:40%;background: blue\">\n          SUBMIT\n        </button>\n\n      </form>\n\n    </div>\n  </div>\n</div>\n\n\n<div id=\"myNav\" class=\"overlay\" #laterPaymentOverlay>\n  <!-- <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a> -->\n  <div class=\"overlay-content\">\n    <a style=\"cursor: pointer;\" (click)=\"laterPayment()\">الدفع لاحقا</a>\n  </div>\n</div>\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
 
 /***/ }),
 
@@ -677,6 +818,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -693,6 +835,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var OrderDetailComponent = /** @class */ (function () {
     function OrderDetailComponent(route, _notifications, zone, router, orderServices, authService) {
         this.route = route;
@@ -701,6 +844,7 @@ var OrderDetailComponent = /** @class */ (function () {
         this.router = router;
         this.orderServices = orderServices;
         this.authService = authService;
+        this.cancelOrder = false;
         this.requestToPauseByClient = false;
     }
     OrderDetailComponent.prototype.ngOnInit = function () {
@@ -708,10 +852,20 @@ var OrderDetailComponent = /** @class */ (function () {
         var user = this.authService.currentUser.user;
         this.providerId = user.id;
         this.orderId = this.route.snapshot.params['id'];
+        this.loginDeapStream();
+        this.cancelForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormGroup"]({
+            'reasonText': new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"](null),
+            'reason': new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"](null)
+        });
         this.fetchOrder(this.orderId);
         // ds.event.subscribe(`/providers/${environment.id}/orders/${this.orderId}`,
         _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].record.getRecord("dsOrder/" + this.orderId).subscribe(function (res) {
-            console.log(_this.orderId, 'the notifcation ', res, res.requestToPauseByClient);
+            console.log(_this.orderId, 'the notifcation ========>', res, res.requestToPauseByClient);
+            if (res.status == 'WAITING_FOR_PAYMENT')
+                _this.openNav();
+            if (res.status == 'ENDED') {
+                console.log('the status is ended');
+            }
             if (res.requestToPauseByClient == true) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_5___default()({
                     title: 'PAUSED_BY_CLIENT',
@@ -754,7 +908,6 @@ var OrderDetailComponent = /** @class */ (function () {
                 //   this.pauseResume('IN_PROGRESS');
                 // }
             }
-            _this.resetUnseenCount();
             if (res.status) {
                 _this.zone.run(function () {
                     _this.fetchOrder(_this.orderId);
@@ -777,16 +930,19 @@ var OrderDetailComponent = /** @class */ (function () {
         this.orderServices.getOrderById(this.providerId, orderId).subscribe(function (res) {
             _this.order = res;
             _this.orderServices.getClientById(_this.order.client.id).subscribe(function (result) {
-                console.log('the order ==', result);
                 _this.client = result;
+                if (['PENDING', 'ACCEPTED', 'ON_THE_WAY', 'ARRIVED'].includes(_this.order.status))
+                    _this.cancelOrder = true;
+                _this.currentStatus = _this.order.status;
             });
         });
     };
-    OrderDetailComponent.prototype.resetUnseenCount = function () {
-        this.orderServices.resetUnseenCount(this.providerId)
-            .subscribe(function (result) {
-        });
-    };
+    // resetUnseenCount() {
+    //   this.orderServices.resetUnseenCount(this.providerId)
+    //     .subscribe(result => {
+    //     }
+    //     )
+    // }
     OrderDetailComponent.prototype.denyResumption = function () {
         this.orderServices.denyResumption(this.providerId, this.orderId).subscribe(function (res) {
             console.log('denyResumption', res);
@@ -809,23 +965,93 @@ var OrderDetailComponent = /** @class */ (function () {
     };
     OrderDetailComponent.prototype.changeStatus = function (id, status) {
         var _this = this;
-        console.log(id, 'the status ====>', status);
+        console.log(this.currentStatus, 'the status ====>', status);
+        if (status == 'CANCELLED_BY_PROVIDER' || status == 'REJECTED_BY_PROVIDER') {
+            switch (this.currentStatus) {
+                case 'ACCEPTED':
+                    this.cancelStatus = 'CANCELLATION_ACCEPTED_REASON_BY_PROVIDER';
+                    break;
+                case 'ARRIVED':
+                    this.cancelStatus = 'CANCELLATION_ARRIVED_REASON_BY_PROVIDER';
+                    break;
+                case 'ON_THE_WAY':
+                    this.cancelStatus = 'CANCELLATION_ON_THE_WAY_REASON_BY_PROVIDER';
+                    break;
+                case 'IN_PROGRESS':
+                    this.cancelStatus = 'CANCELLATION_IN_PROGRESS_REASON_BY_PROVIDER';
+                    break;
+                case 'PENDING':
+                    this.cancelStatus = 'REJECTION_PENDING_REASON_BY_PROVIDER';
+                    break;
+                default: return;
+            }
+            console.log(this.currentStatus, 'this current status ===>>>>>>', this.cancelStatus);
+            this.loadingReason = true;
+            this.orderServices.getReasons(this.cancelStatus).subscribe(function (res) {
+                _this.loadingReason = false;
+                _this.reasons = res;
+                console.log('the reasons', _this.reasons);
+            });
+        }
         this.orderServices.updateproviderorders(id, status).subscribe(function (res) {
+            if (status == 'CANCELLED_BY_PROVIDER' || status == 'REJECTED_BY_PROVIDER')
+                $('#myModal').modal('show');
             _this.zone.run(function () {
                 _this.fetchOrder(_this.orderId);
             });
         }, function (err) {
             _this.open(err.error.error.message);
-            console.log('the error is ====>', err.error.error.message);
+            console.log('the error is ====>', err);
+        });
+    };
+    OrderDetailComponent.prototype.onCancelledOrder = function () {
+        var _this = this;
+        var reasonText = this.cancelForm.get('reasonText').value;
+        var reason = this.cancelForm.get('reason').value;
+        if (!this.cancelForm.valid) {
+            Object.keys(this.cancelForm.controls).forEach(function (key) {
+                _this.cancelForm.get(key).markAsTouched();
+            });
+            return;
+        }
+        var reasonBody = { 'reasonType': this.cancelStatus };
+        if (reason)
+            reasonBody['reason'] = reason;
+        if (!reason && reasonText)
+            reasonBody['otherReason'] = reasonText;
+        console.log(reasonText, reason, 'the reason is ====', reasonBody);
+        this.orderServices.addReasons(this.orderId, reasonBody).subscribe(function (res) {
+            $('#myModal').modal('hide');
+        }, function (err) {
+            console.log('the error of reason', err);
         });
     };
     OrderDetailComponent.prototype.goToChat = function (client) {
         this.router.navigate(['orders', this.orderId, 'client', client.id, 'chat']);
     };
-    OrderDetailComponent.prototype.logOut = function () {
-        console.log('the help');
-        this.authService.logout();
+    OrderDetailComponent.prototype.loginDeapStream = function () {
+        var user = this.authService.currentUser.user;
+        _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].login({
+            accessToken: this.authService.getToken(),
+            loginAs: "PROVIDER",
+            id: user.id
+        }, function (success, data) {
+        });
     };
+    OrderDetailComponent.prototype.openNav = function () {
+        this.laterPaymentOverlay.nativeElement.style.width = "100%";
+        // document.getElementById("myNav").style.width = "100%";
+    };
+    OrderDetailComponent.prototype.closeNav = function () {
+        document.getElementById("myNav").style.width = "0%";
+    };
+    OrderDetailComponent.prototype.laterPayment = function () {
+        console.log('later payment');
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('laterPaymentOverlay'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
+    ], OrderDetailComponent.prototype, "laterPaymentOverlay", void 0);
     OrderDetailComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-order-detail',
@@ -907,7 +1133,7 @@ var OrderServices = /** @class */ (function () {
         return this.httpClient.get(url);
     };
     OrderServices.prototype.fetchproviderorders = function (providerId, page) {
-        var url = this.basePath + "providers/" + providerId + "/orders" + "?page=" + page + "&limit=" + 12;
+        var url = this.basePath + "providers/" + providerId + "/orders" + "?page=" + page + "&limit=" + 10;
         return this.httpClient.get(url);
     };
     OrderServices.prototype.getConversationId = function (person1, person2) {
@@ -930,6 +1156,18 @@ var OrderServices = /** @class */ (function () {
         var url = this.basePath + 'clients/' + ClientId;
         return this.httpClient.get(url);
     };
+    OrderServices.prototype.getReasons = function (type) {
+        var url = this.basePath + 'reasons?type=' + type;
+        return this.httpClient.get(url);
+    };
+    OrderServices.prototype.addReasons = function (orderId, reasonBody) {
+        var url = this.basePath + "orders/" + orderId + "/reason";
+        return this.httpClient.patch(url, reasonBody);
+    };
+    OrderServices.prototype.getUnseenNotification = function (userId) {
+        var url = this.basePath + "users/" + userId + "/notifications/unseen-count";
+        return this.httpClient.get(url);
+    };
     OrderServices = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
@@ -948,7 +1186,7 @@ var OrderServices = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* /* body {\r\n    font-family: Arial;\r\n    color: white;\r\n} */\r\nagm-map{\r\n    height: 600px;\r\n  }\r\n.split {\r\n    height: 100%;\r\n    width: 50%;\r\n    position: fixed;\r\n    top: 0;\r\n    overflow-x: hidden;\r\n    padding-top: 20px;\r\n}\r\n.left {\r\n    left: 0;\r\n}\r\n.right {\r\n    right: 0;\r\n}\r\n.centered img {\r\n    width: 150px;\r\n    border-radius: 50%;\r\n}\r\nh1{\r\n    font-size: 16px;\r\n}\r\n.orderSingle{\r\n      width: 50%;\r\n      height: 250px;\r\n      float: left;\r\n      margin-bottom: 20px;\r\n  }\r\n.card {\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n    max-width: 48%;\r\n    margin: .5%;\r\n    text-align: center;\r\n    font-family: arial;\r\n    margin-bottom: 50px;\r\n    min-height: 380px;\r\n  }\r\n.title {\r\n    color: grey;\r\n    font-size: 18px;\r\n  }\r\nbutton {\r\n    border: none;\r\n    outline: 0;\r\n    display: inline-block;\r\n    padding: 8px;\r\n    color: white;\r\n    background-color: #000;\r\n    text-align: center;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    font-size: 18px;\r\n  }\r\na {\r\n    text-decoration: none;\r\n    font-size: 22px;\r\n    color: black;\r\n  }\r\nbutton:hover, a:hover {\r\n    opacity: 0.7;\r\n  }\r\nbutton:disabled{\r\n      cursor: not-allowed;\r\n  } "
+module.exports = "agm-map{\r\n    height: 600px;\r\n  }\r\n .cardTitle{\r\n     text-decoration: underline\r\n }"
 
 /***/ }),
 
@@ -959,7 +1197,7 @@ module.exports = "/* /* body {\r\n    font-family: Arial;\r\n    color: white;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 style=\"text-decoration: underline\">orders</h2>\n<div class=\"split left pull-left\">\n  <div class=\"centered\">\n    <div class=\"order\">\n      <div *ngFor=\"let order of orders\">\n        <div class=\"card orderSingle\">\n          <p class=\"title\">{{order?.provider?.name}}</p>\n          \n          <h1>Order Number: {{order?.id }}</h1>\n\n          <h1>client Id: {{order?.client }}</h1>\n\n          <h1>Order Price: {{order?.price }}</h1>\n\n          <h1>Order status: {{order?.status }}</h1>\n\n          <ng-template #otherCondition>\n            <h1>\n              Order status: {{order?.status }}\n\n            </h1>\n          </ng-template>\n\n          <h1>Order type: {{order?.orderType }}</h1>\n          <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n          <h1>{{order?.bookingDate | date:'medium'}}</h1>\n          <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n\n\n          <br>\n          <button (click)=\"showOrder(order?.id)\" style=\"width:60%;;background: black\">\n            DETAILS\n          </button>\n\n        </div>\n      </div>\n      <div *ngIf=\"loading\" style=\"text-align: center;margin: 40px auto\">\n        <!-- <img src=\"assets/images/loading.gif\"  width=\"100\" height=\"100\"> -->\n      </div>\n\n      <div *ngIf=\" orders?.length !=0\">\n        <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n          <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n            more\n          </button>\n        </div>\n      </div>\n      <div *ngIf=\"!loading && orders?.length ==0\">\n        <div style=\"text-align: center;margin-top: 50px;\">\n          <button class=\"btn btn-primary\" disabled>\n           no orders\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"split right pull-right\">\n  <div class=\"centered\">\n    <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n      [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <div class=\"notification\">\n    <div class=\"singleNotification\">\n      <button (click)=\"gonotifcation()\">notification</button>\n      <br>\n      <br>\n      <br>\n      <button (click)=\"logOut()\">logOut</button>\n    \n      <!-- <button (click)=\"open()\" class=\"btn btn-primary\">notification click</button> -->\n    </div>\n  </div>\n</div>\n\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<!-- <h2 style=\"text-decoration: underline\">orders</h2> -->\n<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"orders\">\n        <h2 class=\"cardTitle\">the orders </h2>\n        <div *ngIf=\"currentPage?.totalCount >0\">\n          <ngx-datatable *ngIf=\"!loading\" class=\"material bg-white\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\"\n            [rowHeight]=\"50\" [count]=\"currentPage?.totalCount\" [offset]=\"currentPage?.page - 1\" [limit]=\"currentPage?.limit\"\n            [rows]=\"currentPage?.data\" [externalPaging]=\"true\" (page)=\"onPageChange($event)\">\n\n\n            <ngx-datatable-column name=\"order number\" [flexGrow]=\"1\" fxHide>\n              <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                {{ row?.id }}\n              </ng-template>\n            </ngx-datatable-column>\n\n            <ngx-datatable-column name=\" status \" [flexGrow]=\"1\" fxHide>\n              <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                {{ row?.status }}\n              </ng-template>\n            </ngx-datatable-column>\n\n\n            <ngx-datatable-column name=\"\" [flexGrow]=\"1\">\n              <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                <a (click)=\"showOrder(row?.id)\" style=\"cursor: pointer;\">\n                  <!-- DETAILS -->\n                  <i class=\"fa fa-eye\" style=\"font-size: 25px; padding-left:40px; \"></i>\n                </a>\n              </ng-template>\n            </ngx-datatable-column>\n\n\n          </ngx-datatable>\n        </div>\n\n      </div>\n    </div>\n\n    <div class=\"col-md-6\">\n        <div class=\"map\">\n            <h2 class=\"cardTitle\">click to update your location </h2>\n          <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n            [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n            <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n          </agm-map>\n        </div>\n    </div>\n  </div>\n</div>\n\n\n<!-- <div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"split left pull-left\">\n      <div class=\"centered\">\n        <div class=\"order\">\n          <div *ngFor=\"let order of orders\">\n            <div class=\"card orderSingle\">\n              <p class=\"title\">{{order?.provider?.name}}</p>\n\n              <h1>Order Number: {{order?.id }}</h1>\n\n              <h1>client Id: {{order?.client }}</h1>\n\n              <h1>Order Price: {{order?.price }}</h1>\n\n              <h1>Order status: {{order?.status }}</h1>\n\n              <ng-template #otherCondition>\n                <h1>\n                  Order status: {{order?.status }}\n\n                </h1>\n              </ng-template>\n\n              <h1>Order type: {{order?.orderType }}</h1>\n              <h1>Order preview Needed: {{order?.previewNeeded }}</h1>\n              <h1>{{order?.bookingDate | date:'medium'}}</h1>\n              <p>Order location: {{order?.requestLocationPlaceName }}</p>\n\n\n\n              <br>\n              <button (click)=\"showOrder(order?.id)\" style=\"width:60%;;background: black\">\n                DETAILS\n              </button>\n\n            </div>\n          </div>\n        \n\n          <div *ngIf=\" orders?.length !=0\">\n            <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n              <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n                more\n              </button>\n            </div>\n          </div>\n          <div *ngIf=\"!loading && orders?.length ==0\">\n            <div style=\"text-align: center;margin-top: 50px;\">\n              <button class=\"btn btn-primary\" disabled>\n                no orders\n              </button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div> -->\n\n<!-- \n<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\" pull-right\">\n      <div class=\"\">\n        <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n          [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n          <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n        </agm-map>\n      </div>\n\n      <div class=\"notification\">\n        <div class=\"singleNotification\">\n          <button (click)=\"gonotifcation()\">notification</button>\n          <br>\n          <br>\n          <br>\n          <button (click)=\"logOut()\">logOut</button>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div> -->\n\n\n<!-- <simple-notifications [options]=\"options\"></simple-notifications> -->"
 
 /***/ }),
 
@@ -980,6 +1218,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular2_notifications__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular2-notifications */ "./node_modules/angular2-notifications/angular2-notifications.umd.js");
 /* harmony import */ var angular2_notifications__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(angular2_notifications__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _models_page_model__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../models/page.model */ "./src/app/models/page.model.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -995,6 +1234,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var OrdersComponent = /** @class */ (function () {
     function OrdersComponent(orderServices, authService, _notifications, router) {
         this.orderServices = orderServices;
@@ -1003,39 +1243,17 @@ var OrdersComponent = /** @class */ (function () {
         this.router = router;
         this.page = 1;
         this.totalPages = 1;
+        this.currentPage = new _models_page_model__WEBPACK_IMPORTED_MODULE_6__["Page"]();
         this.orders = [];
         this.types = ['alert', 'error', 'info', 'warn', 'success'];
         this.animationTypes = ['fromRight', 'fromLeft', 'scale', 'rotate'];
     }
     OrdersComponent.prototype.ngOnInit = function () {
-        var _this = this;
         var user = this.authService.currentUser.user;
         this.providerId = user.id;
-        _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].login({
-            accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMxNSwiaXNzIjoiQXBwIiwiaWF0IjoxNTM2NDkyMTA5NzgxLCJleHAiOjE1MzY0OTIxMTY5ODF9.wYPCAEDMcUC2JvmBXxT5z2w8Jf2KL7ilVgEsYLQPuOk",
-            loginAs: "PROVIDER",
-            id: 315
-        }, function (success, data) {
-            console.log(success);
-            console.log(data);
-        });
+        this.loginDeapStream();
         this.fetchOrders(1);
         this.getProviderLocation();
-        _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].record.getRecord("dsNotifications/" + this.providerId).subscribe(function (res) {
-            if (res.unseenCount > 0) {
-                _this.open('you have new notification');
-                console.log('the notifcation', res);
-                _this.resetUnseenCount();
-                _this.fetchOrders(1);
-            }
-            console.log(res.unseenCount, 'the notifcation', res);
-        });
-    };
-    OrdersComponent.prototype.resetUnseenCount = function () {
-        this.orderServices.resetUnseenCount(this.providerId)
-            .subscribe(function (result) {
-            console.log(result, 'result');
-        });
     };
     OrdersComponent.prototype.newPosition = function (event) {
         this.newlat = event.coords.lat;
@@ -1059,7 +1277,6 @@ var OrdersComponent = /** @class */ (function () {
         var _this = this;
         this.orderServices.getProviderLocation(this.providerId)
             .subscribe(function (result) {
-            console.log('etProviderLocation', result['currentLocation']);
             _this.lng = result['currentLocation'][0],
                 _this.lat = result['currentLocation'][1];
         });
@@ -1085,6 +1302,7 @@ var OrdersComponent = /** @class */ (function () {
         this.orderServices.fetchproviderorders(this.providerId, page)
             .subscribe(function (result) {
             console.log(result);
+            _this.currentPage = result;
             _this.orders = _this.orders.concat(result.data);
             _this.totalPages = result.pageCount;
             _this.loading = false;
@@ -1093,16 +1311,33 @@ var OrdersComponent = /** @class */ (function () {
                 _this.noMoreData = true;
         });
     };
-    OrdersComponent.prototype.gonotifcation = function () {
-        this.router.navigate(['provider', this.providerId, 'notification']);
+    OrdersComponent.prototype.onPageChange = function (event) {
+        this.fetchOrders(event.offset + 1);
     };
     OrdersComponent.prototype.showOrder = function (orderId) {
-        console.log('the orderId ===', this.router, orderId);
         this.router.navigate(['orders', orderId]);
     };
-    OrdersComponent.prototype.logOut = function () {
-        console.log('the help');
-        this.authService.logout();
+    // startTracking() {
+    //   let opts = { maximumAge: 60000, timeout: 15000 }
+    //   let watchPositionReturn = navigator.geolocation.watchPosition((position) => {
+    //     this.lat = position['coords'].latitude;
+    //     this.lng = position['coords'].longitude;
+    //     // console.log('watchPositionReturn', position);
+    //     //  ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.lat, longitude: this.lng });
+    //   },
+    //     (err) => {
+    //       console.log('watchPositionReturn error', err);
+    //     },
+    //     opts);
+    // }
+    OrdersComponent.prototype.loginDeapStream = function () {
+        var user = this.authService.currentUser.user;
+        _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].login({
+            accessToken: this.authService.getToken(),
+            loginAs: "PROVIDER",
+            id: user.id
+        }, function (success, data) {
+        });
     };
     OrdersComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1180,7 +1415,7 @@ var AuthInterceptor = /** @class */ (function () {
                     _this.router.navigate(['not-allowed']);
                 }
             }
-            return rxjs__WEBPACK_IMPORTED_MODULE_5__["Observable"].throw(error);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["throwError"])(error);
         }));
     };
     AuthInterceptor = __decorate([
@@ -1331,7 +1566,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <a class=\"navbar-brand\" routerLink=\"/\">Home page</a>\n        </div>\n\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n            <a class=\"navbar-brand\" (click)=\"logOut()\" style=\"cursor: pointer;\"> logOut</a>\n        </div>\n    </div>\n</nav>\n<div *ngFor=\"let notif of notification \" style=\"widows: 60%;padding: 5px;text-align: center;height: 200px;margin-left: 20%;margin-bottom: 20px;margin-right: 20%;background: mediumpurple\">\n  <div class=\"notif\">\n   \n    <h4>the notification : {{notif.id}}</h4>\n    <h4>the message :{{notif.text}}</h4>\n    <h4>provider :{{notif?.subject?.provider?.user.name}}</h4>\n    <h4>client :{{notif?.subject?.client?.user.name}}</h4>\n    <h5>kind :{{notif?.subject?.kind}}</h5>\n    <h5>status :{{notif?.subject?.status}}</h5>\n  </div>\n\n</div>\n\n<div *ngIf=\" notification?.length !=0\">\n  <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n    <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n      المزيد\n    </button>\n  </div>\n</div>\n\n<div *ngIf=\"!loading && notification?.length ==0\">\n  <div style=\"text-align: center;margin-top: 50px;\">\n    <button class=\"btn btn-primary\" disabled>\n      لا يوجد بيانات\n    </button>\n  </div>\n</div>"
+module.exports = "\n<div *ngFor=\"let notif of notification \" \nstyle=\"width: 60%;padding: 5px;text-align: center;\nheight: 230px;margin-left: 20%;margin-bottom: 20px;margin-right: 20%;\nborder: 1px solid #007be2;\nborder-radius: 10px;\">\n<table class=\"table table-hover\">\n    <tbody>\n      <tr>\n        <td>the notification</td>\n        <td>{{notif.id}}</td>\n      </tr>\n      <tr>\n        <td>the message</td>\n        <td>{{notif.text}}</td>\n      </tr>\n      <tr>\n        <td>provider</td>\n        <td>{{notif?.subject?.provider?.user.name}}</td>\n      </tr>\n      <tr>\n        <td>client</td>\n        <td>{{notif?.subject?.client?.user.name}}</td>\n      </tr>\n      <tr>\n        <td>kind</td>\n        <td>{{notif?.subject?.kind}}</td>\n      </tr>\n      <tr>\n        <td>status</td>\n        <td>{{notif?.subject?.status}}</td>\n      </tr>\n    </tbody>\n  </table>\n\n  <!-- <div class=\"notif\">\n   \n    <h4>the notification : {{notif.id}}</h4>\n    <h4>the message :{{notif.text}}</h4>\n    <h4>provider :{{notif?.subject?.provider?.user.name}}</h4>\n    <h4>client :{{notif?.subject?.client?.user.name}}</h4>\n    <h5>kind :{{notif?.subject?.kind}}</h5>\n    <h5>status :{{notif?.subject?.status}}</h5>\n  </div>-->\n\n </div> \n\n<div *ngIf=\" notification?.length !=0\">\n  <div style=\"text-align: center;margin-top: 50px;margin-bottom: 50px;\">\n    <button class=\"btn btn-primary\" (click)=\"onLoadMoreClick()\" [disabled]=\"loading || noMoreData \">\n      المزيد\n    </button>\n  </div>\n</div>\n\n<div *ngIf=\"!loading && notification?.length ==0\">\n  <div style=\"text-align: center;margin-top: 50px;\">\n    <button class=\"btn btn-primary\" disabled>\n      لا يوجد بيانات\n    </button>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1389,10 +1624,6 @@ var ShoworderNotificationComponent = /** @class */ (function () {
             if (_this.page == _this.totalPages)
                 _this.noMoreData = true;
         });
-    };
-    ShoworderNotificationComponent.prototype.logOut = function () {
-        console.log('the help');
-        this.authService.logout();
     };
     ShoworderNotificationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
