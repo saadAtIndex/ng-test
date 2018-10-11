@@ -1,5 +1,285 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	var module = __webpack_require__(id);
+	return module;
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /*!**********************************************************!*\
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
@@ -134,6 +414,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @swimlane/ngx-datatable */ "./node_modules/@swimlane/ngx-datatable/release/index.js");
 /* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _external_order_show_external_order_show_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./external-order-show/external-order-show.component */ "./src/app/external-order-show/external-order-show.component.ts");
+/* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+/* harmony import */ var ng2_datepicker__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ng2-datepicker */ "./node_modules/ng2-datepicker/dist/bundles/ng2-datepicker.umd.js");
+/* harmony import */ var ng2_datepicker__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(ng2_datepicker__WEBPACK_IMPORTED_MODULE_23__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -161,12 +445,16 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
 var appRouting = [
     { path: 'signin', component: _login_component_login_component_component__WEBPACK_IMPORTED_MODULE_15__["LoginComponent"] },
     {
         path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_19__["HomeComponent"], canActivate: [_service_authGuard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"]], children: [
             { path: '', component: _orders_orders_component__WEBPACK_IMPORTED_MODULE_9__["OrdersComponent"] },
             { path: 'orders/:id', component: _order_detail_order_detail_component__WEBPACK_IMPORTED_MODULE_14__["OrderDetailComponent"] },
+            { path: 'external-orders/:id', component: _external_order_show_external_order_show_component__WEBPACK_IMPORTED_MODULE_21__["ExternalOrderShowComponent"] },
             { path: 'orders/:id/client/:clientId/chat', component: _chat_chat_component__WEBPACK_IMPORTED_MODULE_7__["ChatComponent"] },
             { path: 'provider/:id/notification', component: _showorder_notification_showorder_notification_component__WEBPACK_IMPORTED_MODULE_11__["ShoworderNotificationComponent"] },
         ]
@@ -184,7 +472,8 @@ var AppModule = /** @class */ (function () {
                 _showorder_notification_showorder_notification_component__WEBPACK_IMPORTED_MODULE_11__["ShoworderNotificationComponent"],
                 _order_detail_order_detail_component__WEBPACK_IMPORTED_MODULE_14__["OrderDetailComponent"],
                 _login_component_login_component_component__WEBPACK_IMPORTED_MODULE_15__["LoginComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_19__["HomeComponent"]
+                _home_home_component__WEBPACK_IMPORTED_MODULE_19__["HomeComponent"],
+                _external_order_show_external_order_show_component__WEBPACK_IMPORTED_MODULE_21__["ExternalOrderShowComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -193,7 +482,9 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"],
                 _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_20__["NgxDatatableModule"],
+                ng2_datepicker__WEBPACK_IMPORTED_MODULE_23__["NgDatepickerModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
+                ngx_smart_modal__WEBPACK_IMPORTED_MODULE_22__["NgxSmartModalModule"].forRoot(),
                 angular2_notifications__WEBPACK_IMPORTED_MODULE_12__["SimpleNotificationsModule"].forRoot(),
                 _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(appRouting),
                 _agm_core__WEBPACK_IMPORTED_MODULE_3__["AgmCoreModule"].forRoot({
@@ -539,6 +830,227 @@ ds.on('error', function (err) {
 
 /***/ }),
 
+/***/ "./src/app/external-order-show/external-order-show.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/external-order-show/external-order-show.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "agm-map{\r\n  height: 300px;\r\n}\r\n  .card{\r\n    width: 100%;\r\n    padding: 10px;\r\n    min-height: 450px;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n  }\r\n  button {\r\n    border: none;\r\n    outline: 0;\r\n    display: inline-block;\r\n    padding: 8px;\r\n    color: white;\r\n    background-color: #000;\r\n    text-align: center;\r\n    cursor: pointer;\r\n    width: 100%;\r\n    font-size: 18px;\r\n  }\r\n  .finishModal{\r\n    padding: 20px;\r\n    width: 70%;\r\n  }\r\n  #myModal{\r\n    width: 50%;\r\n    margin-left: 25%;\r\n   \r\n  }\r\n  .modal-content{\r\n    padding: 20px;\r\n  }\r\n  .modal-sm {\r\n    width: 450px;\r\n  }\r\n  .watingForPayement .modal-content{\r\n    background: #eee\r\n  }\r\n  .nsm-content{\r\n    padding: 2rem;\r\n  }\r\n  .ngx-datepicker-container.ngx-datepicker-input {\r\n    width: 100%;\r\n}\r\n  .ngx-datepicker-container \r\n.ngx-datepicker-input{\r\n  width: 100% !important;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/external-order-show/external-order-show.component.html":
+/*!************************************************************************!*\
+  !*** ./src/app/external-order-show/external-order-show.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"card  pull-left\">\n        <h1>External Order Details</h1>\n        <table class=\"table table-bordered\">\n\n          <tbody>\n            <tr>\n              <td>Order Number</td>\n              <td> {{order?.id }}</td>\n            </tr>\n            <tr>\n              <td>client id</td>\n              <td>{{order?.client?.id }}</td>\n            </tr>\n            <tr>\n              <td>client Name</td>\n              <td>{{client?.user?.name }}</td>\n            </tr>\n            <tr>\n              <td>Order Price</td>\n              <td>{{order?.price }}</td>\n            </tr>\n            <tr>\n              <td>Order status</td>\n              <td>{{order?.status}}</td>\n            </tr>\n            <tr>\n              <td>Order type</td>\n              <td>{{order?.kind}}</td>\n            </tr>\n            <tr>\n              <td> creation Date</td>\n              <td>{{order?.createdAt | date:'medium'}}</td>\n            </tr>\n\n          </tbody>\n        </table>\n      </div>\n      <br>\n      <br>\n      <br>\n\n    </div>\n    <div class=\"col-md-6\">\n      <div class=\"card pull-left  text-center\">\n        <h1 class=\" text-center\">Actions </h1>\n\n\n        <p *ngIf=\"order?.status =='ACCEPTED_BY_CLIENT'\">\n          <button (click)=\"finshExternalOrderStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n            FINISHED_WORKING\n          </button>\n        </p>\n\n        <p *ngIf=\"order?.status =='PENDING'\">\n          <button class=\"btn btn-primary\" (click)=\"acceptStatus(order?.id,'ACCEPTED_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background:#007be2\">\n            ACCEPTED_BY_PROVIDER\n          </button>\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            REJECTED_BY_PROVIDER\n          </button>\n        </p>\n        <p>\n          <button (click)=\"goToChat(order?.client)\" style=\"width:60%;background:#007be2\">\n            CHAT\n          </button>\n        </p>\n\n      </div>\n    </div>\n\n  </div>\n\n  <div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"myModal\">\n    <div class=\"modal-dialog modal-sm\" role=\"document\">\n      <div class=\"modal-content\">\n        <form [formGroup]=\"externalPriceForm\" (ngSubmit)=\"changeStatus(order?.id,'ACCEPTED_BY_PROVIDER')\">\n          <h1>External Order Price </h1>\n\n          <div class=\"form-group\">\n            <label for=\"exampleInputEmail1\">min price</label>\n            <input type=\"text\" class=\"form-control\" formControlName=\"minPrice\" placeholder=\"Enter min Price\">\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('minPrice').hasError('required') && externalPriceForm.get('minPrice').touched\">\n              هذا الحقل الزامي\n            </span>\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('minPrice').hasError('pattern') && externalPriceForm.get('minPrice').touched\">\n              يرجي ادخال قيمة رقميه\n            </span>\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('minPrice').hasError('min') && externalPriceForm.get('minPrice').touched\">\n              السعر يجب الا يقل عن 1\n            </span>\n          </div>\n\n          <div class=\"form-group\">\n            <label for=\"exampleInputEmail1\">max price</label>\n            <input type=\"text\" class=\"form-control\" formControlName=\"maxPrice\" placeholder=\"Enter max price\">\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('maxPrice').hasError('required') && externalPriceForm.get('maxPrice').touched\">\n              هذا الحقل الزامي\n            </span>\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('maxPrice').hasError('pattern') && externalPriceForm.get('maxPrice').touched\">\n              يرجي ادخال قيمة رقميه\n            </span>\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('maxPrice').hasError('min') && externalPriceForm.get('maxPrice').touched\">\n              السعر يجب الا يقل عن 1\n            </span>\n          </div>\n\n          <button style=\"width:40%;background: blue\">\n            SUBMIT\n          </button>\n\n        </form>\n\n      </div>\n    </div>\n  </div>\n\n  <div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"finishExternalOrder\">\n    <div class=\"modal-dialog modal-sm\" role=\"document\">\n      <div class=\"modal-content\">\n        <form [formGroup]=\"externalPriceForm\" (ngSubmit)=\"changeStatus(order?.id,'ACCEPTED_BY_PROVIDER')\">\n          <h1>External Order Price </h1>\n\n          <div class=\"form-group\">\n            <label for=\"exampleInputEmail1\">min price</label>\n            <input type=\"text\" class=\"form-control\" formControlName=\"minPrice\" placeholder=\"Enter min Price\">\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('minPrice').hasError('required') && externalPriceForm.get('minPrice').touched\">\n              هذا الحقل الزامي\n            </span>\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('minPrice').hasError('pattern') && externalPriceForm.get('minPrice').touched\">\n              يرجي ادخال قيمة رقميه\n            </span>\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('minPrice').hasError('min') && externalPriceForm.get('minPrice').touched\">\n              السعر يجب الا يقل عن 1\n            </span>\n          </div>\n\n          <div class=\"form-group\">\n            <label for=\"exampleInputEmail1\">max price</label>\n            <input type=\"text\" class=\"form-control\" formControlName=\"maxPrice\" placeholder=\"Enter max price\">\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('maxPrice').hasError('required') && externalPriceForm.get('maxPrice').touched\">\n              هذا الحقل الزامي\n            </span>\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('maxPrice').hasError('pattern') && externalPriceForm.get('maxPrice').touched\">\n              يرجي ادخال قيمة رقميه\n            </span>\n            <span class=\"text-error\" *ngIf=\"externalPriceForm.get('maxPrice').hasError('min') && externalPriceForm.get('maxPrice').touched\">\n              السعر يجب الا يقل عن 1\n            </span>\n          </div>\n\n          <button style=\"width:40%;background: blue\">\n            SUBMIT\n          </button>\n\n        </form>\n\n      </div>\n    </div>\n  </div>\n\n\n\n  <!-- <div class=\"col-md-12\"> -->\n  <ngx-smart-modal #finishModal identifier=\"finishModal\" class=\"finishModal\" customClass=\"medium-modal\">\n    <form [formGroup]=\"externalFinishForm\" (ngSubmit)=\"changeStatus(order?.id,'FINISHED_WORKING')\">\n      <h1>finish External Order </h1>\n\n      <div class=\"form-group\">\n        <label for=\"exampleInputEmail1\"> price</label>\n        <input type=\"text\" class=\"form-control\" formControlName=\"price\" placeholder=\"Enter  Price\">\n        <span class=\"text-error\" *ngIf=\"externalFinishForm.get('price').hasError('required') && externalFinishForm.get('price').touched\">\n          هذا الحقل الزامي\n        </span>\n        <span class=\"text-error\" *ngIf=\"externalFinishForm.get('price').hasError('pattern') && externalFinishForm.get('price').touched\">\n          يرجي ادخال قيمة رقميه\n        </span>\n        <span class=\"text-error\" *ngIf=\"externalFinishForm.get('price').hasError('min') && externalFinishForm.get('price').touched\">\n          السعر يجب الا يقل عن 1\n        </span>\n\n        <span *ngIf=\"priceRangeMessage\">\n          {{ this.priceMessage}}\n        </span>\n      </div>\n\n      <label for=\"exampleInputEmail1\"> delivery Date</label>\n      <ng-datepicker formControlName=\"deliveryDate\" #deliveryDate name=\"date\" [options]=\"calendarOptions\" (dateSelect)=\"change($event)\"\n        style=\" width: 100% !important;\"></ng-datepicker>\n\n      <br>\n      <br>\n      <div class=\"map\">\n        <h3 class=\"cardTitle\">Click to choose delivery location </h3>\n        <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\" [scrollwheel]=\"true\"\n          (mapClick)=\"newDeliveryPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n          <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n        </agm-map>\n      </div>\n\n      <br>\n      <br>\n      <p class=\"text-center\" *ngIf=\"loadingStatus\">\n          <img src=\"assets/loading.gif\" class=\"img-responsive\" width=\"16%\" height=\"200\" style=\"margin-left: 42%;\">\n      </p>\n      <p class=\"text-center\" *ngIf=\"!loadingStatus\">\n        <button style=\"width:40%;background: blue\">\n          SUBMIT\n        </button>\n      </p>\n\n    </form>\n\n\n  </ngx-smart-modal>\n  <!-- </div> -->\n\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/external-order-show/external-order-show.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/external-order-show/external-order-show.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: ExternalOrderShowComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExternalOrderShowComponent", function() { return ExternalOrderShowComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular2_notifications__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-notifications */ "./node_modules/angular2-notifications/angular2-notifications.umd.js");
+/* harmony import */ var angular2_notifications__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_notifications__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _order_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../order.service */ "./src/app/order.service.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+/* harmony import */ var _da_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../da.service */ "./src/app/da.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var ExternalOrderShowComponent = /** @class */ (function () {
+    function ExternalOrderShowComponent(route, _notifications, zone, router, orderServices, ngxSmartModalService, authService, appRef) {
+        this.route = route;
+        this._notifications = _notifications;
+        this.zone = zone;
+        this.router = router;
+        this.orderServices = orderServices;
+        this.ngxSmartModalService = ngxSmartModalService;
+        this.authService = authService;
+        this.appRef = appRef;
+        this.calendarOptions = {
+            format: "DD-mm-YYYY",
+            displayFormat: 'MMM D[,] YYYY',
+            barTitleFormat: 'MMMM YYYY',
+            minDate: new Date(Date.now()),
+            firstWeekdaySunday: false
+        };
+        this.cancelOrder = false;
+        this.priceRangeMessage = false;
+        this.openOverly = false;
+        this.requestToPauseByClient = false;
+    }
+    ExternalOrderShowComponent.prototype.ngOnInit = function () {
+        // this.date = new Date();
+        var user = this.authService.currentUser.user;
+        this.providerId = user.id;
+        this.orderId = this.route.snapshot.params['id'];
+        this.fetchOrder(this.orderId);
+        this.getProviderLocation();
+        this.externalPriceForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
+            'minPrice': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].min(1), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("[0-9]*")]),
+            'maxPrice': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].min(1), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("[0-9]*")]),
+        });
+        this.externalFinishForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormGroup"]({
+            'deliveryDate': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]),
+            'price': new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].min(1), _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern("[0-9]*")])
+        });
+        this.loginDeapStream();
+    };
+    ExternalOrderShowComponent.prototype.fetchOrder = function (orderId) {
+        var _this = this;
+        this.orderServices.getExternalOrderById(this.providerId, orderId)
+            .subscribe(function (res) {
+            _this.order = res;
+            _this.orderServices.getClientById(_this.order.client.id)
+                .subscribe(function (result) {
+                _this.client = result;
+                _this.currentStatus = _this.order.status;
+                _this.dsEventLisenning();
+            });
+            console.log('the order is', _this.order);
+        });
+    };
+    ExternalOrderShowComponent.prototype.acceptStatus = function () {
+        $('#myModal').modal('show');
+    };
+    ExternalOrderShowComponent.prototype.finshExternalOrderStatus = function () {
+        this.ngxSmartModalService.getModal('finishModal').open();
+    };
+    ExternalOrderShowComponent.prototype.changeStatus = function (id, status) {
+        var _this = this;
+        var body = { "status": status };
+        if (status == 'ACCEPTED_BY_PROVIDER') {
+            var minPrice = this.externalPriceForm.get('minPrice').value;
+            var maxPrice = this.externalPriceForm.get('maxPrice').value;
+            if (!this.externalPriceForm.valid) {
+                Object.keys(this.externalPriceForm.controls).forEach(function (key) {
+                    _this.externalPriceForm.get(key).markAsTouched();
+                });
+                return;
+            }
+            body['minPrice'] = minPrice;
+            body['maxPrice'] = maxPrice;
+        }
+        if (status == 'FINISHED_WORKING') {
+            var price = this.externalFinishForm.get('price').value;
+            var deliveryDate = this.externalFinishForm.get('deliveryDate').value;
+            if (!this.externalFinishForm.valid) {
+                Object.keys(this.externalFinishForm.controls).forEach(function (key) {
+                    _this.externalFinishForm.get(key).markAsTouched();
+                });
+                return;
+            }
+            body['price'] = price;
+            body['deliveryDate'] = deliveryDate.getTime();
+            body['deliveryLocation'] = [this.lng, this.lat];
+        }
+        console.log('the body ===>', body);
+        this.loadingStatus = true;
+        this.orderServices.updateExternalOrders(id, body)
+            .subscribe(function (res) {
+            _this.loadingStatus = false;
+            _this.ngxSmartModalService.getModal('finishModal').close();
+            $('#myModal').modal('hide');
+            console.log('the return from updated order is ===>', res);
+        }, function (err) {
+            _this.loadingStatus = false;
+            console.log(err.error.error.message, err.status);
+            _this.priceRangeMessage = true;
+            _this.priceMessage = err.error.error.message;
+            if (err.status == 422)
+                _this.priceMessage = err.error.error.message;
+        });
+    };
+    ExternalOrderShowComponent.prototype.newDeliveryPosition = function (event) {
+        this.newlat = event.coords.lat;
+        this.newLng = event.coords.lng;
+        this.lat = this.newlat;
+        this.lng = this.newLng;
+        //ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.newlat, longitude: this.newLng });
+    };
+    ExternalOrderShowComponent.prototype.getProviderLocation = function () {
+        var _this = this;
+        this.orderServices.getProviderLocation(this.providerId)
+            .subscribe(function (result) {
+            _this.lng = result['currentLocation'][0],
+                _this.lat = result['currentLocation'][1];
+        });
+    };
+    ExternalOrderShowComponent.prototype.goToChat = function (client) {
+        this.router.navigate(['orders', this.orderId, 'client', client.id, 'chat']);
+    };
+    ExternalOrderShowComponent.prototype.loginDeapStream = function () {
+        var user = this.authService.currentUser.user;
+        _da_service__WEBPACK_IMPORTED_MODULE_7__["default"].login({
+            accessToken: this.authService.getToken(),
+            loginAs: "PROVIDER",
+            id: user.id
+        }, function (success, data) {
+        });
+    };
+    ExternalOrderShowComponent.prototype.dsEventLisenning = function () {
+        var _this = this;
+        _da_service__WEBPACK_IMPORTED_MODULE_7__["default"].record.getRecord("dsOrder/" + this.orderId).subscribe(function (res) {
+            if (_this.currentStatus != res.status) {
+                _this.appRef.tick();
+                _this.fetchOrder(_this.orderId);
+            }
+            console.log('the notification is =======>', res);
+        });
+    };
+    ExternalOrderShowComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-external-order-show',
+            template: __webpack_require__(/*! ./external-order-show.component.html */ "./src/app/external-order-show/external-order-show.component.html"),
+            styles: [__webpack_require__(/*! ./external-order-show.component.css */ "./src/app/external-order-show/external-order-show.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            angular2_notifications__WEBPACK_IMPORTED_MODULE_2__["NotificationsService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _order_service__WEBPACK_IMPORTED_MODULE_3__["OrderServices"],
+            ngx_smart_modal__WEBPACK_IMPORTED_MODULE_6__["NgxSmartModalService"],
+            _service_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"]])
+    ], ExternalOrderShowComponent);
+    return ExternalOrderShowComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/home/home.component.css":
 /*!*****************************************!*\
   !*** ./src/app/home/home.component.css ***!
@@ -797,7 +1309,7 @@ module.exports = ".row{\r\n  margin-top: 20px;\r\n}\r\n.card{\r\n  width: 100%;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"card  pull-left\">\n        <h1>Order Details</h1>\n        <table class=\"table table-bordered\">\n\n          <tbody>\n            <tr>\n              <td>Order Number</td>\n              <td> {{order?.id }}</td>\n            </tr>\n            <!-- <tr>\n              <td>provider</td>\n              <td>{{order?.provider?.name}}</td>\n            </tr> -->\n            <tr>\n              <td>client id</td>\n              <td>{{order?.client?.id }}</td>\n            </tr>\n            <tr>\n              <td>client Name</td>\n              <td>{{client?.user?.name }}</td>\n            </tr>\n            <tr>\n              <td>Order Price</td>\n              <td>{{order?.price }}</td>\n            </tr>\n            <tr>\n              <td>Order status</td>\n              <td>{{order?.status}}</td>\n            </tr>\n            <tr>\n              <td>Order type</td>\n              <td>{{order?.orderType}}</td>\n            </tr>\n            <tr>\n              <td>Order preview Needed</td>\n              <td>{{order?.previewNeeded}}</td>\n            </tr>\n            <tr>\n              <td> booking Date</td>\n              <td>{{order?.bookingDate | date:'medium'}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      <br>\n      <br>\n      <br>\n      <div class=\"card pull-left  text-center\">\n        <h1 class=\" text-center\">Actions </h1>\n        <!-- <p *ngIf=\"['ACCEPTED','ON_THE_WAY','ARRIVED'].includes( orders?.status) \"> -->\n        <!-- <p *ngIf=\"cancelOrder\">\n                  <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n                    CANCELLED\n                  </button>\n                </p> -->\n\n        <p *ngIf=\"order?.status =='ACCEPTED' ||  order?.status =='ON_THE_WAY' || order?.status =='ARRIVED'\">\n          <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n            CANCELLED\n          </button>\n        </p>\n\n        <p *ngIf=\"order?.status =='PENDING'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:60%;margin-top:10px;background:#007be2\">\n            ACCEPTED\n          </button>\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            REJECTED_BY_PROVIDER\n          </button>\n        </p>\n\n        <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"width:60%;background: #007be2\">\n            ON_THE_WAY\n          </button>\n        </h1>\n\n        <P *ngIf=\"order?.status =='IN_PROGRESS'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;;background: #007be2\">\n            PAUSED_BY_PROVIDER\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            FINISHED_WORKING\n          </button>\n        </P>\n\n        <P *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            RESUME\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            FINISHED_WORKING\n          </button>\n        </P>\n\n        <p *ngIf=\"order?.status =='ON_THE_WAY'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"width:60%;background: #007be2;margin-top:10px;\">\n            ARRIVED\n          </button>\n        </p>\n\n        <p>\n          <button (click)=\"goToChat(order?.client)\" style=\"width:60%;background:#007be2\">\n            CHAT\n          </button>\n        </p>\n\n\n      </div>\n\n    </div>\n\n    <div class=\"col-md-6\">\n      <div class=\"map\">\n        <h2 class=\"cardTitle\">Click to update your location </h2>\n        <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n          [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n          <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n        </agm-map>\n      </div>\n    </div>\n\n\n\n  </div>\n</div>\n\n<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n\n    </div>\n\n\n\n\n  </div>\n</div>\n\n\n<div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"myModal\">\n  <div class=\"modal-dialog modal-sm\" role=\"document\">\n    <div class=\"modal-content\">\n      <form [formGroup]=\"cancelForm\" (ngSubmit)=\"onCancelledOrder()\">\n        <h1>cancel reasons</h1>\n        <div *ngIf=\"loadingReason\">\n          LOADING....\n        </div>\n        <div *ngIf=\"!loadingReason\">\n          <div class=\"radio\" *ngFor=\"let reason of reasons\">\n            <label>\n              <input type=\"radio\" formControlName=\"reason\" checked [value]=\"reason.id\">{{reason.text}}</label>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"comment\">Comment:</label>\n          <textarea class=\"form-control\" rows=\"5\" id=\"comment\" formControlName=\"reasonText\"></textarea>\n        </div>\n        <button style=\"width:40%;background: blue\">\n          SUBMIT\n        </button>\n\n      </form>\n\n    </div>\n  </div>\n</div>\n\n\n<div id=\"myNav\" class=\"overlay\" #laterPaymentOverlay>\n  <!-- <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a> -->\n  <div class=\"overlay-content text-center\">\n    <!-- <a style=\"cursor: pointer;\" (click)=\"laterPayment()\"></a> -->\n\n    <div class=\"\">\n      <h1>بانتظار رد العميل</h1>\n      <img src=\"assets/loading.gif\" class=\"img-responsive\" width=\"16%\" height=\"200\" style=\"margin-left: 42%;\">\n    </div>\n    <button (click)=\"laterPayment()\" style=\"width:50%;background: red\">\n      الدفع لاحقا\n    </button>\n  </div>\n</div>\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"card  pull-left\">\n        <h1>Order Details</h1>\n        <table class=\"table table-bordered\">\n\n          <tbody>\n            <tr>\n              <td>Order Number</td>\n              <td> {{order?.id }}</td>\n            </tr>\n            <!-- <tr>\n              <td>provider</td>\n              <td>{{order?.provider?.name}}</td>\n            </tr> -->\n            <tr>\n              <td>client id</td>\n              <td>{{order?.client?.id }}</td>\n            </tr>\n            <tr>\n              <td>client Name</td>\n              <td>{{client?.user?.name }}</td>\n            </tr>\n            <tr>\n              <td>Order Price</td>\n              <td>{{order?.price }}</td>\n            </tr>\n            <tr>\n              <td>Order status</td>\n              <td>{{order?.status}}</td>\n            </tr>\n            <tr>\n              <td>Order type</td>\n              <td>{{order?.orderType}}</td>\n            </tr>\n            <tr>\n              <td>Order preview Needed</td>\n              <td>{{order?.previewNeeded}}</td>\n            </tr>\n            <tr>\n              <td> booking Date</td>\n              <td>{{order?.bookingDate | date:'medium'}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      <br>\n      <br>\n      <br>\n      <div class=\"card pull-left  text-center\">\n        <h1 class=\" text-center\">Actions </h1>\n\n        <!-- <p *ngIf=\"['ACCEPTED','ON_THE_WAY','ARRIVED'].includes( orders?.status) \"> -->\n        <!-- <p *ngIf=\"cancelOrder\">\n                  <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n                    CANCELLED\n                  </button>\n                </p> -->\n\n        <p *ngIf=\"order?.status =='ACCEPTED' ||  order?.status =='ON_THE_WAY' || order?.status =='ARRIVED'\">\n          <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n            CANCELLED\n          </button>\n        </p>\n\n        <p *ngIf=\"order?.status =='PENDING'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:60%;margin-top:10px;background:#007be2\">\n            ACCEPTED\n          </button>\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            REJECTED_BY_PROVIDER\n          </button>\n        </p>\n\n        <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"width:60%;background: #007be2\">\n            ON_THE_WAY\n          </button>\n        </h1>\n\n        <P *ngIf=\"order?.status =='IN_PROGRESS'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;;background: #007be2\">\n            PAUSED_BY_PROVIDER\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            FINISHED_WORKING\n          </button>\n        </P>\n\n        <P *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            RESUME\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            FINISHED_WORKING\n          </button>\n        </P>\n\n        <p *ngIf=\"order?.status =='ON_THE_WAY'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"width:60%;background: #007be2;margin-top:10px;\">\n            ARRIVED\n          </button>\n        </p>\n\n        <p>\n          <button (click)=\"goToChat(order?.client)\" style=\"width:60%;background:#007be2\">\n            CHAT\n          </button>\n        </p>\n\n\n\n      </div>\n\n    </div>\n\n    <div class=\"col-md-6\">\n      <div class=\"modal-content text-center\" *ngIf=\"order?.status =='PAUSED_BY_PROVIDER' ||  order?.status =='IN_PROGRESS' || order?.status =='PAUSED_BY_CLIENT'\">\n        <span style=\"font-size: 40px;color:#003d71\" class=\"glyphicon glyphicon-time\"></span>\n        <br> {{timer }}\n      </div>\n\n      <div class=\"map\">\n        <h2 class=\"cardTitle\">Click to update your location </h2>\n        <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n          [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n          <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n        </agm-map>\n      </div>\n    </div>\n\n\n\n  </div>\n</div>\n\n\n\n<div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"myModal\">\n  <div class=\"modal-dialog modal-sm\" role=\"document\">\n    <div class=\"modal-content\">\n      <form [formGroup]=\"cancelForm\" (ngSubmit)=\"onCancelledOrder()\">\n        <h1>cancel reasons</h1>\n        <div *ngIf=\"loadingReason\">\n          LOADING....\n        </div>\n        <div *ngIf=\"!loadingReason\">\n          <div class=\"radio\" *ngFor=\"let reason of reasons\">\n            <label>\n              <input type=\"radio\" formControlName=\"reason\" checked [value]=\"reason.id\">{{reason.text}}</label>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"comment\">Comment:</label>\n          <textarea class=\"form-control\" rows=\"5\" id=\"comment\" formControlName=\"reasonText\"></textarea>\n        </div>\n        <button style=\"width:40%;background: blue\">\n          SUBMIT\n        </button>\n\n      </form>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"timerModal\">\n  <div class=\"modal-dialog modal-sm\" role=\"document\">\n    <div class=\"modal-content text-center\">\n      <span style=\"font-size: 40px;color:#003d71\" class=\"glyphicon glyphicon-time\"></span>\n      <br> {{timer }}\n    </div>\n  </div>\n</div>\n\n{{ timer }} the timer ===============================\n\n<div id=\"myNav\" class=\"overlay\" #laterPaymentOverlay>\n  <!-- <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a> -->\n  <div class=\"overlay-content text-center\">\n    <!-- <a style=\"cursor: pointer;\" (click)=\"laterPayment()\"></a> -->\n\n    <div class=\"\">\n      <h1>بانتظار رد العميل</h1>\n      <img src=\"assets/loading.gif\" class=\"img-responsive\" width=\"16%\" height=\"200\" style=\"margin-left: 42%;\">\n    </div>\n    <div *ngIf=\"Payment\">\n      <button (click)=\"laterPayment()\" style=\"width:50%;background: red\">\n        الدفع لاحقا\n      </button>\n    </div>\n  </div>\n</div>\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
 
 /***/ }),
 
@@ -821,6 +1333,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -838,17 +1352,25 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var OrderDetailComponent = /** @class */ (function () {
-    function OrderDetailComponent(route, _notifications, zone, router, orderServices, authService) {
+    function OrderDetailComponent(route, _notifications, zone, router, orderServices, authService, appRef) {
         this.route = route;
         this._notifications = _notifications;
         this.zone = zone;
         this.router = router;
         this.orderServices = orderServices;
         this.authService = authService;
+        this.appRef = appRef;
         this.cancelOrder = false;
         this.openOverly = false;
         this.requestToPauseByClient = false;
+        this.second = 0;
+        this.minute = 0;
+        this.firstDsLisning = false;
+        this.hour = 0;
+        this.stopedTime = 0;
+        this.Payment = false;
     }
     OrderDetailComponent.prototype.ngOnInit = function () {
         var user = this.authService.currentUser.user;
@@ -861,7 +1383,6 @@ var OrderDetailComponent = /** @class */ (function () {
             'reason': new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"](null)
         });
         this.fetchOrder(this.orderId);
-        // ds.event.subscribe(`/providers/${environment.id}/orders/${this.orderId}`,
     };
     OrderDetailComponent.prototype.newPosition = function (event) {
         this.newlat = event.coords.lat;
@@ -877,7 +1398,6 @@ var OrderDetailComponent = /** @class */ (function () {
         };
         this.orderServices.updateprovideLocation(this.providerId, body)
             .subscribe(function (result) {
-            //console.log(result, 'result')
         });
         //ds.event.emit('dsLocationUpdate', { id: environment.id, latitude: this.newlat, longitude: this.newLng });
     };
@@ -892,7 +1412,12 @@ var OrderDetailComponent = /** @class */ (function () {
     OrderDetailComponent.prototype.dsEventLisenning = function () {
         var _this = this;
         _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].record.getRecord("dsOrder/" + this.orderId).subscribe(function (res) {
-            if (res.status == 'WAITING_FOR_PAYMENT' && _this.currentStatus != 'ENDED' && _this.order.isProviderWaitingForPayment == true)
+            console.log('the notification is =======>', res);
+            if (res.status == 'WAITING_FOR_PAYMENT' && _this.currentStatus != 'ENDED' && _this.order.isProviderWaitingForPayment == true) {
+                _this.Payment = true;
+                _this.openNav();
+            }
+            if (res.status == 'FINISHED_WORKING' || _this.currentStatus == 'FINISHED_WORKING')
                 _this.openNav();
             if (res.status == 'ENDED' && _this.currentStatus != 'ENDED') {
                 _this.closeNav();
@@ -962,14 +1487,23 @@ var OrderDetailComponent = /** @class */ (function () {
                     _this.fetchOrder(_this.orderId);
                 });
             }
+            if (res.status == "IN_PROGRESS" || _this.currentStatus == "IN_PROGRESS") {
+                if (res.currentStartTime)
+                    _this.currentOrderStartTime = res.currentStartTime;
+                if (_this.firstDsLisning == false) {
+                    _this.zone.run(function () {
+                        _this.orderTimer();
+                    });
+                }
+            }
+            if ((res.status == "PAUSED_BY_PROVIDER" && !res.requestToResumeByProvider == true)
+                || (res.status == "PAUSED_BY_CLIENT" && !res.requestToResumeByClient == true)) {
+                _this.stopTimer();
+            }
         });
     };
     OrderDetailComponent.prototype.pauseResume = function (status) {
-        var _this = this;
         this.orderServices.updateproviderorders(this.orderId, status).subscribe(function (res) {
-            _this.zone.run(function () {
-                _this.fetchOrder(_this.orderId);
-            });
         }, function (err) {
             console.log('the error is ====>', err);
         });
@@ -980,13 +1514,33 @@ var OrderDetailComponent = /** @class */ (function () {
             _this.order = res;
             _this.orderServices.getClientById(_this.order.client.id).subscribe(function (result) {
                 _this.client = result;
+                _this.dsEventLisenning();
                 if (['ACCEPTED', 'ON_THE_WAY', 'ARRIVED'].includes(_this.order.status))
                     _this.cancelOrder = true;
                 _this.currentStatus = _this.order.status;
-                _this.dsEventLisenning();
+                if (['PAUSED_BY_PROVIDER', 'IN_PROGRESS', 'PAUSED_BY_CLIENT'].includes(_this.order.status)) {
+                    _this.zone.run(function () {
+                        // this.orderTimer();
+                        _this.currentTime();
+                    });
+                }
                 // console.log('the order is', this.order);
             });
         });
+    };
+    OrderDetailComponent.prototype.currentTime = function () {
+        this.resuemeOrderPeriodTime();
+        var currentTime;
+        if (this.stopedTime > 0)
+            currentTime = this.secondsToHMS(this.stopedTime + moment__WEBPACK_IMPORTED_MODULE_8__().diff(this.currentOrderStartTime, 'seconds'));
+        else
+            currentTime = this.secondsToHMS(moment__WEBPACK_IMPORTED_MODULE_8__().diff(this.currentOrderStartTime, 'seconds'));
+        console.log('the stoped time', currentTime, currentTime.hours, currentTime.minutes, currentTime.seconds);
+        this.second = currentTime.seconds;
+        this.minute = currentTime.minutes;
+        this.hour = currentTime.hours;
+        this.timer = this.hour + " : " + this.minute + " : " + this.second + " ";
+        this.appRef.tick();
     };
     OrderDetailComponent.prototype.providerConfirmCash = function (action) {
         var _this = this;
@@ -1019,7 +1573,6 @@ var OrderDetailComponent = /** @class */ (function () {
     };
     OrderDetailComponent.prototype.changeStatus = function (id, status) {
         var _this = this;
-        console.log(this.currentStatus, 'the status ====>', status);
         if (status == 'CANCELLED_BY_PROVIDER' || status == 'REJECTED_BY_PROVIDER') {
             switch (this.currentStatus) {
                 case 'ACCEPTED':
@@ -1039,20 +1592,15 @@ var OrderDetailComponent = /** @class */ (function () {
                     break;
                 default: return;
             }
-            console.log(this.currentStatus, 'this current status ===>>>>>>', this.cancelStatus);
             this.loadingReason = true;
             this.orderServices.getReasons(this.cancelStatus).subscribe(function (res) {
                 _this.loadingReason = false;
                 _this.reasons = res;
-                console.log('the reasons', _this.reasons);
             });
         }
         this.orderServices.updateproviderorders(id, status).subscribe(function (res) {
             if (status == 'CANCELLED_BY_PROVIDER' || status == 'REJECTED_BY_PROVIDER')
                 $('#myModal').modal('show');
-            _this.zone.run(function () {
-                _this.fetchOrder(_this.orderId);
-            });
         }, function (err) {
             _this.open(err.error.error.message);
             console.log('the error is ====>', err);
@@ -1073,7 +1621,6 @@ var OrderDetailComponent = /** @class */ (function () {
             reasonBody['reason'] = reason;
         if (!reason && reasonText)
             reasonBody['otherReason'] = reasonText;
-        console.log(reasonText, reason, 'the reason is ====', reasonBody);
         this.orderServices.addReasons(this.orderId, reasonBody).subscribe(function (res) {
             $('#myModal').modal('hide');
         }, function (err) {
@@ -1103,11 +1650,71 @@ var OrderDetailComponent = /** @class */ (function () {
     OrderDetailComponent.prototype.laterPayment = function () {
         var _this = this;
         this.orderServices.laterPayment(this.orderId).subscribe(function (res) {
-            console.log('the later for payment is ===>', res);
             _this.closeNav();
-            _this.fetchOrder(_this.orderId);
+            // this.fetchOrder(this.orderId);
         });
         console.log('later payment');
+    };
+    OrderDetailComponent.prototype.resuemeOrderPeriodTime = function () {
+        var workingPeriods = this.order.workingPeriods;
+        this.stopedTime = 0;
+        if (workingPeriods) {
+            for (var _i = 0, workingPeriods_1 = workingPeriods; _i < workingPeriods_1.length; _i++) {
+                var workingPeriod = workingPeriods_1[_i];
+                if (workingPeriod.endTime) {
+                    var endTime = moment__WEBPACK_IMPORTED_MODULE_8__(workingPeriod.endTime), startTime = moment__WEBPACK_IMPORTED_MODULE_8__(workingPeriod.startTime);
+                    // this.stopedTime += moment.duration(endTime.diff(startTime)).asSeconds();
+                    this.stopedTime += endTime.diff(startTime, 'seconds');
+                }
+            }
+        }
+        //console.log(111111, this.stopedTime)
+        return this.stopedTime;
+    };
+    OrderDetailComponent.prototype.secondsToHMS = function (d) {
+        d = Number(d);
+        var h = Math.floor(d / 3600);
+        var m = Math.floor((d % 3600) / 60);
+        var s = Math.floor((d % 3600) % 60);
+        return { hours: h, minutes: m, seconds: s };
+    };
+    OrderDetailComponent.prototype.orderTimer = function () {
+        var _this = this;
+        console.log(1111111111111);
+        this.resuemeOrderPeriodTime();
+        // clearInterval(this.timerIntervel);
+        this.firstDsLisning = true;
+        var currentTime;
+        if (this.currentOrderStartTime)
+            console.log('currentOrderStartTime ====', this.stopedTime + moment__WEBPACK_IMPORTED_MODULE_8__().diff(this.currentOrderStartTime, 'seconds'));
+        if (this.stopedTime > 0)
+            currentTime = this.secondsToHMS(this.stopedTime + moment__WEBPACK_IMPORTED_MODULE_8__().diff(this.currentOrderStartTime, 'seconds'));
+        else
+            currentTime = this.secondsToHMS(moment__WEBPACK_IMPORTED_MODULE_8__().diff(this.currentOrderStartTime, 'seconds'));
+        this.second = currentTime.seconds;
+        this.minute = currentTime.minutes;
+        this.hour = currentTime.hours;
+        this.timerIntervel = setInterval(function () {
+            _this.second = _this.second + 1;
+            if (_this.second >= 60) {
+                _this.second = 0;
+                _this.minute++;
+            }
+            if (_this.minute >= 60) {
+                _this.second = 0;
+                _this.minute = 0;
+                _this.hour++;
+            }
+            _this.timer = _this.hour + " : " + _this.minute + " : " + _this.second + " ";
+            _this.appRef.tick();
+        }, 1000);
+        // console.log('second timer enter in timer ', this.timer);
+    };
+    OrderDetailComponent.prototype.stopTimer = function () {
+        this.firstDsLisning = false;
+        console.log('second ', this.second, this.minute, this.hour);
+        clearInterval(this.timerIntervel);
+        this.appRef.tick();
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('laterPaymentOverlay'),
@@ -1124,7 +1731,8 @@ var OrderDetailComponent = /** @class */ (function () {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
             _order_service__WEBPACK_IMPORTED_MODULE_2__["OrderServices"],
-            _service_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"]])
+            _service_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"]])
     ], OrderDetailComponent);
     return OrderDetailComponent;
 }());
@@ -1193,8 +1801,16 @@ var OrderServices = /** @class */ (function () {
         var url = this.basePath + "providers/" + providerId + "/orders/" + orderId;
         return this.httpClient.get(url);
     };
+    OrderServices.prototype.getExternalOrderById = function (providerId, orderId) {
+        var url = this.basePath + "providers/" + providerId + "/external-orders/" + orderId;
+        return this.httpClient.get(url);
+    };
     OrderServices.prototype.fetchproviderorders = function (providerId, page) {
         var url = this.basePath + "providers/" + providerId + "/orders" + "?page=" + page + "&limit=" + 10;
+        return this.httpClient.get(url);
+    };
+    OrderServices.prototype.fetchproviderExternalorders = function (providerId, page) {
+        var url = this.basePath + "providers/" + providerId + "/external-orders" + "?page=" + page + "&limit=" + 10;
         return this.httpClient.get(url);
     };
     OrderServices.prototype.getConversationId = function (person1, person2) {
@@ -1237,6 +1853,10 @@ var OrderServices = /** @class */ (function () {
         var url = this.basePath + "users/" + userId + "/notifications/unseen-count";
         return this.httpClient.get(url);
     };
+    OrderServices.prototype.updateExternalOrders = function (orderId, body) {
+        var url = this.basePath + "external-orders/" + orderId + "/status";
+        return this.httpClient.put(url, body);
+    };
     OrderServices = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
@@ -1255,7 +1875,7 @@ var OrderServices = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "agm-map{\r\n    height: 600px;\r\n  }\r\n .cardTitle{\r\n     /* text-decoration: underline */\r\n }"
+module.exports = "agm-map{\r\n    height: 600px;\r\n  }\r\n .cardTitle{\r\n     /* text-decoration: underline */\r\n }\r\n .nav-tabs { border-bottom: 2px solid #DDD; }\r\n .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }\r\n .nav-tabs > li > a { border: none; color: #666; }\r\n .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }\r\n .nav-tabs > li > a::after { content: \"\"; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; -webkit-transform: scale(0); transform: scale(0); }\r\n .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { -webkit-transform: scale(1); transform: scale(1); }\r\n .tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }\r\n .tab-pane { padding: 15px 0; }\r\n .tab-content{padding:20px}\r\n .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }"
 
 /***/ }),
 
@@ -1266,7 +1886,7 @@ module.exports = "agm-map{\r\n    height: 600px;\r\n  }\r\n .cardTitle{\r\n     
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <h2 style=\"text-decoration: underline\">orders</h2> -->\n<div class=\"row\">\n  <div class=\"col-md-6\">\n    <div class=\"orders\">\n      <h2 class=\"cardTitle\"> Current orders </h2>\n      <div *ngIf=\"currentPage?.totalCount >0\">\n        <ngx-datatable *ngIf=\"!loading\" class=\"material bg-white\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\"\n          [rowHeight]=\"50\" [count]=\"currentPage?.totalCount\" [offset]=\"currentPage?.page - 1\" [limit]=\"currentPage?.limit\"\n          [rows]=\"currentPage?.data\" [externalPaging]=\"true\" (page)=\"onPageChange($event)\">\n\n\n          <ngx-datatable-column name=\"order number\" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{ row?.id }}\n            </ng-template>\n          </ngx-datatable-column>\n\n          <ngx-datatable-column name=\" status \" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{ row?.status }}\n            </ng-template>\n          </ngx-datatable-column>\n\n          <!-- <ngx-datatable-column name=\"  booking Date \" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{row?.bookingDate | date:'medium'}}\n            </ng-template>\n          </ngx-datatable-column> -->\n\n\n          <ngx-datatable-column name=\"\" [flexGrow]=\"1\">\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              <a (click)=\"showOrder(row?.id)\" style=\"cursor: pointer;\">\n                <!-- DETAILS -->\n                <i class=\"fa fa-eye\" style=\"font-size: 25px; padding-left:40px; \"></i>\n              </a>\n            </ng-template>\n          </ngx-datatable-column>\n\n\n        </ngx-datatable>\n      </div>\n      <h2  class=\"text-center\" *ngIf=\"currentPage?.totalCount ==0\">لا توجد طلبات</h2>\n    </div>\n\n\n  </div>\n  <div class=\"col-md-6\">\n      <div class=\"map\">\n        <h2 class=\"cardTitle\">Click to update your location </h2>\n        <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n          [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n          <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n        </agm-map>\n      </div>\n    </div>\n</div>\n\n\n\n<!-- <simple-notifications [options]=\"options\"></simple-notifications> -->"
+module.exports = "<!-- <h2 style=\"text-decoration: underline\">orders</h2> -->\n<div class=\"row\">\n\n  <div class=\"col-md-6\">\n    <!-- Nav tabs -->\n    <div class=\"card\">\n      <ul class=\"nav nav-tabs\" role=\"tablist\">\n        <li role=\"presentation\" class=\"active\">\n          <a href=\"#normalOrder\" aria-controls=\"normalOrder\" role=\"tab\" data-toggle=\"tab\">Normal Order</a>\n        </li>\n        <li role=\"presentation\">\n          <a href=\"#externalOrder\" aria-controls=\"externalOrder\" role=\"tab\" data-toggle=\"tab\"> External Orders</a>\n        </li>\n      </ul>\n\n      <!-- Tab panes -->\n      <div class=\"tab-content\">\n        <div role=\"tabpanel\" class=\"tab-pane active\" id=\"normalOrder\">\n\n          <div class=\"orders\">\n            <h2 class=\"cardTitle\"> Normal orders </h2>\n            <div class=\"text-center\" *ngIf=\"loadingNormalOrder\">\n                <img src=\"assets/loading.gif\" class=\"img-responsive\" width=\"16%\" height=\"200\" style=\"margin-left: 42%;\">\n            </div>\n            <div *ngIf=\"!loadingNormalOrder && currentPage?.totalCount >0\">\n              <ngx-datatable *ngIf=\"!loading\" class=\"material bg-white\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\"\n                [rowHeight]=\"50\" [count]=\"currentPage?.totalCount\" [offset]=\"currentPage?.page - 1\" [limit]=\"currentPage?.limit\"\n                [rows]=\"currentPage?.data\" [externalPaging]=\"true\" (page)=\"onPageChange($event)\">\n\n\n                <ngx-datatable-column name=\"order number\" [flexGrow]=\"1\" fxHide>\n                  <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                    {{ row?.id }}\n                  </ng-template>\n                </ngx-datatable-column>\n\n                <ngx-datatable-column name=\" status \" [flexGrow]=\"1\" fxHide>\n                  <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                    {{ row?.status }}\n                  </ng-template>\n                </ngx-datatable-column>\n\n                <ngx-datatable-column name=\"\" [flexGrow]=\"1\">\n                  <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                    <a (click)=\"showOrder(row?.id)\" style=\"cursor: pointer;\">\n                      <i class=\"fa fa-eye\" style=\"font-size: 25px; padding-left:40px; \"></i>\n                    </a>\n                  </ng-template>\n                </ngx-datatable-column>\n\n\n              </ngx-datatable>\n            </div>\n            <h2 class=\"text-center\" *ngIf=\"!loadingNormalOrder && currentPage?.totalCount ==0\">لا توجد طلبات</h2>\n          </div>\n\n\n        </div>\n\n        <div role=\"tabpanel\" class=\"tab-pane\" id=\"externalOrder\">\n          <div class=\"orders\">\n            <h2 class=\"cardTitle\"> External Orders </h2>\n            <div class=\"text-center\" *ngIf=\"loadingExternalOrder\">\n                <img src=\"assets/loading.gif\" class=\"img-responsive\" width=\"16%\" height=\"200\" style=\"margin-left: 42%;\">\n            </div>\n            <div *ngIf=\"!loadingExternalOrder && externalCurrentPage?.totalCount >0\">\n              <ngx-datatable class=\"material bg-white\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\"\n              [rowHeight]=\"50\" [count]=\"externalCurrentPage?.totalCount\" [offset]=\"externalCurrentPage?.page - 1\" [limit]=\"externalCurrentPage?.limit\"\n              [rows]=\"externalCurrentPage?.data\" [externalPaging]=\"true\" (page)=\"onExternalPageChange($event)\">\n              \n\n                <ngx-datatable-column name=\"order number\" [flexGrow]=\"1\" >\n                  <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                    {{ row?.id }}\n                  </ng-template>\n                </ngx-datatable-column>\n\n                <ngx-datatable-column name=\" status \" [flexGrow]=\"1\" >\n                  <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                    {{ row?.status }}\n                  </ng-template>\n                </ngx-datatable-column>\n\n                <ngx-datatable-column name=\"\" [flexGrow]=\"1\">\n                  <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                    <a (click)=\"showExternalOrder(row?.id)\" style=\"cursor: pointer;\">\n                      <i class=\"fa fa-eye\" style=\"font-size: 25px; padding-left:40px; \"></i>\n                    </a>\n                  </ng-template>\n                </ngx-datatable-column>\n\n\n              </ngx-datatable>\n            </div>\n            <h2 class=\"text-center\" *ngIf=\"!loadingExternalOrder && externalCurrentPage?.externalTotalPages ==0\">لا توجد طلبات</h2>\n          </div>\n\n        </div>\n\n\n      </div>\n    </div>\n  </div>\n\n  <!-- <div class=\"col-md-6\">\n    <div class=\"orders\">\n      <h2 class=\"cardTitle\"> Current orders </h2>\n      <div *ngIf=\"currentPage?.totalCount >0\">\n        <ngx-datatable *ngIf=\"!loading\" class=\"material bg-white\" [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\"\n          [rowHeight]=\"50\" [count]=\"currentPage?.totalCount\" [offset]=\"currentPage?.page - 1\" [limit]=\"currentPage?.limit\"\n          [rows]=\"currentPage?.data\" [externalPaging]=\"true\" (page)=\"onPageChange($event)\">\n\n\n          <ngx-datatable-column name=\"order number\" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{ row?.id }}\n            </ng-template>\n          </ngx-datatable-column>\n\n          <ngx-datatable-column name=\" status \" [flexGrow]=\"1\" fxHide>\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              {{ row?.status }}\n            </ng-template>\n          </ngx-datatable-column>\n\n          <ngx-datatable-column name=\"\" [flexGrow]=\"1\">\n            <ng-template let-row=\"row\" ngx-datatable-cell-template>\n              <a (click)=\"showOrder(row?.id)\" style=\"cursor: pointer;\">\n                <i class=\"fa fa-eye\" style=\"font-size: 25px; padding-left:40px; \"></i>\n              </a>\n            </ng-template>\n          </ngx-datatable-column>\n\n\n        </ngx-datatable>\n      </div>\n      <h2  class=\"text-center\" *ngIf=\"currentPage?.totalCount ==0\">لا توجد طلبات</h2>\n    </div>\n\n\n  </div> -->\n\n  <div class=\"col-md-6\">\n    <div class=\"map\">\n      <h2 class=\"cardTitle\">Click to update your location </h2>\n      <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n        [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n        <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n      </agm-map>\n    </div>\n  </div>\n</div>\n\n\n\n<!-- <simple-notifications [options]=\"options\"></simple-notifications> -->"
 
 /***/ }),
 
@@ -1323,6 +1943,7 @@ var OrdersComponent = /** @class */ (function () {
         this.loginDeapStream();
         this.getProviderLocation();
         this.fetchOrders(1);
+        this.fetchproviderExternalorders(1);
     };
     OrdersComponent.prototype.newPosition = function (event) {
         this.newlat = event.coords.lat;
@@ -1367,23 +1988,43 @@ var OrdersComponent = /** @class */ (function () {
     };
     OrdersComponent.prototype.fetchOrders = function (page) {
         var _this = this;
-        this.loading = true;
+        this.loadingNormalOrder = true;
         this.orderServices.fetchproviderorders(this.providerId, page)
             .subscribe(function (result) {
             _this.currentPage = result;
             _this.orders = _this.orders.concat(result.data);
             _this.totalPages = result.pageCount;
-            _this.loading = false;
+            _this.loadingNormalOrder = false;
             //listen
             if (_this.page == _this.totalPages)
                 _this.noMoreData = true;
         });
     };
+    OrdersComponent.prototype.fetchproviderExternalorders = function (page) {
+        var _this = this;
+        this.loadingExternalOrder = true;
+        this.orderServices.fetchproviderExternalorders(this.providerId, page)
+            .subscribe(function (result) {
+            _this.externalCurrentPage = result;
+            _this.externalTotalPages = result.pageCount;
+            console.log(_this.externalTotalPages, 'the external order===', _this.externalCurrentPage);
+            _this.loadingExternalOrder = false;
+            //listen
+            if (_this.externalPage == _this.externalTotalPages)
+                _this.noMoreExternalData = true;
+        });
+    };
     OrdersComponent.prototype.onPageChange = function (event) {
         this.fetchOrders(event.offset + 1);
     };
+    OrdersComponent.prototype.onExternalPageChange = function (event) {
+        this.fetchproviderExternalorders(event.offset + 1);
+    };
     OrdersComponent.prototype.showOrder = function (orderId) {
         this.router.navigate(['orders', orderId]);
+    };
+    OrdersComponent.prototype.showExternalOrder = function (orderId) {
+        this.router.navigate(['external-orders', orderId]);
     };
     // startTracking() {
     //   let opts = { maximumAge: 60000, timeout: 15000 }
@@ -1462,7 +2103,6 @@ var AuthInterceptor = /** @class */ (function () {
         this.router = router;
     }
     AuthInterceptor.prototype.intercept = function (req, next) {
-        var _this = this;
         var authService = this.injector.get(_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]);
         if (!authService.isAuthenticated()) {
             return next.handle(req);
@@ -1480,7 +2120,6 @@ var AuthInterceptor = /** @class */ (function () {
                 }
                 else if (status_1 === 403) {
                     console.log('not-allowed');
-                    _this.router.navigate(['not-allowed']);
                 }
             }
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["throwError"])(error);
