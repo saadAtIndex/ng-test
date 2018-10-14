@@ -337,8 +337,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _order_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./order.service */ "./src/app/order.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _da_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./da.service */ "./src/app/da.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./service/auth.service */ "./src/app/service/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -348,6 +349,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -363,6 +365,16 @@ var AppComponent = /** @class */ (function () {
         this.authService.authUser();
     }
     AppComponent.prototype.ngOnInit = function () {
+        this.loginDeapStream();
+    };
+    AppComponent.prototype.loginDeapStream = function () {
+        var user = this.authService.currentUser.user;
+        _da_service__WEBPACK_IMPORTED_MODULE_2__["default"].login({
+            accessToken: this.authService.getToken(),
+            loginAs: "PROVIDER",
+            id: user.id
+        }, function (success, data) {
+        });
     };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -371,8 +383,8 @@ var AppComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
         __metadata("design:paramtypes", [_order_service__WEBPACK_IMPORTED_MODULE_1__["OrderServices"],
-            _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+            _service_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -1336,7 +1348,7 @@ var Page = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row{\r\n  margin-top: 20px;\r\n}\r\n.card{\r\n  width: 100%;\r\n  padding: 10px;\r\n  min-height: 450px;\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n}\r\nbutton {\r\n  border: none;\r\n  outline: 0;\r\n  display: inline-block;\r\n  padding: 8px;\r\n  color: white;\r\n  background-color: #000;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  width: 100%;\r\n  font-size: 18px;\r\n}\r\n#myModal{\r\n  width: 50%;\r\n  margin-left: 25%;\r\n \r\n}\r\n.modal-content{\r\n  padding: 20px;\r\n}\r\n.modal-sm {\r\n  width: 450px;\r\n}\r\n.watingForPayement .modal-content{\r\n  background: #eee\r\n}\r\n.watingForPayement{\r\n  width: 100%;\r\n  height: 500px;\r\n}\r\n.overlay {\r\n  height: 100%;\r\n  width: 0;\r\n  position: fixed;\r\n  z-index: 1;\r\n  top: 51PX;\r\n  left: 0;\r\n  background-color: #777777eb;\r\n  overflow-x: hidden;\r\n  transition: 0.5s;\r\n}\r\n.overlay-content {\r\n  position: relative;\r\n  top: 25%;\r\n  width: 100%;\r\n  text-align: center;\r\n  margin-top: 30px;\r\n}\r\n.overlay a {\r\n  padding: 8px;\r\n  text-decoration: none;\r\n  font-size: 36px;\r\n  color: #ffffff;\r\n  display: block;\r\n  transition: 0.3s;\r\n}\r\n.overlay a:hover, .overlay a:focus {\r\n  color: #f1f1f1;\r\n}\r\n.overlay .closebtn {\r\n  position: absolute;\r\n  top: 20px;\r\n  right: 45px;\r\n  font-size: 60px;\r\n}\r\n@media screen and (max-height: 450px) {\r\n.overlay a {font-size: 20px}\r\n.overlay .closebtn {\r\n  font-size: 40px;\r\n  top: 15px;\r\n  right: 35px;\r\n}\r\n}\r\nagm-map{\r\n  height: 700px;\r\n}"
+module.exports = ".row{\r\n  margin-top: 20px;\r\n}\r\n.card{\r\n  width: 100%;\r\n  padding: 10px;\r\n  min-height: 450px;\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\r\n}\r\nbutton {\r\n  border: none;\r\n  outline: 0;\r\n  display: inline-block;\r\n  padding: 8px;\r\n  color: white;\r\n  background-color: #000;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  width: 100%;\r\n  font-size: 18px;\r\n}\r\n#myModal{\r\n  width: 50%;\r\n  margin-left: 25%;\r\n \r\n}\r\n.modal-content{\r\n  padding: 20px;\r\n}\r\n.modal-sm {\r\n  width: 450px;\r\n}\r\n.watingForPayement .modal-content{\r\n  background: #eee\r\n}\r\n.watingForPayement{\r\n  width: 100%;\r\n  height: 500px;\r\n}\r\n.overlay {\r\n  height: 100%;\r\n  width: 0;\r\n  position: fixed;\r\n  z-index: 1;\r\n  top: 51PX;\r\n  left: 0;\r\n  background-color: #777777eb;\r\n  overflow-x: hidden;\r\n  transition: 0.5s;\r\n}\r\n.overlay-content {\r\n  position: relative;\r\n  top: 25%;\r\n  width: 100%;\r\n  text-align: center;\r\n  margin-top: 30px;\r\n}\r\n.overlay a {\r\n  padding: 8px;\r\n  text-decoration: none;\r\n  font-size: 36px;\r\n  color: #ffffff;\r\n  display: block;\r\n  transition: 0.3s;\r\n}\r\n.overlay a:hover, .overlay a:focus {\r\n  color: #f1f1f1;\r\n}\r\n.overlay .closebtn {\r\n  position: absolute;\r\n  top: 20px;\r\n  right: 45px;\r\n  font-size: 60px;\r\n}\r\n@media screen and (max-height: 450px) {\r\n.overlay a {font-size: 20px}\r\n.overlay .closebtn {\r\n  font-size: 40px;\r\n  top: 15px;\r\n  right: 35px;\r\n}\r\n}\r\nagm-map{\r\n  height: 700px;\r\n}\r\n.rating {\r\n  float:left;\r\n}\r\n.rating:not(:checked) > input {\r\n  position:absolute;\r\n  top:-9999px;\r\n  clip:rect(0,0,0,0);\r\n}\r\n.rating:not(:checked) > label {\r\n  float:right;\r\n  width:1em;\r\n  padding:0.1em;\r\n  overflow:hidden;\r\n  white-space:nowrap;\r\n  cursor:pointer;\r\n  font-size:200%;\r\n  line-height:1.2;\r\n  color:#ddd;\r\n}\r\n.rating:not(:checked) > label:before {\r\n  content: '★ ';\r\n}\r\n.rating > input:checked ~ label {\r\n  color: #f70;\r\n}\r\n.rating:not(:checked) > label:hover,\r\n.rating:not(:checked) > label:hover ~ label {\r\n  color: gold;\r\n}\r\n.rating > input:checked ~ label:hover,\r\n.rating > input:checked ~ label:hover ~ label,\r\n.rating > label:hover ~ input:checked ~ label {\r\n  color: #ea0;\r\n}"
 
 /***/ }),
 
@@ -1347,7 +1359,7 @@ module.exports = ".row{\r\n  margin-top: 20px;\r\n}\r\n.card{\r\n  width: 100%;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"card  pull-left\">\n        <h1>Order Details</h1>\n        <table class=\"table table-bordered\">\n\n          <tbody>\n            <tr>\n              <td>Order Number</td>\n              <td> {{order?.id }}</td>\n            </tr>\n            <!-- <tr>\n              <td>provider</td>\n              <td>{{order?.provider?.name}}</td>\n            </tr> -->\n            <tr>\n              <td>client id</td>\n              <td>{{order?.client?.id }}</td>\n            </tr>\n            <tr>\n              <td>client Name</td>\n              <td>{{client?.user?.name }}</td>\n            </tr>\n            <tr>\n              <td>Order Price</td>\n              <td>{{order?.price }}</td>\n            </tr>\n            <tr>\n              <td>Order status</td>\n              <td>{{order?.status}}</td>\n            </tr>\n            <tr>\n              <td>Order type</td>\n              <td>{{order?.orderType}}</td>\n            </tr>\n            <tr>\n              <td>Order preview Needed</td>\n              <td>{{order?.previewNeeded}}</td>\n            </tr>\n            <tr>\n              <td> booking Date</td>\n              <td>{{order?.bookingDate | date:'medium'}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      <br>\n      <br>\n      <br>\n      <div class=\"card pull-left  text-center\">\n        <h1 class=\" text-center\">Actions </h1>\n\n        <!-- <p *ngIf=\"['ACCEPTED','ON_THE_WAY','ARRIVED'].includes( orders?.status) \"> -->\n        <!-- <p *ngIf=\"cancelOrder\">\n                  <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n                    CANCELLED\n                  </button>\n                </p> -->\n\n        <p *ngIf=\"order?.status =='ACCEPTED' ||  order?.status =='ON_THE_WAY' || order?.status =='ARRIVED'\">\n          <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n            CANCELLED\n          </button>\n        </p>\n\n        <p *ngIf=\"order?.status =='PENDING'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:60%;margin-top:10px;background:#007be2\">\n            ACCEPTED\n          </button>\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            REJECTED_BY_PROVIDER\n          </button>\n        </p>\n\n        <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"width:60%;background: #007be2\">\n            ON_THE_WAY\n          </button>\n        </h1>\n\n        <P *ngIf=\"order?.status =='IN_PROGRESS'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;;background: #007be2\">\n            PAUSED_BY_PROVIDER\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            FINISHED_WORKING\n          </button>\n        </P>\n\n        <P *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            RESUME\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            FINISHED_WORKING\n          </button>\n        </P>\n\n        <p *ngIf=\"order?.status =='ON_THE_WAY'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"width:60%;background: #007be2;margin-top:10px;\">\n            ARRIVED\n          </button>\n        </p>\n\n        <p>\n          <button (click)=\"goToChat(order?.client)\" style=\"width:60%;background:#007be2\">\n            CHAT\n          </button>\n        </p>\n\n\n        <div *ngIf=\"paymentMethod\" style=\"margin-top: 100px;\">\n          <h4>CLIENT CASH PAYMENT</h4>\n          <button (click)=\"providerConfirmCash('CONFIRMED')\" style=\"width:40%;background:#007be2;margin: 5px;\">\n            yes\n          </button>\n          <button (click)=\"providerConfirmCash('DENIED')\" style=\"width:40%;background:#007be2;margin: 5px;\">\n            no\n          </button>\n        </div>\n\n\n      </div>\n\n    </div>\n\n    <div class=\"col-md-6\">\n      <div class=\"modal-content text-center\" *ngIf=\"order?.status =='PAUSED_BY_PROVIDER' ||  order?.status =='IN_PROGRESS' || order?.status =='PAUSED_BY_CLIENT'\">\n        <span style=\"font-size: 40px;color:#003d71\" class=\"glyphicon glyphicon-time\"></span>\n        <br> {{timer }}\n      </div>\n\n      <div class=\"map\">\n        <h2 class=\"cardTitle\">Click to update your location </h2>\n        <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n          [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n          <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n        </agm-map>\n      </div>\n    </div>\n\n\n\n  </div>\n</div>\n\n\n\n<div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"myModal\">\n  <div class=\"modal-dialog modal-sm\" role=\"document\">\n    <div class=\"modal-content\">\n      <form [formGroup]=\"cancelForm\" (ngSubmit)=\"onCancelledOrder()\">\n        <h1>cancel reasons</h1>\n        <div *ngIf=\"loadingReason\">\n          LOADING....\n        </div>\n        <div *ngIf=\"!loadingReason\">\n          <div class=\"radio\" *ngFor=\"let reason of reasons\">\n            <label>\n              <input type=\"radio\" formControlName=\"reason\" checked [value]=\"reason.id\">{{reason.text}}</label>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"comment\">Comment:</label>\n          <textarea class=\"form-control\" rows=\"5\" id=\"comment\" formControlName=\"reasonText\"></textarea>\n        </div>\n        <button style=\"width:40%;background: blue\">\n          SUBMIT\n        </button>\n\n      </form>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"timerModal\">\n  <div class=\"modal-dialog modal-sm\" role=\"document\">\n    <div class=\"modal-content text-center\">\n      <span style=\"font-size: 40px;color:#003d71\" class=\"glyphicon glyphicon-time\"></span>\n      <br> {{timer }}\n    </div>\n  </div>\n</div>\n\n\n<div id=\"myNav\" class=\"overlay\" #laterPaymentOverlay>\n  <div class=\"overlay-content text-center\">\n\n    <div class=\"\">\n      <h1>بانتظار رد العميل</h1>\n      <img src=\"assets/loading.gif\" class=\"img-responsive\" width=\"16%\" height=\"200\" style=\"margin-left: 42%;\">\n    </div>\n    <div *ngIf=\"Payment\">\n      <button (click)=\"laterPayment()\" style=\"width:50%;background: red\">\n        الدفع لاحقا\n      </button>\n    </div>\n  </div>\n</div>\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-12\">\n    <div class=\"col-md-6\">\n      <div class=\"card  pull-left\">\n        <h1>Order Details</h1>\n        <table class=\"table table-bordered\">\n\n          <tbody>\n            <tr>\n              <td>Order Number</td>\n              <td> {{order?.id }}</td>\n            </tr>\n            <!-- <tr>\n              <td>provider</td>\n              <td>{{order?.provider?.name}}</td>\n            </tr> -->\n            <tr>\n              <td>client id</td>\n              <td>{{order?.client?.id }}</td>\n            </tr>\n            <tr>\n              <td>client Name</td>\n              <td>{{client?.user?.name }}</td>\n            </tr>\n            <tr>\n              <td>Order Price</td>\n              <td>{{order?.price }}</td>\n            </tr>\n            <tr>\n              <td>Order status</td>\n              <td>{{order?.status}}</td>\n            </tr>\n            <tr>\n              <td>Order type</td>\n              <td>{{order?.orderType}}</td>\n            </tr>\n            <tr>\n              <td>Order preview Needed</td>\n              <td>{{order?.previewNeeded}}</td>\n            </tr>\n            <tr>\n              <td> booking Date</td>\n              <td>{{order?.bookingDate | date:'medium'}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n            <tr>\n              <td>Order location</td>\n              <td>{{order?.requestLocationPlaceName}}</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      <br>\n      <br>\n      <br>\n      <div class=\"card pull-left  text-center\">\n        <h1 class=\" text-center\">Actions </h1>\n\n        <!-- <p *ngIf=\"['ACCEPTED','ON_THE_WAY','ARRIVED'].includes( orders?.status) \"> -->\n        <!-- <p *ngIf=\"cancelOrder\">\n                  <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n                    CANCELLED\n                  </button>\n                </p> -->\n\n        <p *ngIf=\"order?.status =='ACCEPTED' ||  order?.status =='ON_THE_WAY' || order?.status =='ARRIVED'\">\n          <button (click)=\"changeStatus(order?.id,'CANCELLED_BY_PROVIDER')\" style=\"width:60%;background:#007be2;margin-top:10px;\">\n            CANCELLED\n          </button>\n        </p>\n\n        <p *ngIf=\"order?.status =='PENDING'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ACCEPTED')\" style=\"width:60%;margin-top:10px;background:#007be2\">\n            ACCEPTED\n          </button>\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REJECTED_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            REJECTED_BY_PROVIDER\n          </button>\n        </p>\n\n        <h1 *ngIf=\"order?.status =='ACCEPTED'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ON_THE_WAY')\" style=\"width:60%;background: #007be2\">\n            ON_THE_WAY\n          </button>\n        </h1>\n\n        <P *ngIf=\"order?.status =='IN_PROGRESS'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_PAUSE_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;;background: #007be2\">\n            PAUSED_BY_PROVIDER\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            FINISHED_WORKING\n          </button>\n        </P>\n\n        <P *ngIf=\"order?.status =='PAUSED_BY_PROVIDER'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'REQUEST_TO_RESUME_BY_PROVIDER')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            RESUME\n          </button>\n\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'FINISHED_WORKING')\" style=\"width:60%;margin-top:10px;background: #007be2\">\n            FINISHED_WORKING\n          </button>\n        </P>\n\n        <p *ngIf=\"order?.status =='ON_THE_WAY'\">\n          <button class=\"btn btn-primary\" (click)=\"changeStatus(order?.id,'ARRIVED')\" style=\"width:60%;background: #007be2;margin-top:10px;\">\n            ARRIVED\n          </button>\n        </p>\n\n        <p>\n          <button (click)=\"goToChat(order?.client)\" style=\"width:60%;background:#007be2\">\n            CHAT\n          </button>\n        </p>\n\n\n        <div *ngIf=\"paymentMethod\" style=\"margin-top: 100px;\">\n          <h4>CLIENT CASH PAYMENT</h4>\n          <button (click)=\"providerConfirmCash('CONFIRMED')\" style=\"width:40%;background:#007be2;margin: 5px;\">\n            yes\n          </button>\n          <button (click)=\"providerConfirmCash('DENIED')\" style=\"width:40%;background:#007be2;margin: 5px;\">\n            no\n          </button>\n        </div>\n\n\n      </div>\n\n    </div>\n\n    <div class=\"col-md-6\">\n      <div class=\"modal-content text-center\" *ngIf=\"order?.status =='PAUSED_BY_PROVIDER' ||  order?.status =='IN_PROGRESS' || order?.status =='PAUSED_BY_CLIENT'\">\n        <span style=\"font-size: 40px;color:#003d71\" class=\"glyphicon glyphicon-time\"></span>\n        <br> {{timer }}\n      </div>\n\n      <div class=\"map\">\n        <h2 class=\"cardTitle\">Click to update your location </h2>\n        <agm-map [latitude]=\"30.614399499999998\" [longitude]=\"32.300712499999996\" [zoom]=\"14\" [disableDoubleClickZoom]=\"true\" [mapDraggable]=\"true\"\n          [scrollwheel]=\"true\" (mapClick)=\"newPosition($event)\" [disableDefaultUI]=\"true\" [zoomControl]=\"false\">\n          <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n        </agm-map>\n      </div>\n    </div>\n\n  </div>\n</div>\n\n\n\n<div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"myModal\">\n  <div class=\"modal-dialog modal-sm\" role=\"document\">\n    <div class=\"modal-content\">\n      <form [formGroup]=\"cancelForm\" (ngSubmit)=\"onCancelledOrder()\">\n        <h1>cancel reasons</h1>\n        <div *ngIf=\"loadingReason\">\n          LOADING....\n        </div>\n        <div *ngIf=\"!loadingReason\">\n          <div class=\"radio\" *ngFor=\"let reason of reasons\">\n            <label>\n              <input type=\"radio\" formControlName=\"reason\" checked [value]=\"reason.id\">{{reason.text}}</label>\n          </div>\n        </div>\n\n        <div class=\"form-group\">\n          <label for=\"comment\">Comment:</label>\n          <textarea class=\"form-control\" rows=\"5\" id=\"comment\" formControlName=\"reasonText\"></textarea>\n        </div>\n        <button style=\"width:40%;background: blue\">\n          SUBMIT\n        </button>\n\n      </form>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"modal fade bs-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\" id=\"timerModal\">\n  <div class=\"modal-dialog modal-sm\" role=\"document\">\n    <div class=\"modal-content text-center\">\n      <span style=\"font-size: 40px;color:#003d71\" class=\"glyphicon glyphicon-time\"></span>\n      <br> {{timer }}\n    </div>\n  </div>\n</div>\n\n\n<div id=\"myNav\" class=\"overlay\" #laterPaymentOverlay>\n  <div class=\"overlay-content text-center\">\n\n    <div class=\"\">\n      <h1>بانتظار رد العميل</h1>\n      <img src=\"assets/loading.gif\" class=\"img-responsive\" width=\"16%\" height=\"200\" style=\"margin-left: 42%;\">\n    </div>\n\n    <div *ngIf=\"Payment\">\n      <button (click)=\"laterPayment()\" style=\"width:50%;background: red\">\n        الدفع لاحقا\n      </button>\n    </div>\n  </div>\n</div>\n\n\n\n<ngx-smart-modal #rateClientModal identifier=\"rateClientModal\" class=\"finishModal\" customClass=\"medium-modal\">\n  <form [formGroup]=\"rateClientForm\" (ngSubmit)=\"onRateClientOrder()\">\n\n    <div class=\"rating\">\n      <input type=\"radio\" [name]=\"inputName\" value=\"5\" [checked]=\"rating===5\" />\n      <label title=\"Rocks!\" (click)='onClick(5)'>5 stars</label>\n\n      <input type=\"radio\" [name]=\"inputName\" value=\"4\" [checked]=\"rating===4\" />\n      <label title=\"Pretty good\" (click)='onClick(4)'>4 stars</label>\n\n      <input type=\"radio\" [name]=\"inputName\" value=\"3\" [checked]=\"rating===3\" />\n      <label title=\"Meh\" (click)='onClick(3)'>3 stars</label>\n\n      <input type=\"radio\" [name]=\"inputName\" value=\"2\" [checked]=\"rating===2\" />\n      <label title=\"Kinda bad\" (click)='onClick(2)'>2 stars</label>\n\n      <input type=\"radio\" [name]=\"inputName\" value=\"1\" [checked]=\"rating===1\" />\n      <label title=\"Sucks big time\" (click)='onClick(1)'>1 star</label>\n\n    </div>\n    <br>\n    <br>\n    <span class=\"text-error\" *ngIf=\"rateError\">           هذا الحقل الزامي\n      </span>\n    <br>\n    <br>\n\n    <div class=\"form-group\">\n      <label for=\"comment\">Comment:</label>\n      <textarea class=\"form-control\" rows=\"5\" id=\"comment\" formControlName=\"comment\"></textarea>\n      <span class=\"text-error\" *ngIf=\"rateClientForm.get('comment').hasError('required') && rateClientForm.get('comment').touched\">\n          هذا الحقل الزامي\n      </span>\n    </div>\n    <button style=\"width:40%;background: blue\">\n      SUBMIT\n    </button>\n\n  </form>\n\n</ngx-smart-modal>\n\n\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
 
 /***/ }),
 
@@ -1371,8 +1383,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var ngx_smart_modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-smart-modal */ "./node_modules/ngx-smart-modal/esm5/ngx-smart-modal.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1391,16 +1404,20 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var OrderDetailComponent = /** @class */ (function () {
-    function OrderDetailComponent(route, _notifications, zone, router, orderServices, authService, appRef) {
+    function OrderDetailComponent(route, _notifications, zone, ngxSmartModalService, router, orderServices, authService, appRef) {
         this.route = route;
         this._notifications = _notifications;
         this.zone = zone;
+        this.ngxSmartModalService = ngxSmartModalService;
         this.router = router;
         this.orderServices = orderServices;
         this.authService = authService;
         this.appRef = appRef;
+        this.ratingClick = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.cancelOrder = false;
+        this.rateError = false;
         this.openOverly = false;
         this.requestToPauseByClient = false;
         this.second = 0;
@@ -1415,11 +1432,15 @@ var OrderDetailComponent = /** @class */ (function () {
         var user = this.authService.currentUser.user;
         this.providerId = user.id;
         this.orderId = this.route.snapshot.params['id'];
+        this.inputName = this.itemId + '_rating';
         this.loginDeapStream();
         this.getProviderLocation();
         this.cancelForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormGroup"]({
             'reasonText': new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"](null),
             'reason': new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"](null)
+        });
+        this.rateClientForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormGroup"]({
+            'comment': new _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormControl"](null, [_angular_forms__WEBPACK_IMPORTED_MODULE_7__["Validators"].required])
         });
         this.fetchOrder(this.orderId);
     };
@@ -1456,6 +1477,10 @@ var OrderDetailComponent = /** @class */ (function () {
                 _this.Payment = true;
                 _this.openNav();
             }
+            if (res.status == 'ENDED' && _this.order.isProviderWaitingForPayment == true) {
+                _this.closeNav();
+                _this.paymentMethod = true;
+            }
             if (res.status == 'FINISHED_WORKING' || _this.currentStatus == 'FINISHED_WORKING')
                 _this.openNav();
             if (res.status == 'ENDED' && _this.order.isProviderWaitingForPayment == true) {
@@ -1463,6 +1488,8 @@ var OrderDetailComponent = /** @class */ (function () {
                 if (res.paymentMethod == 'CASH')
                     _this.paymentMethod = true;
             }
+            if (res.status == 'ENDED' && _this.order.isProviderWaitingForPayment == false && _this.order.rate == 0)
+                _this.ngxSmartModalService.getModal('rateClientModal').open();
             if (res.requestToPauseByClient == true) {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_5___default()({
                     title: 'PAUSED_BY_CLIENT',
@@ -1537,9 +1564,9 @@ var OrderDetailComponent = /** @class */ (function () {
         var _this = this;
         this.orderServices.getOrderById(this.providerId, orderId).subscribe(function (res) {
             _this.order = res;
+            _this.dsEventLisenning();
             _this.orderServices.getClientById(_this.order.client.id).subscribe(function (result) {
                 _this.client = result;
-                _this.dsEventLisenning();
                 if (['ACCEPTED', 'ON_THE_WAY', 'ARRIVED'].includes(_this.order.status))
                     _this.cancelOrder = true;
                 _this.currentStatus = _this.order.status;
@@ -1547,11 +1574,17 @@ var OrderDetailComponent = /** @class */ (function () {
                     _this.closeNav();
                     _this.paymentMethod = true;
                 }
+                else {
+                    _this.paymentMethod = false;
+                }
+                if (_this.currentStatus == 'ENDED' && _this.order.isProviderWaitingForPayment == false && _this.order.rate == 0)
+                    _this.ngxSmartModalService.getModal('rateClientModal').open();
                 if (['PAUSED_BY_PROVIDER', 'IN_PROGRESS', 'PAUSED_BY_CLIENT'].includes(_this.order.status)) {
-                    _this.zone.run(function () {
-                        // this.orderTimer();
-                        _this.currentTime();
-                    });
+                    _this.currentTime();
+                }
+                if (_this.currentStatus == 'WAITING_FOR_PAYMENT' && _this.order.isProviderWaitingForPayment == true) {
+                    _this.Payment = true;
+                    _this.openNav();
                 }
                 console.log('the order is', _this.order);
             });
@@ -1559,12 +1592,16 @@ var OrderDetailComponent = /** @class */ (function () {
     };
     OrderDetailComponent.prototype.currentTime = function () {
         this.resuemeOrderPeriodTime();
+        this.second = 0;
+        this.minute = 0;
+        this.hour = 0;
         var currentTime;
         if (this.stopedTime > 0)
-            currentTime = this.secondsToHMS(this.stopedTime + moment__WEBPACK_IMPORTED_MODULE_8__().diff(this.currentOrderStartTime, 'seconds'));
+            currentTime = this.secondsToHMS(this.stopedTime + moment__WEBPACK_IMPORTED_MODULE_9__().diff(this.currentOrderStartTime, 'seconds'));
         else
-            currentTime = this.secondsToHMS(moment__WEBPACK_IMPORTED_MODULE_8__().diff(this.currentOrderStartTime, 'seconds'));
-        console.log('the stoped time', currentTime, currentTime.hours, currentTime.minutes, currentTime.seconds);
+            currentTime = this.secondsToHMS(moment__WEBPACK_IMPORTED_MODULE_9__().diff(this.currentOrderStartTime, 'seconds'));
+        // if (this.stopedTime == 0) currentTime = this.secondsToHMS(moment().diff(this.currentOrderStartTime, 'seconds'));
+        // else currentTime = this.secondsToHMS(this.stopedTime);
         this.second = currentTime.seconds;
         this.minute = currentTime.minutes;
         this.hour = currentTime.hours;
@@ -1694,13 +1731,13 @@ var OrderDetailComponent = /** @class */ (function () {
             for (var _i = 0, workingPeriods_1 = workingPeriods; _i < workingPeriods_1.length; _i++) {
                 var workingPeriod = workingPeriods_1[_i];
                 if (workingPeriod.endTime) {
-                    var endTime = moment__WEBPACK_IMPORTED_MODULE_8__(workingPeriod.endTime), startTime = moment__WEBPACK_IMPORTED_MODULE_8__(workingPeriod.startTime);
+                    var endTime = moment__WEBPACK_IMPORTED_MODULE_9__(workingPeriod.endTime), startTime = moment__WEBPACK_IMPORTED_MODULE_9__(workingPeriod.startTime);
                     // this.stopedTime += moment.duration(endTime.diff(startTime)).asSeconds();
                     this.stopedTime += endTime.diff(startTime, 'seconds');
                 }
             }
         }
-        //console.log(111111, this.stopedTime)
+        console.log(111111, this.stopedTime);
         return this.stopedTime;
     };
     OrderDetailComponent.prototype.secondsToHMS = function (d) {
@@ -1717,12 +1754,10 @@ var OrderDetailComponent = /** @class */ (function () {
         // clearInterval(this.timerIntervel);
         this.firstDsLisning = true;
         var currentTime;
-        if (this.currentOrderStartTime)
-            console.log('currentOrderStartTime ====', this.stopedTime + moment__WEBPACK_IMPORTED_MODULE_8__().diff(this.currentOrderStartTime, 'seconds'));
         if (this.stopedTime > 0)
-            currentTime = this.secondsToHMS(this.stopedTime + moment__WEBPACK_IMPORTED_MODULE_8__().diff(this.currentOrderStartTime, 'seconds'));
+            currentTime = this.secondsToHMS(this.stopedTime + moment__WEBPACK_IMPORTED_MODULE_9__().diff(this.currentOrderStartTime, 'seconds'));
         else
-            currentTime = this.secondsToHMS(moment__WEBPACK_IMPORTED_MODULE_8__().diff(this.currentOrderStartTime, 'seconds'));
+            currentTime = this.secondsToHMS(moment__WEBPACK_IMPORTED_MODULE_9__().diff(this.currentOrderStartTime, 'seconds'));
         this.second = currentTime.seconds;
         this.minute = currentTime.minutes;
         this.hour = currentTime.hours;
@@ -1748,10 +1783,52 @@ var OrderDetailComponent = /** @class */ (function () {
         clearInterval(this.timerIntervel);
         this.appRef.tick();
     };
+    OrderDetailComponent.prototype.onClick = function (rating) {
+        this.rating = rating;
+        this.ratingClick.emit({
+            itemId: this.itemId,
+            rating: rating
+        });
+        console.log('the rate====', this.rating);
+    };
+    OrderDetailComponent.prototype.onRateClientOrder = function () {
+        var _this = this;
+        if (!this.rateClientForm.valid) {
+            Object.keys(this.rateClientForm.controls).forEach(function (key) {
+                _this.rateClientForm.get(key).markAsTouched();
+            });
+            if (!this.rating || this.rating == 0)
+                this.rateError = true;
+            return;
+        }
+        var comment = this.rateClientForm.get('comment').value;
+        var rateBody = { rate: this.rating };
+        if (comment)
+            rateBody['comment'] = comment;
+        this.orderServices.rateOrder(this.orderId, rateBody)
+            .subscribe(function (res) {
+            _this.ngxSmartModalService.getModal('rateClientModal').close();
+            console.log('the rate result ====>', res);
+        }, function (err) {
+            console.log('the error ==>', err);
+        });
+    };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('laterPaymentOverlay'),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
     ], OrderDetailComponent.prototype, "laterPaymentOverlay", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Number)
+    ], OrderDetailComponent.prototype, "rating", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Number)
+    ], OrderDetailComponent.prototype, "itemId", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], OrderDetailComponent.prototype, "ratingClick", void 0);
     OrderDetailComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-order-detail',
@@ -1761,6 +1838,7 @@ var OrderDetailComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
             angular2_notifications__WEBPACK_IMPORTED_MODULE_4__["NotificationsService"],
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"],
+            ngx_smart_modal__WEBPACK_IMPORTED_MODULE_8__["NgxSmartModalService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
             _order_service__WEBPACK_IMPORTED_MODULE_2__["OrderServices"],
             _service_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"],
@@ -1896,6 +1974,10 @@ var OrderServices = /** @class */ (function () {
     OrderServices.prototype.updateExternalOrders = function (orderId, body) {
         var url = this.basePath + "external-orders/" + orderId + "/status";
         return this.httpClient.put(url, body);
+    };
+    OrderServices.prototype.rateOrder = function (orderId, rateBody) {
+        var url = this.basePath + "orders/" + orderId + "/rate";
+        return this.httpClient.patch(url, rateBody);
     };
     OrderServices = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
