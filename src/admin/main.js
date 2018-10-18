@@ -1473,16 +1473,20 @@ var OrderDetailComponent = /** @class */ (function () {
         var _this = this;
         _da_service__WEBPACK_IMPORTED_MODULE_3__["default"].record.getRecord("dsOrder/" + this.orderId).subscribe(function (res) {
             console.log('the notification is =======>', res);
-            if (res.status == 'WAITING_FOR_PAYMENT' && _this.currentStatus != 'ENDED' && _this.order.isProviderWaitingForPayment == true) {
+            if (res.status == 'WAITING_FOR_PAYMENT' && _this.currentStatus != 'ENDED' && res.isProviderWaitingForPayment == true) {
                 _this.Payment = true;
                 _this.openNav();
+            }
+            if (res.status == 'WAITING_FOR_PAYMENT' && _this.order.isProviderWaitingForPayment == false) {
+                _this.closeNav();
             }
             if (res.status == 'ENDED' && _this.order.isProviderWaitingForPayment == true) {
                 _this.closeNav();
                 _this.paymentMethod = true;
             }
-            if (res.status == 'FINISHED_WORKING' || _this.currentStatus == 'FINISHED_WORKING')
+            if (res.status == 'FINISHED_WORKING' || _this.currentStatus == 'FINISHED_WORKING') {
                 _this.openNav();
+            }
             if (res.status == 'ENDED' && _this.order.isProviderWaitingForPayment == true) {
                 _this.closeNav();
                 if (res.paymentMethod == 'CASH')
@@ -1585,6 +1589,12 @@ var OrderDetailComponent = /** @class */ (function () {
                 if (_this.currentStatus == 'WAITING_FOR_PAYMENT' && _this.order.isProviderWaitingForPayment == true) {
                     _this.Payment = true;
                     _this.openNav();
+                }
+                if (_this.currentStatus == 'WAITING_FOR_PAYMENT' && _this.order.isProviderWaitingForPayment == false) {
+                    _this.closeNav();
+                }
+                if (_this.currentStatus == 'ENDED' && _this.order.isProviderWaitingForPayment == false) {
+                    _this.closeNav();
                 }
                 console.log('the order is', _this.order);
             });
@@ -1712,17 +1722,19 @@ var OrderDetailComponent = /** @class */ (function () {
         this.laterPaymentOverlay.nativeElement.style.width = "100%";
         this.openOverly = true;
     };
-    OrderDetailComponent.prototype.closeNav = function () {
-        this.laterPaymentOverlay.nativeElement.style.width = "0%";
-        this.openOverly = false;
-    };
     OrderDetailComponent.prototype.laterPayment = function () {
         var _this = this;
         this.orderServices.laterPayment(this.orderId).subscribe(function (res) {
+            _this.laterPaymentOverlay.nativeElement.style.width = "0";
             _this.closeNav();
             // this.fetchOrder(this.orderId);
         });
         console.log('later payment');
+    };
+    OrderDetailComponent.prototype.closeNav = function () {
+        console.log(1111111111111111111);
+        this.laterPaymentOverlay.nativeElement.style.width = "0%";
+        this.openOverly = false;
     };
     OrderDetailComponent.prototype.resuemeOrderPeriodTime = function () {
         var workingPeriods = this.order.workingPeriods;
