@@ -1893,8 +1893,8 @@ var OrderServices = /** @class */ (function () {
         this.httpClient = httpClient;
         this.path = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].path + "providers/" + _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].id + "/orders";
         this.basePath = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].path;
-        this.token = { headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Authorization', 'Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMxNSwiaXNzIjoiQXBwIiwiaWF0IjoxNTM2NDkyMTA5NzgxLCJleHAiOjE1MzY0OTIxMTY5ODF9.wYPCAEDMcUC2JvmBXxT5z2w8Jf2KL7ilVgEsYLQPuOk') };
     }
+    //token = { headers: new HttpHeaders().set('Authorization', 'Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMxNSwiaXNzIjoiQXBwIiwiaWF0IjoxNTM2NDkyMTA5NzgxLCJleHAiOjE1MzY0OTIxMTY5ODF9.wYPCAEDMcUC2JvmBXxT5z2w8Jf2KL7ilVgEsYLQPuOk') };
     OrderServices.prototype.denyPausation = function (providerId, orderId) {
         var url = this.basePath + 'providers/' + providerId + '/orders/' + orderId + '/deny-pausation';
         return this.httpClient.put(url, {});
@@ -1912,7 +1912,7 @@ var OrderServices = /** @class */ (function () {
         return this.httpClient.put(url, {});
     };
     OrderServices.prototype.sendMessage = function (messageObject, conversationId) {
-        var url = this.basePath + "chat/" + conversationId;
+        var url = this.basePath + "chat/providers/" + conversationId;
         return this.httpClient.post(url, messageObject);
     };
     OrderServices.prototype.getConversationMessages = function (conversationId) {
